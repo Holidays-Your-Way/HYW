@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About – Holidays Your Way</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Poppins:wght@500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --hyw-blue: #0A3161;
+      --hyw-blue-dark: #07203F;
+      --hyw-red-dark: #8A102F;
+      --hyw-white: #FFFFFF;
+      --hyw-text: #1F2430;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Nunito", sans-serif;
+      color: var(--hyw-text);
+      background-color: var(--hyw-white);
+    }
+
+    h1, h2, h3 {
+      font-family: "Poppins", sans-serif;
+    }
+
+    /* NAVBAR */
+    .hyw-nav {
+      background-color: var(--hyw-white);
+      border-bottom: 1px solid #e3e6ee;
+      padding: 0.4rem 0;
+    }
+
+    .hyw-logo {
+      height: 180px;
+      width: auto;
+    }
+
+    @media (max-width: 991.98px) { .hyw-logo { height: 140px; } }
+    @media (max-width: 575.98px) { .hyw-logo { height: 90px; } }
+
+    .navbar-nav .nav-link {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #394155;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: var(--hyw-blue);
+    }
+
+    /* TYPOGRAPHY */
+    .about-page .hyw-section-title {
+      font-size: 2.4rem;
+      line-height: 1.25;
+      color: var(--hyw-blue-dark);
+      margin-bottom: 1.4rem;
+    }
+
+    .about-page .hyw-section-intro {
+      font-size: 1.15rem;
+      line-height: 1.75;
+      color: #4a5264;
+      margin-bottom: 1.4rem;
+    }
+
+    .hyw-section {
+      padding: 4.5rem 0;
+    }
+
+    .hyw-section-light {
+      background-color: #FFFFFF;
+    }
+
+    /* PERFECT CIRCLE PHOTO */
+    .about-photo-wrapper {
+      width: 340px;
+      height: 340px;
+      margin: 0 auto;
+    }
+
+    .about-photo {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    }
+
+    @media (max-width: 575.98px) {
+      .about-photo-wrapper {
+        width: 260px;
+        height: 260px;
+      }
+    }
+
+    /* CTA BUTTON */
+    .btn-hyw-hero-blue {
+      background-color: var(--hyw-blue) !important;
+      color: #FFFFFF !important;
+      border-radius: 999px;
+      padding: 0.85rem 1.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+    }
+
+    /* FOOTER */
+    .hyw-footer {
+      background-color: #050816;
+      color: #cfd3e3;
+      padding: 1.5rem 0;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+
+<body class="about-page">
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg hyw-nav">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/holidays-your-way-logo.png" alt="Holidays Your Way" class="hyw-logo" />
+      </a>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#hywNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="hywNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="orlando.html">Orlando</a></li>
+          <li class="nav-item"><a class="nav-link" href="destinations.html">Worldwide</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">What We Offer</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN ABOUT SECTION -->
+  <section class="hyw-section hyw-section-light">
+    <div class="container">
+      <div class="row align-items-center g-5">
+
+        <!-- PHOTO -->
+        <div class="col-lg-5 text-center">
+          <div class="about-photo-wrapper">
+            <img src="images/about-photo.jpeg" alt="Alison – Holidays Your Way" class="about-photo">
+          </div>
+        </div>
+
+        <!-- TEXT -->
+        <div class="col-lg-7">
+
+          <h2 class="hyw-section-title"> Who Am I?</h2>
+
+          <p class="hyw-section-intro">
+            I’m Alison, the founder of Holidays Your Way. I’ve spent more than 40 years travelling, and Orlando… that’s my love affair. My true home away from home. I visit multiple times a year because I genuinely adore it. The parks, the hotels, the villas, the whole atmosphere of the place. I know what works, what doesn’t, and what turns a holiday from “where do we even start?” into something that actually feels easy.
+          </p>
+
+          <p class="hyw-section-intro">
+            And just to be clear, I’m not one of those “I’ve read a blog so now I’m an expert” types. I’ve travelled all across the world, from the Maldives, the Caribbean, Europe, Vietnam and many more places. If I recommend it, it’s because I’ve been. If I haven’t, I won’t pretend.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY I BUILT HYW -->
+  <section class="hyw-section">
+    <div class="container">
+
+      <h2 class="hyw-section-title">🎢 Why I Built Holidays Your Way</h2>
+
+      <p class="hyw-section-intro">
+        I started Holidays Your Way because I was fed of seeing people passed through call centres, handed generic itineraries, or treated like a booking reference. That’s not how I work, and it never will be.
+      </p>
+
+      <p class="hyw-section-intro">
+        When you book with me, you get honesty, experience and a holiday that’s built around <em>you</em>. No scripts. No pressure. No “this is what everyone books”. Planning a holiday should feel exciting, not like homework. My job is to cut through the noise, give you straight answers, and help you make decisions that actually make sense for your family, your budget and your way of travelling.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- SPECIALISMS -->
+  <section class="hyw-section hyw-section-light">
+    <div class="container">
+
+      <h2 class="hyw-section-title">🌍 What I Specialise In</h2>
+
+      <p class="hyw-section-intro">
+        Orlando is the destination I know inside out. I’ve stayed in the hotels and villas, I've eaten at the restaurants, tested different approaches to planning and figured out the shortcuts and pitfalls that make or break a day. It’s the place I can talk about for hours, well days if I am honest, and I still get excited.
+      </p>
+
+      <p class="hyw-section-intro">
+        But I bring that same level of honesty and detail to every destination I sell. Whether it’s a luxury Maldives escape, a Caribbean family holiday, a European beach break or something completely different, you’ll get advice based on lived experience, not what a brochure says.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="hyw-section">
+    <div class="container">
+
+      <h2 class="hyw-section-title">👥 The Team Behind the Brand</h2>
+
+      <p class="hyw-section-intro">
+        Holidays Your Way is growing. Soon, I’ll be bringing in a small team of trusted travel specialists, each with their own destination expertise.
+      </p>
+
+      <p class="hyw-section-intro">
+        Orlando will always be my area, but the team will let us offer the same honest, experience led planning for destinations across the world. Every agent will focus on what they genuinely know and love. You’ll always be matched with the right specialist, and the standards will stay exactly the same: real experience, real advice, and holidays planned properly.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- HOW I WORK -->
+  <section class="hyw-section hyw-section-light">
+    <div class="container">
+
+      <h2 class="hyw-section-title">🧭 How I Work</h2>
+
+      <p class="hyw-section-intro">I keep things simple:</p>
+
+      <p class="hyw-section-intro">
+        • I listen first.<br>
+        • I tailor everything to you.<br>
+        • I take the stress out of it.<br>
+        • I help with hotels, flights, tickets, itineraries and the “what actually works” part.<br>
+        • I’m on WhatsApp and email — no call centres, no being passed around.<br>
+        • And I’m honest. If something isn’t worth it, I’ll tell you. No messing about.
+      </p>
+
+      <p class="hyw-section-intro">
+        Whether you’re planning Orlando, a beach escape, a city break or something completely different, you’ll get the same level of care, clarity and straight talking advice.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="hyw-section text-center">
+    <div class="container">
+      <h2 class="hyw-section-title">Ready to Start Planning?</h2>
+      <p class="hyw-section-intro mx-auto">
+        This is where your contact buttons will sit — email, WhatsApp and your “Tell Me About Your Trip” form.
+      </p>
+      <a href="contact.html" class="btn btn-hyw-hero-blue">Tell Me About Your Trip</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="hyw-footer">
+    <div class="container">
+      <p class="mb-0">© 2026 Holidays Your Way. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
