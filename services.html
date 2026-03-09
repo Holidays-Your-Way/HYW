@@ -1,454 +1,202 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>What We Offer – Holidays Your Way</title>
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What We Offer | Holidays Your Way</title>
 
   <style>
+    /* ------------------------------
+       BRAND COLOURS
+    ------------------------------ */
     :root {
-      --hyw-blue: #0A3161;
-      --hyw-blue-dark: #07203F;
-      --hyw-red-dark: #8A102F;
-      --hyw-white: #FFFFFF;
-      --hyw-text: #1F2430;
+      --hyw-blue-dark: #0a1a2f;
+      --hyw-blue-mid: #1f3b57;
+      --hyw-blue-light: #e8f1f8;
+      --hyw-white: #ffffff;
+      --hyw-grey: #f7f7f7;
     }
 
     body {
       margin: 0;
-      font-family: "Nunito", sans-serif;
-      color: var(--hyw-text);
-      background-color: var(--hyw-white);
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--hyw-white);
+      color: var(--hyw-blue-dark);
     }
 
-    h1, h2, h3 {
-      font-family: "Poppins", sans-serif;
+    /* ------------------------------
+       NAVIGATION
+    ------------------------------ */
+    header {
+      background: var(--hyw-blue-dark);
+      padding: 20px;
+      text-align: center;
     }
 
-    /* NAVBAR */
-    .hyw-nav {
-      background-color: var(--hyw-white);
-      border-bottom: 1px solid #e3e6ee;
-      padding: 0.4rem 0;
+    header h1 {
+      color: var(--hyw-white);
+      margin: 0;
+      font-size: 28px;
+      letter-spacing: 1px;
     }
 
-    .hyw-logo {
-      height: 180px;
-      width: auto;
+    nav {
+      margin-top: 10px;
     }
 
-    @media (max-width: 991.98px) { .hyw-logo { height: 140px; } }
-    @media (max-width: 575.98px) { .hyw-logo { height: 90px; } }
-
-    .navbar-nav .nav-link {
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: #394155;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+    nav a {
+      color: var(--hyw-white);
+      text-decoration: none;
+      margin: 0 12px;
+      font-size: 15px;
+      font-weight: 500;
     }
 
-    .navbar-nav .nav-link:hover,
-    .navbar-nav .nav-link.active {
-      color: var(--hyw-blue);
+    nav a:hover {
+      text-decoration: underline;
     }
 
-    /* HERO */
+    /* ------------------------------
+       HERO SECTION
+    ------------------------------ */
     .hyw-hero {
+      width: 100%;
+      height: 380px;
+      background-image: url("images/plane-window.jpg"); /* Replace with your chosen image filename */
       background-size: cover;
       background-position: center;
-      padding: 6rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      color: var(--hyw-white);
+      padding: 0 20px;
     }
 
     .hyw-hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      font-size: 42px;
+      margin: 0;
+      color: var(--hyw-blue-dark);
+      text-shadow: none;
     }
 
     .hyw-hero p {
-      font-size: 1.2rem;
-      font-weight: 300;
-      text-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    }
-
-    /* OFFER SECTIONS */
-    .offer-block {
-      padding: 3rem 0;
-      border-bottom: 1px solid #e9ecf3;
-    }
-
-    .offer-block h2 {
-      font-size: 2rem;
+      font-size: 18px;
+      margin-top: 10px;
       color: var(--hyw-blue-dark);
-      margin-bottom: 1rem;
+      max-width: 700px;
     }
 
-    .offer-block p {
-      font-size: 1.1rem;
-      color: #4a5264;
-      line-height: 1.7;
+    /* ------------------------------
+       CONTENT SECTIONS
+    ------------------------------ */
+    .services-container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
-    /* CTA */
-    .hyw-cta {
-      text-align: center;
-      padding: 4rem 0;
+    .service-box {
+      background: var(--hyw-grey);
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      border-left: 6px solid var(--hyw-blue-mid);
     }
 
-    .hyw-cta h2 {
-      font-size: 2.4rem;
+    .service-box h2 {
+      margin-top: 0;
+      font-size: 26px;
       color: var(--hyw-blue-dark);
-      margin-bottom: 1rem;
     }
 
-    .hyw-cta p {
-      font-size: 1.15rem;
-      color: #4a5264;
-      margin-bottom: 2rem;
+    .service-box p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--hyw-blue-mid);
     }
 
-    .btn-hyw-hero-blue {
-      background-color: var(--hyw-blue) !important;
-      color: #FFFFFF !important;
-      border-radius: 999px;
-      padding: 0.85rem 1.9rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.18);
-    }
-
-    /* FOOTER */
-    .hyw-footer {
-      background-color: #050816;
-      color: #cfd3e3;
-      padding: 1.5rem 0;
+    /* ------------------------------
+       FOOTER
+    ------------------------------ */
+    footer {
+      background: var(--hyw-blue-dark);
+      color: var(--hyw-white);
       text-align: center;
-      font-size: 0.85rem;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+
+    /* ------------------------------
+       MOBILE
+    ------------------------------ */
+    @media (max-width: 768px) {
+      .hyw-hero {
+        height: 300px;
+      }
+
+      .hyw-hero h1 {
+        font-size: 32px;
+      }
+
+      .hyw-hero p {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg hyw-nav">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="images/holidays-your-way-logo.png" alt="Holidays Your Way" class="hyw-logo" />
-      </a>
-
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#hywNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="hywNav">
-        <ul class="navbar-nav ms-auto align-items-lg-center">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="orlando.html">Orlando</a></li>
-          <li class="nav-item"><a class="nav-link" href="destinations.html">Worldwide</a></li>
-          <li class="nav-item"><a class="nav-link active" href="services.html">What We Offer</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <!-- HEADER -->
+  <header>
+    <h1>HOLIDAYS YOUR WAY</h1>
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="about.html">ABOUT</a>
+      <a href="orlando.html">ORLANDO</a>
+      <a href="worldwide.html">WORLDWIDE</a>
+      <a href="services.html">WHAT WE OFFER</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+  </header>
 
   <!-- HERO -->
-  <section class="hyw-hero" style="background-image: url('images/offer-hero.jpg');">
-    <div class="container">
-      <h1>What We Offer</h1>
-      <p>Personal, honest, experience‑led holiday planning — tailored to you.</p>
-    </div>
+  <section class="hyw-hero">
+    <h1>What We Offer</h1>
+    <p>Personal service – experienced holiday planning – tailored to you</p>
   </section>
 
-  <!-- OFFER SECTIONS -->
-  <section class="offer-block">
-    <div class="container">
+  <!-- CONTENT -->
+  <div class="services-container">
+
+    <div class="service-box">
       <h2>Orlando Holidays</h2>
       <p>From theme parks to hidden gems, I’ll help you build the perfect Orlando itinerary with real insider knowledge.</p>
     </div>
-  </section>
 
-  <section class="offer-block">
-    <div class="container">
+    <div class="service-box">
       <h2>Europe</h2>
-      <p>Family‑friendly escapes, luxury resorts, and sun‑soaked destinations across Greece, Cyprus, Türkiye and more.</p>
+      <p>Family-friendly escapes, luxury resorts, and sun-soaked destinations across Greece, Cyprus, Türkiye and more.</p>
     </div>
-  </section>
 
-  <section class="offer-block">
-    <div class="container">
+    <div class="service-box">
       <h2>Worldwide</h2>
-      <p>From the Maldives to Mexico, I’ll help you find the perfect long‑haul getaway with trusted suppliers and real experience.</p>
+      <p>From the Maldives to Mexico, I’ll help you find the perfect long-haul getaway with trusted suppliers and real experience.</p>
     </div>
-  </section>
 
-  <section class="offer-block">
-    <div class="container">
+    <div class="service-box">
       <h2>Tailored Packages</h2>
-      <p>Every holiday is built around you — your budget, your style, your must‑haves. No generic packages, no upselling.</p>
+      <p>Every holiday is built around you — your budget, your style, your must-haves. No generic packages, no upselling.</p>
     </div>
-  </section>
 
-  <!-- CTA -->
-  <section class="hyw-cta">
-    <div class="container">
-      <h2>Let’s Build Your Perfect Holiday</h2>
-      <p>Tell me what you’re dreaming of and I’ll take care of the rest.</p>
-      <a href="contact.html" class="btn btn-hyw-hero-blue">Get in Touch</a>
-    </div>
-  </section>
+  </div>
 
   <!-- FOOTER -->
-  <footer class="hyw-footer">
-    <div class="container">
-      <p class="mb-0">© 2026 Holidays Your Way. All rights reserved.</p>
-    </div>
+  <footer>
+    © 2024 Holidays Your Way — Tailored Travel by Alison K
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>What We Offer – Holidays Your Way</title>
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-  <style>
-    :root {
-      --hyw-blue: #0A3161;
-      --hyw-blue-dark: #07203F;
-      --hyw-red-dark: #8A102F;
-      --hyw-white: #FFFFFF;
-      --hyw-text: #1F2430;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Nunito", sans-serif;
-      color: var(--hyw-text);
-      background-color: var(--hyw-white);
-    }
-
-    h1, h2, h3 {
-      font-family: "Poppins", sans-serif;
-    }
-
-    /* NAVBAR */
-    .hyw-nav {
-      background-color: var(--hyw-white);
-      border-bottom: 1px solid #e3e6ee;
-      padding: 0.4rem 0;
-    }
-
-    .hyw-logo {
-      height: 180px;
-      width: auto;
-    }
-
-    @media (max-width: 991.98px) { .hyw-logo { height: 140px; } }
-    @media (max-width: 575.98px) { .hyw-logo { height: 90px; } }
-
-    .navbar-nav .nav-link {
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: #394155;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .navbar-nav .nav-link:hover,
-    .navbar-nav .nav-link.active {
-      color: var(--hyw-blue);
-    }
-
-    /* HERO */
-    .hyw-hero {
-      background-size: cover;
-      background-position: center;
-      padding: 6rem 0;
-      text-align: center;
-      color: var(--hyw-white);
-    }
-
-    .hyw-hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      text-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    }
-
-    .hyw-hero p {
-      font-size: 1.2rem;
-      font-weight: 300;
-      text-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    }
-
-    /* OFFER SECTIONS */
-    .offer-block {
-      padding: 3rem 0;
-      border-bottom: 1px solid #e9ecf3;
-    }
-
-    .offer-block h2 {
-      font-size: 2rem;
-      color: var(--hyw-blue-dark);
-      margin-bottom: 1rem;
-    }
-
-    .offer-block p {
-      font-size: 1.1rem;
-      color: #4a5264;
-      line-height: 1.7;
-    }
-
-    /* CTA */
-    .hyw-cta {
-      text-align: center;
-      padding: 4rem 0;
-    }
-
-    .hyw-cta h2 {
-      font-size: 2.4rem;
-      color: var(--hyw-blue-dark);
-      margin-bottom: 1rem;
-    }
-
-    .hyw-cta p {
-      font-size: 1.15rem;
-      color: #4a5264;
-      margin-bottom: 2rem;
-    }
-
-    .btn-hyw-hero-blue {
-      background-color: var(--hyw-blue) !important;
-      color: #FFFFFF !important;
-      border-radius: 999px;
-      padding: 0.85rem 1.9rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.18);
-    }
-
-    /* FOOTER */
-    .hyw-footer {
-      background-color: #050816;
-      color: #cfd3e3;
-      padding: 1.5rem 0;
-      text-align: center;
-      font-size: 0.85rem;
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg hyw-nav">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="images/holidays-your-way-logo.png" alt="Holidays Your Way" class="hyw-logo" />
-      </a>
-
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#hywNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="hywNav">
-        <ul class="navbar-nav ms-auto align-items-lg-center">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="orlando.html">Orlando</a></li>
-          <li class="nav-item"><a class="nav-link" href="destinations.html">Worldwide</a></li>
-          <li class="nav-item"><a class="nav-link active" href="services.html">What We Offer</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hyw-hero" style="background-image: url('images/offer-hero.jpg');">
-    <div class="container">
-      <h1>What We Offer</h1>
-      <p>Personal, honest, experience‑led holiday planning — tailored to you.</p>
-    </div>
-  </section>
-
-  <!-- OFFER SECTIONS -->
-  <section class="offer-block">
-    <div class="container">
-      <h2>Orlando Holidays</h2>
-      <p>From theme parks to hidden gems, I’ll help you build the perfect Orlando itinerary with real insider knowledge.</p>
-    </div>
-  </section>
-
-  <section class="offer-block">
-    <div class="container">
-      <h2>Europe</h2>
-      <p>Family‑friendly escapes, luxury resorts, and sun‑soaked destinations across Greece, Cyprus, Türkiye and more.</p>
-    </div>
-  </section>
-
-  <section class="offer-block">
-    <div class="container">
-      <h2>Worldwide</h2>
-      <p>From the Maldives to Mexico, I’ll help you find the perfect long‑haul getaway with trusted suppliers and real experience.</p>
-    </div>
-  </section>
-
-  <section class="offer-block">
-    <div class="container">
-      <h2>Tailored Packages</h2>
-      <p>Every holiday is built around you — your budget, your style, your must‑haves. No generic packages, no upselling.</p>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="hyw-cta">
-    <div class="container">
-      <h2>Let’s Build Your Perfect Holiday</h2>
-      <p>Tell me what you’re dreaming of and I’ll take care of the rest.</p>
-      <a href="contact.html" class="btn btn-hyw-hero-blue">Get in Touch</a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="hyw-footer">
-    <div class="container">
-      <p class="mb-0">© 2026 Holidays Your Way. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
->>>>>>> 0e5e306b3552c04636e0b4f6221d4c69f4026766
 </html>
