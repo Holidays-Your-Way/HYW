@@ -3,27 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Orlando Holidays – Holidays Your Way</title>
+  <title>Orlando – Holidays Your Way</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Poppins:wght@500;600;700&family=Caveat:wght@600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Poppins:wght@500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
   <style>
+
     :root {
       --hyw-blue: #0A3161;
       --hyw-blue-dark: #07203F;
-      --hyw-red: #B31942;
       --hyw-red-dark: #8A102F;
       --hyw-white: #FFFFFF;
-      --hyw-light: #F5F7FA;
-      --hyw-soft-cream: #FFFFFF;
       --hyw-text: #1F2430;
       --hyw-grey: #f7f7f7;
+      --hyw-soft-cream: #FFFFFF;
     }
 
     body {
@@ -33,11 +32,13 @@
       background-color: var(--hyw-white);
     }
 
-    h1, h2, h3, h4 {
+    h1, h2, h3 {
       font-family: "Poppins", sans-serif;
     }
 
-    /* PARTNERSHIP HEADER */
+    /* ============================
+       PARTNERSHIP HEADER
+       ============================ */
     .hyw-header {
       display: flex;
       justify-content: space-between;
@@ -74,7 +75,7 @@
       width: auto;
     }
 
-    /* NAVBAR */
+    /* NAVIGATION */
     .hyw-nav {
       background-color: var(--hyw-white);
       padding: 0;
@@ -116,162 +117,69 @@
       .hyw-atol-logo { height: 50px; }
     }
 
-    /* HERO */
-    .hyw-hero-wrapper { position: relative; }
+    /* ORLANDO TYPOGRAPHY (Option A) */
+    .orlando-page .hyw-section-title {
+      font-size: 8.1rem;
+      font-weight: 800;
+      color: var(--hyw-blue-dark);
+    }
 
-    .hyw-hero-carousel .carousel-item {
-      height: 75vh;
-      min-height: 500px;
+    .orlando-page .hyw-section-intro {
+      font-size: 5.2rem;
+      line-height: 1.2;
+      color: #4a5264;
+    }
+
+    /* CAROUSEL */
+    .orlando-carousel .carousel-item {
+      height: 100vh;
+      min-height: 650px;
       background-size: cover;
       background-position: center;
     }
 
-    .hyw-hero-overlay {
+    .orlando-hero-overlay {
       position: absolute;
       inset: 0;
       background: rgba(0,0,0,0.25);
       z-index: 1;
     }
 
-    .hyw-hero {
+    .orlando-hero-text {
       position: absolute;
       inset: 0;
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
       text-align: center;
-      padding: 3rem 1.5rem;
       z-index: 3;
+      color: #fff;
+      padding: 2rem;
     }
 
-    .hyw-accent {
-      font-family: 'Caveat', cursive;
-      font-size: 1.9rem;
-      margin-bottom: 1rem;
-      color: var(--hyw-white);
-      text-shadow: 0 3px 12px rgba(0,0,0,0.45);
-      display: block;
-    }
-
-    .hyw-hero h1 {
+    .orlando-hero-text h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 3rem;
+      font-size: 4rem;
       font-weight: 800;
-      line-height: 1.25;
-      max-width: 900px;
-      margin: 0 auto 1.4rem;
-      color: var(--hyw-white);
       text-shadow: 0 4px 18px rgba(0,0,0,0.55);
     }
 
-    .hyw-hero p.lead {
-      font-size: 1.15rem;
-      line-height: 1.6;
-      color: var(--hyw-white);
-      margin-bottom: 1.2rem;
-    }
-
-    /* BUTTONS */
-    .btn-hyw-primary {
-      background-color: var(--hyw-white);
-      color: var(--hyw-blue);
-      border-radius: 999px;
-      padding: 0.85rem 1.9rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .btn-hyw-accent {
-      background-color: var(--hyw-red);
-      color: var(--hyw-white);
-      border-radius: 999px;
-      padding: 0.85rem 1.9rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+    .orlando-hero-text p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      text-shadow: 0 3px 12px rgba(0,0,0,0.45);
     }
 
     .btn-hyw-hero-blue {
-      background-color: var(--hyw-blue) !important;
-      color: #FFFFFF !important;
+      background-color: var(--hyw-blue);
+      color: #fff;
       border-radius: 999px;
       padding: 0.85rem 1.9rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       box-shadow: 0 10px 25px rgba(0,0,0,0.18);
-    }
-
-    /* SECTIONS */
-    .hyw-section {
-      padding: 4.5rem 0;
-    }
-
-    .hyw-section-light {
-      background-color: var(--hyw-soft-cream);
-    }
-
-    .hyw-section-title {
-      font-family: 'Playfair Display', serif;
-      font-weight: 800;
-      font-size: 2rem;
-      color: var(--hyw-blue-dark);
-      margin-bottom: 1.4rem;
-    }
-
-    .hyw-section-intro {
-      max-width: 720px;
-      margin-bottom: 1.8rem;
-      font-size: 1.05rem;
-      line-height: 1.6;
-      color: #4a5264;
-    }
-
-    .hyw-card {
-      background: var(--hyw-white);
-      border: 1px solid #e1e4ee;
-      border-radius: 1.1rem;
-      padding: 2rem;
-      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
-      height: 100%;
-    }
-
-    .hyw-tag {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: var(--hyw-red-dark);
-      letter-spacing: 0.1em;
-      margin-bottom: 0.4rem;
-      display: block;
-    }
-
-    .hyw-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 800;
-      font-size: 1.5rem;
-      color: var(--hyw-blue-dark);
-      margin-bottom: 1rem;
-    }
-
-    .hyw-list li {
-      margin-bottom: 0.55rem;
-      line-height: 1.5;
-    }
-
-    /* FINAL CTA */
-    .hyw-final-cta {
-      text-align: center;
-      background-color: var(--hyw-white);
-    }
-
-    /* FOOTER */
-    .hyw-footer {
-      background-color: #050816;
-      color: #cfd3e3;
-      padding: 1.5rem 0;
-      text-align: center;
-      font-size: 0.85rem;
     }
 
     /* LEGAL FOOTER */
@@ -316,12 +224,6 @@
       margin-bottom: 1.5rem;
     }
 
-    .social-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
     .social-icon {
       height: 28px;
       width: auto;
@@ -356,58 +258,6 @@
       margin-bottom: 0.4rem;
     }
 
-    @media (max-width: 575.98px) {
-      .legal-exotic-logo,
-      .legal-atol-logo {
-        height: 50px;
-      }
-
-      .legal-text {
-        font-size: 0.85rem;
-      }
-
-      .legal-features {
-        gap: 1.2rem;
-      }
-
-      .feature-icon {
-        height: 32px;
-      }
-
-      .feature-item {
-        font-size: 0.75rem;
-      }
-    }
-
-    /* ORLANDO PAGE TYPOGRAPHY — MATCH ORIGINAL DESIGN */
-    .orlando-page .hyw-section-title {
-      font-size: 8.1rem;
-      line-height: 1.25;
-    }
-
-    .orlando-page .hyw-section-intro {
-      font-size: 5.2rem;
-      line-height: 1.75;
-    }
-
-    .orlando-page .hyw-card {
-      padding: 2.4rem;
-    }
-
-    .orlando-page .hyw-card h3 {
-      font-size: 1.7rem;
-      line-height: 1.35;
-    }
-
-    .orlando-page .hyw-card p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-    }
-
-    .orlando-page .hyw-tag {
-      font-size: 0.9rem;
-      letter-spacing: 0.12em;
-    }
   </style>
 </head>
 
@@ -441,213 +291,85 @@
       </div>
     </nav>
   </header>
-    <!-- HERO -->
-  <div class="hyw-hero-wrapper">
+    <!-- ORLANDO CAROUSEL -->
+  <div id="orlandoCarousel" class="carousel slide orlando-carousel" data-bs-ride="carousel">
 
-    <div id="orlandoHeroCarousel" class="carousel slide carousel-fade hyw-hero-carousel" data-bs-ride="carousel">
-      <div class="carousel-inner">
+    <div class="carousel-inner">
 
-        <div class="carousel-item active" style="background-image: url('images/orlando1.jpg');"></div>
-        <div class="carousel-item" style="background-image: url('images/orlando2.jpg');"></div>
-        <div class="carousel-item" style="background-image: url('images/orlando3.jpg');"></div>
-        <div class="carousel-item" style="background-image: url('images/orlando4.jpg');"></div>
-        <div class="carousel-item" style="background-image: url('images/orlando5.jpg');"></div>
-        <div class="carousel-item" style="background-image: url('images/orlando6.jpg');"></div>
-        <div class="carousel-item" style="background-image: url('images/orlando7.jpg');"></div>
-        <div class="carousel-item" style="background-image: url('images/orlando8.jpg');"></div>
-        <div class="carousel-item" style="background-image: url('images/orlando9.jpg');"></div>
-        <div class="carousel-item" style="background-image: url('images/orlando10.jpg');"></div>
-        <div class="carousel-item" style="background-image: url('images/orlando11.jpg');"></div>
-        <div class="carousel-item" style="background-image: url('images/orlando12.jpg');"></div>
-        <div class="carousel-item" style="background-image: url('images/orlando13.jpg');"></div>
-        <div class="carousel-item" style="background-image: url('images/orlando14.jpg');"></div>
-        <div class="carousel-item" style="background-image: url('images/orlando15.jpg');"></div>
-        <div class="carousel-item" style="background-image: url('images/orlando16.jpg');"></div>
-        <div class="carousel-item" style="background-image: url('images/orlando17.jpg');"></div>
-        <div class="carousel-item" style="background-image: url('images/orlando18.jpg');"></div>
-        <div class="carousel-item" style="background-image: url('images/orlando19.jpg');"></div>
-        <div class="carousel-item" style="background-image: url('images/orlando20.jpg');"></div>
-        <div class="carousel-item" style="background-image: url('images/orlando21.jpg');"></div>
-        <div class="carousel-item" style="background-image: url('images/orlando22.jpg');"></div>
+      <!-- 22 IMAGES -->
+      <div class="carousel-item active" style="background-image: url('images/orlando1.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/orlando2.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/orlando3.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/orlando4.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/orlando5.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/orlando6.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/orlando7.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/orlando8.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/orlando9.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/orlando10.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/orlando11.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/orlando12.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/orlando13.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/orlando14.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/orlando15.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/orlando16.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/orlando17.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/orlando18.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/orlando19.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/orlando20.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/orlando21.jpg');"></div>
+      <div class="carousel-item" style="background-image: url('images/orlando22.jpg');"></div>
 
-      </div>
     </div>
 
-    <div class="hyw-hero-overlay"></div>
+    <!-- HERO OVERLAY -->
+    <div class="orlando-hero-overlay"></div>
 
-    <header class="hyw-hero">
-      <div class="hyw-hero-content">
+    <!-- HERO TEXT -->
+    <div class="orlando-hero-text">
+      <h1>Orlando, Florida</h1>
+      <p>The theme park capital of the world — and my second home.</p>
 
-        <span class="hyw-accent">Planned by someone who’s actually been.</span>
-
-        <h1>Your Orlando holiday — planned your way, with real experience behind every recommendation.</h1>
-
-        <p class="lead">
-          From Universal and Disney to I‑Drive, resorts, villas and everything in between — I help you plan an Orlando trip that actually fits your family.
-        </p>
-
-        <div class="hyw-hero-buttons">
-          <a href="#universal" class="btn btn-hyw-primary">Universal Orlando</a>
-          <a href="#disney" class="btn btn-hyw-accent">Walt Disney World</a>
-          <a href="contact.html" class="btn btn-hyw-hero-blue">Tell me about your trip</a>
-        </div>
-
+      <div class="mt-4 d-flex gap-3 flex-wrap justify-content-center">
+        <a href="#universal" class="btn btn-hyw-hero-blue btn-lg">Universal Orlando</a>
+        <a href="#disney" class="btn btn-hyw-hero-blue btn-lg">Walt Disney World</a>
       </div>
-    </header>
+    </div>
 
   </div>
 
-  <!-- WELCOME TO ORLANDO -->
-  <section class="hyw-section hyw-section-light">
+  <!-- ORLANDO CONTENT SECTION -->
+  <section class="py-5">
     <div class="container">
-      <h2 class="hyw-section-title text-center">Welcome to Orlando</h2>
 
-      <p class="hyw-section-intro text-center mx-auto">
-        Orlando is big, bold and full of choice — but that also means it can feel overwhelming.
-        My job is to help you understand the parks, hotels, tickets and planning so your holiday
-        feels exciting, not stressful.
+      <h2 class="hyw-section-title text-center mb-4">Orlando Holidays</h2>
+      <p class="hyw-section-intro text-center mb-5">
+        Real experience. Real advice. Real magic.
       </p>
 
-      <div class="row g-4 mt-4">
+      <div class="row g-5">
 
-        <div class="col-md-4">
-          <div class="hyw-card text-center">
-            <span class="hyw-tag">Real experience</span>
-            <h3>I’ve actually been — a lot</h3>
-            <p>
-              I visit Orlando multiple times a year. Everything I recommend comes from real trips,
-              real mistakes and real wins — not scripts.
-            </p>
-          </div>
+        <div class="col-lg-6">
+          <img src="images/orlando-hero.jpg" alt="Orlando" class="img-fluid rounded shadow">
         </div>
 
-        <div class="col-md-4">
-          <div class="hyw-card text-center">
-            <span class="hyw-tag">Tailored planning</span>
-            <h3>Your family, your way</h3>
-            <p>
-              Every family travels differently. I help you plan a holiday that fits your pace,
-              your budget and your must‑dos.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="hyw-card text-center">
-            <span class="hyw-tag">Honest guidance</span>
-            <h3>Straight answers, no scripts</h3>
-            <p>
-              Not sure about tickets? Confused by resorts? Wondering if a car is worth it?
-              I’ll give you honest, practical advice — not sales talk.
-            </p>
-          </div>
+        <div class="col-lg-6 d-flex flex-column justify-content-center">
+          <p>
+            Orlando isn’t just a destination — it’s a feeling. I’ve spent decades exploring every corner of this incredible city, returning multiple times a year to keep my knowledge fresh, personal, and genuinely useful.
+          </p>
+          <p>
+            Whether you’re planning your first visit or your fifteenth, I’ll help you build a holiday that’s exciting, stress‑free, and full of unforgettable moments.
+          </p>
         </div>
 
       </div>
-    </div>
-  </section>
-
-  <!-- ORLANDO HOLIDAY HUB -->
-  <section class="hyw-section">
-    <div class="container">
-
-      <h2 class="hyw-section-title text-center">Your Orlando Holiday Hub</h2>
-
-      <p class="hyw-section-intro text-center mx-auto">
-        Everything you need to plan your Orlando holiday — from parks and hotels to tickets and transport.
-      </p>
-
-      <div class="row g-4 mt-4">
-
-        <div class="col-md-6 col-lg-4" id="disney">
-          <div class="hyw-card">
-            <span class="hyw-tag">Walt Disney World</span>
-            <h3>Magic, nostalgia & family fun</h3>
-            <p>
-              Four theme parks, two water parks, dining, shows and classic Disney magic.
-            </p>
-            <a href="#" class="btn-hyw-link">Explore Disney</a>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4" id="universal">
-          <div class="hyw-card">
-            <span class="hyw-tag">Universal Orlando</span>
-            <h3>Thrills, coasters & Harry Potter</h3>
-            <p>
-              Universal Studios, Islands of Adventure and Volcano Bay — perfect for thrill‑seekers.
-            </p>
-            <a href="#" class="btn-hyw-link">Explore Universal</a>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="hyw-card">
-            <span class="hyw-tag">SeaWorld & Busch Gardens</span>
-            <h3>Big coasters & animal encounters</h3>
-            <p>
-              A mix of huge rollercoasters and family‑friendly animal experiences.
-            </p>
-            <a href="#" class="btn-hyw-link">Explore SeaWorld</a>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="hyw-card">
-            <span class="hyw-tag">Where to stay</span>
-            <h3>On‑site or off‑site?</h3>
-            <p>
-              Disney resorts, Universal hotels, I‑Drive, villas and more — I’ll help you choose.
-            </p>
-            <a href="#" class="btn-hyw-link">See hotel options</a>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="hyw-card">
-            <span class="hyw-tag">Tickets</span>
-            <h3>What do you actually need?</h3>
-            <p>
-              Park tickets can be confusing — I’ll help you pick the right ones for your trip.
-            </p>
-            <a href="#" class="btn-hyw-link">Learn about tickets</a>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="hyw-card">
-            <span class="hyw-tag">Transport</span>
-            <h3>Car hire, Uber or shuttles?</h3>
-            <p>
-              Orlando is easy to get around — here’s how to choose the best option.
-            </p>
-            <a href="#" class="btn-hyw-link">Transport guide</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section class="hyw-section hyw-final-cta text-center">
-    <div class="container">
-
-      <h2 class="hyw-section-title">Ready to talk about your holiday?</h2>
-
-      <p class="hyw-section-intro mx-auto">
-        Whether you know exactly what you want or you’re staring at a blank page thinking
-        “where do we even start?” — send me a message and we’ll figure it out together.
-      </p>
-
-      <a href="contact.html" class="btn btn-hyw-hero-blue">Tell me about your trip</a>
 
     </div>
   </section>
     <!-- FOOTER -->
   <footer class="hyw-footer">
     <div class="container">
-      <p class="mb-0">© 2024 Holidays Your Way. All rights reserved. </p>
+      <p class="mb-0">© 2024 Holidays Your Way. All rights reserved.</p>
     </div>
   </footer>
 
@@ -676,7 +398,9 @@
         </a>
       </div>
 
+      <!-- FEATURE STRIP -->
       <div class="legal-features">
+
         <div class="feature-item">
           <img src="images/atol-exotic.png" alt="ATOL Protected" class="feature-icon">
           <span>ATOL Protected</span>
@@ -706,11 +430,13 @@
           <img src="images/icon-calendar.png" alt="2027/2028 Packages" class="feature-icon">
           <span>2027/2028 Packages Available</span>
         </div>
+
       </div>
 
     </div>
   </section>
 
+  <!-- SCRIPTS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
