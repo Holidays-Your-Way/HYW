@@ -128,139 +128,6 @@
       letter-spacing: 0.08em;
       box-shadow: 0 10px 25px rgba(0,0,0,0.18);
     }
-
-    /* SECTION TITLES */
-    .hyw-section-title {
-      font-family: 'Playfair Display', serif;
-      font-weight: 800;
-      font-size: 2rem;
-      color: var(--hyw-blue-dark);
-      margin-bottom: 1.4rem;
-    }
-
-    /* HOTEL TILES */
-    .hotel-card {
-      border-radius: 1rem;
-      overflow: hidden;
-      border: 1px solid #e1e4ee;
-      transition: transform 0.2s ease;
-      cursor: pointer;
-    }
-
-    .hotel-card:hover {
-      transform: translateY(-4px);
-    }
-
-    .hotel-card img {
-      height: 220px;
-      width: 100%;
-      object-fit: cover;
-    }
-
-    .hotel-card-title {
-      padding: 1rem;
-      text-align: center;
-      font-weight: 700;
-      color: var(--hyw-blue-dark);
-    }
-
-    /* PLANNING LINKS */
-    .planning-links a {
-      display: block;
-      margin-bottom: 0.6rem;
-      font-weight: 600;
-      color: var(--hyw-blue);
-      text-decoration: none;
-    }
-
-    .planning-links a:hover {
-      text-decoration: underline;
-    }
-
-    /* MAIN FOOTER */
-    .hyw-footer {
-      background-color: #050816;
-      color: #cfd3e3;
-      padding: 1.5rem 0;
-      text-align: center;
-      font-size: 0.85rem;
-    }
-
-    /* LEGAL FOOTER (IDENTICAL TO ABOUT PAGE) */
-    .legal-footer {
-      background-color: #f5f5f5;
-      padding: 2rem 0;
-      text-align: center;
-      color: #333;
-      font-size: 0.9rem;
-      border-top: 1px solid #ddd;
-    }
-
-    .legal-logos {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1.2rem;
-      margin-bottom: 1rem;
-    }
-
-    .legal-exotic-logo {
-      height: 70px;
-      width: auto;
-    }
-
-    .legal-atol-logo {
-      height: 90px;
-      width: auto;
-    }
-
-    .legal-text {
-      max-width: 900px;
-      margin: 0 auto 1.5rem;
-      line-height: 1.5;
-      color: #444;
-    }
-
-    .legal-social {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .social-icon {
-      height: 28px;
-      width: auto;
-      transition: opacity 0.2s ease;
-    }
-
-    .social-icon:hover {
-      opacity: 0.7;
-    }
-
-    .legal-features {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .feature-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-size: 0.85rem;
-      color: #333;
-      max-width: 120px;
-      text-align: center;
-    }
-
-    .feature-icon {
-      height: 40px;
-      width: auto;
-      margin-bottom: 0.4rem;
-    }
   </style>
 </head>
 
@@ -299,7 +166,6 @@
   <div id="orlandoCarousel" class="carousel slide orlando-carousel" data-bs-ride="carousel">
     <div class="carousel-inner">
 
-      <!-- 22 images -->
       <div class="carousel-item active" style="background-image: url('images/orlando1.jpg');"></div>
       <div class="carousel-item" style="background-image: url('images/orlando2.jpg');"></div>
       <div class="carousel-item" style="background-image: url('images/orlando3.jpg');"></div>
@@ -336,8 +202,7 @@
       </div>
     </div>
   </div>
-
-  <!-- HOTELS SECTION -->
+    <!-- HOTELS SECTION -->
   <section class="py-5">
     <div class="container">
       <h2 class="hyw-section-title text-center mb-5">Where to Stay</h2>
@@ -405,8 +270,7 @@
       <p class="mb-0">© 2024 Holidays Your Way. All rights reserved.</p>
     </div>
   </footer>
-
-  <!-- LEGAL FOOTER (IDENTICAL TO ABOUT PAGE) -->
+    <!-- LEGAL FOOTER (IDENTICAL TO ABOUT PAGE) -->
   <section class="legal-footer">
     <div class="container">
 
@@ -432,6 +296,7 @@
       </div>
 
       <div class="legal-features">
+
         <div class="feature-item">
           <img src="images/atol-exotic.png" alt="ATOL Protected" class="feature-icon">
           <span>ATOL Protected</span>
@@ -457,9 +322,9 @@
           <span>Tailored Travel Experience</span>
         </div>
 
-         <div class="feature-item">
-           <img src="images/icon-calendar.png" alt="2027/2028 Packages" class="feature-icon">
-           <span>2027/2028 Packages Available</span>
+        <div class="feature-item">
+          <img src="images/icon-calendar.png" alt="2027/2028 Packages" class="feature-icon">
+          <span>2027/2028 Packages Available</span>
         </div>
 
       </div> <!-- end legal-features -->
