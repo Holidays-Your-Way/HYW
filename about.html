@@ -20,6 +20,7 @@
       --hyw-red-dark: #8A102F;
       --hyw-white: #FFFFFF;
       --hyw-text: #1F2430;
+      --hyw-grey: #f7f7f7;
     }
 
     body {
@@ -125,6 +126,113 @@
       padding: 1.5rem 0;
       text-align: center;
       font-size: 0.85rem;
+    }
+
+    /* LEGAL FOOTER */
+    .legal-footer {
+      background-color: #f5f5f5;
+      padding: 2rem 0;
+      text-align: center;
+      color: #333;
+      font-size: 0.9rem;
+      border-top: 1px solid #ddd;
+    }
+
+    .legal-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .legal-exotic-logo {
+      height: 70px;
+      width: auto;
+    }
+
+    .legal-atol-logo {
+      height: 90px;
+      width: auto;
+    }
+
+    .legal-text {
+      max-width: 900px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.5;
+      color: #444;
+    }
+
+    .legal-social {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* SOCIAL ICONS */
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .social-icon {
+      height: 28px;
+      width: auto;
+      transition: opacity 0.2s ease;
+    }
+
+    .social-icon:hover {
+      opacity: 0.7;
+    }
+
+    /* FEATURE STRIP */
+    .legal-features {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .feature-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.85rem;
+      color: #333;
+      max-width: 120px;
+      text-align: center;
+    }
+
+    .feature-icon {
+      height: 40px;
+      width: auto;
+      margin-bottom: 0.4rem;
+    }
+
+    @media (max-width: 575.98px) {
+      .legal-exotic-logo,
+      .legal-atol-logo {
+        height: 50px;
+      }
+
+      .legal-text {
+        font-size: 0.85rem;
+      }
+
+      .legal-features {
+        gap: 1.2rem;
+      }
+
+      .feature-icon {
+        height: 32px;
+      }
+
+      .feature-item {
+        font-size: 0.75rem;
+      }
     }
   </style>
 </head>

@@ -13,7 +13,8 @@
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-  <style id="main-style-v4">
+  <style>
+
     :root {
       --hyw-blue: #0A3161;
       --hyw-blue-dark: #07203F;
@@ -23,6 +24,7 @@
       --hyw-light: #F5F7FA;
       --hyw-soft-cream: #FFFFFF;
       --hyw-text: #1F2430;
+      --hyw-grey: #f7f7f7;
     }
 
     body {
@@ -36,20 +38,50 @@
       font-family: "Poppins", sans-serif;
     }
 
-    /* NAVBAR */
-    .hyw-nav {
+    /* ============================
+       NEW PARTNERSHIP HEADER
+       ============================ */
+    .hyw-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.6rem 1rem;
       background-color: var(--hyw-white);
       border-bottom: 1px solid #e3e6ee;
-      padding: 0.4rem 0;
     }
 
-    .hyw-logo {
-      height: 180px;
+    .hyw-header-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .hyw-logo-main {
+      height: 120px;
       width: auto;
     }
 
-    @media (max-width: 991.98px) { .hyw-logo { height: 140px; } }
-    @media (max-width: 575.98px) { .hyw-logo { height: 90px; } }
+    .hyw-partner-group {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .hyw-partner-logo {
+      height: 96px;
+      width: auto;
+    }
+
+    .hyw-atol-logo {
+      height: 120px;
+      width: auto;
+    }
+
+    /* NAVBAR */
+    .hyw-nav {
+      background-color: var(--hyw-white);
+      padding: 0;
+    }
 
     .navbar-nav .nav-link {
       font-weight: 600;
@@ -64,6 +96,29 @@
       color: var(--hyw-blue);
     }
 
+    /* MOBILE HEADER */
+    @media (max-width: 991.98px) {
+      .hyw-logo-main { height: 90px; }
+      .hyw-partner-logo,
+      .hyw-atol-logo { height: 72px; }
+    }
+
+    @media (max-width: 575.98px) {
+      .hyw-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+      }
+
+      .hyw-header-left {
+        flex-direction: column;
+      }
+
+      .hyw-logo-main { height: 70px; }
+      .hyw-partner-logo,
+      .hyw-atol-logo { height: 50px; }
+    }
+
     /* HERO */
     .hyw-hero-wrapper { position: relative; }
 
@@ -74,7 +129,6 @@
       background-position: center;
     }
 
-    /* NO BLUE FILM ANYMORE */
     .hyw-hero-overlay {
       position: absolute;
       inset: 0;
@@ -141,7 +195,6 @@
       letter-spacing: 0.08em;
     }
 
-    /* ⭐ NEW BLUE HERO BUTTON */
     .btn-hyw-hero-blue {
       background-color: var(--hyw-blue) !important;
       color: #FFFFFF !important;
@@ -151,17 +204,6 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
       box-shadow: 0 10px 25px rgba(0,0,0,0.18);
-    }
-
-    .btn-hyw-outline {
-      background-color: transparent;
-      border: 1px solid var(--hyw-white);
-      color: var(--hyw-white);
-      border-radius: 999px;
-      padding: 0.85rem 1.9rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
     }
 
     /* WAVE */
@@ -195,12 +237,6 @@
       font-size: 1.05rem;
       line-height: 1.6;
       color: #4a5264;
-    }
-
-    /* ABOUT SPACING */
-    .hyw-about-row {
-      --bs-gutter-x: 4rem;
-      align-items: flex-start;
     }
 
     /* CARDS */
@@ -249,22 +285,136 @@
       text-align: center;
       font-size: 0.85rem;
     }
+
+    /* LEGAL FOOTER */
+    .legal-footer {
+      background-color: #f5f5f5;
+      padding: 2rem 0;
+      text-align: center;
+      color: #333;
+      font-size: 0.9rem;
+      border-top: 1px solid #ddd;
+    }
+
+    .legal-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .legal-exotic-logo {
+      height: 70px;
+      width: auto;
+    }
+
+    .legal-atol-logo {
+      height: 90px;
+      width: auto;
+    }
+
+    .legal-text {
+      max-width: 900px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.5;
+      color: #444;
+    }
+
+    .legal-social {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .social-icon {
+      height: 28px;
+      width: auto;
+      transition: opacity 0.2s ease;
+    }
+
+    .social-icon:hover {
+      opacity: 0.7;
+    }
+
+    .legal-features {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .feature-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.85rem;
+      color: #333;
+      max-width: 120px;
+      text-align: center;
+    }
+
+    .feature-icon {
+      height: 40px;
+      width: auto;
+      margin-bottom: 0.4rem;
+    }
+
+    @media (max-width: 575.98px) {
+      .legal-exotic-logo,
+      .legal-atol-logo {
+        height: 50px;
+      }
+
+      .legal-text {
+        font-size: 0.85rem;
+      }
+
+      .legal-features {
+        gap: 1.2rem;
+      }
+
+      .feature-icon {
+        height: 32px;
+      }
+
+      .feature-item {
+        font-size: 0.75rem;
+      }
+    }
+
   </style>
 </head>
+
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg hyw-nav">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="images/holidays-your-way-logo.png" alt="Holidays Your Way" class="hyw-logo" />
-      </a>
+  <!-- ============================
+       NEW PARTNERSHIP HEADER
+       ============================ -->
+  <header class="hyw-header">
+    <div class="hyw-header-left">
+      <img src="images/holidays-your-way-logo.png" alt="Holidays Your Way" class="hyw-logo-main">
 
+      <div class="hyw-partner-group">
+        <img src="images/exotic-travel.jpeg" alt="Exotic World Travel" class="hyw-partner-logo">
+        <img src="images/atol-exotic.png" alt="ATOL Protected" class="hyw-atol-logo">
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg hyw-nav">
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#hywNav">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="hywNav">
+      <div class="collapse navbar-collapse justify-content-end" id="hywNav">
         <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
@@ -274,17 +424,14 @@
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
       </div>
-    </div>
-  </nav>
-
-
-  <!-- HERO WITH CAROUSEL -->
+    </nav>
+  </header>
+    <!-- HERO WITH CAROUSEL -->
   <div class="hyw-hero-wrapper">
 
     <div id="hywHeroCarousel" class="carousel slide carousel-fade hyw-hero-carousel" data-bs-ride="carousel">
       <div class="carousel-inner">
 
-        <!-- Your hero images -->
         <div class="carousel-item active" style="background-image: url('images/hero1.jpg');"></div>
         <div class="carousel-item" style="background-image: url('images/hero2.jpg');"></div>
         <div class="carousel-item" style="background-image: url('images/hero3.jpg');"></div>
@@ -294,7 +441,6 @@
       </div>
     </div>
 
-    <!-- NO OVERLAY TINT -->
     <div class="hyw-hero-overlay"></div>
 
     <header class="hyw-hero">
@@ -311,15 +457,12 @@
         <div class="hyw-hero-buttons">
           <a href="orlando.html" class="btn btn-hyw-primary">Plan your Orlando holiday</a>
           <a href="destinations.html" class="btn btn-hyw-accent">Explore worldwide destinations</a>
-
-          <!-- ⭐ BLUE HERO BUTTON -->
           <a href="contact.html" class="btn btn-hyw-hero-blue">Tell me about your trip</a>
         </div>
 
       </div>
     </header>
 
-    <!-- WAVE DIVIDER -->
     <div class="hyw-wave">
       <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
         <path fill="#FFFFFF" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,197.3C672,192,768,160,864,154.7C960,149,1056,171,1152,181.3C1248,192,1344,192,1392,192L1440,192V320H0Z"></path>
@@ -327,171 +470,162 @@
     </div>
 
   </div>
+
+
   <!-- WHO I AM & HOW I WORK -->
-<section class="hyw-section hyw-section-light">
-  <div class="container">
-    <div class="row g-4 hyw-about-row">
+  <section class="hyw-section hyw-section-light">
+    <div class="container">
+      <div class="row g-4 hyw-about-row">
 
-      <!-- LEFT COLUMN -->
-      <div class="col-lg-7">
-        <h2 class="hyw-section-title">Who I am & how I work</h2>
+        <div class="col-lg-7">
+          <h2 class="hyw-section-title">Who I am & how I work</h2>
 
-        <p class="hyw-section-intro">
-          I’m Alison, an independent UK travel agent with a serious soft spot for Orlando and a passport full of stamps from everywhere else.
-          Holidays Your Way is built on one simple idea: your holiday should feel like it’s been planned <strong>for you</strong>, not copied from a brochure.
-        </p>
+          <p class="hyw-section-intro">
+            I’m Alison, an independent UK travel agent with a serious soft spot for Orlando and a passport full of stamps from everywhere else.
+            Holidays Your Way is built on one simple idea: your holiday should feel like it’s been planned <strong>for you</strong>, not copied from a brochure.
+          </p>
 
-        <p>
-          Orlando is my specialist subject – Universal, Disney, SeaWorld and everything in between – but I also plan trips to the Maldives, Caribbean,
-          Europe, Asia and beyond. If I haven’t been yet, I’ve probably researched it to death.
-        </p>
+          <p>
+            Orlando is my specialist subject – Universal, Disney, SeaWorld and everything in between – but I also plan trips to the Maldives, Caribbean,
+            Europe, Asia and beyond. If I haven’t been yet, I’ve probably researched it to death.
+          </p>
 
-        <p>
-          You won’t get call‑centre scripts or generic advice here. Just honest guidance, real‑world tips and a proper person you can message when
-          you’re not sure what to do next.
-        </p>
-      </div>
-
-      <!-- RIGHT COLUMN -->
-      <div class="col-lg-5">
-        <div class="hyw-card">
-          <span class="hyw-tag">Why people book with Holidays Your Way</span>
-          <h3>Real experience. Real support. Real holidays.</h3>
-
-          <ul class="hyw-list">
-            <li><strong>40+ years of travel:</strong> Orlando multiple times a year, plus worldwide experience.</li>
-            <li><strong>Orlando & beyond:</strong> Universal, Disney, SeaWorld, beaches, cities and more.</li>
-            <li><strong>Tailored holidays:</strong> Built around your family, budget and must‑dos.</li>
-            <li><strong>One point of contact:</strong> No call centres – just me, from first chat to take‑off.</li>
-          </ul>
+          <p>
+            You won’t get call‑centre scripts or generic advice here. Just honest guidance, real‑world tips and a proper person you can message when
+            you’re not sure what to do next.
+          </p>
         </div>
+
+        <div class="col-lg-5">
+          <div class="hyw-card">
+            <span class="hyw-tag">Why people book with Holidays Your Way</span>
+            <h3>Real experience. Real support. Real holidays.</h3>
+
+            <ul class="hyw-list">
+              <li><strong>40+ years of travel:</strong> Orlando multiple times a year, plus worldwide experience.</li>
+              <li><strong>Orlando & beyond:</strong> Universal, Disney, SeaWorld, beaches, cities and more.</li>
+              <li><strong>Tailored holidays:</strong> Built around your family, budget and must‑dos.</li>
+              <li><strong>One point of contact:</strong> No call centres – just me, from first chat to take‑off.</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
+    </div>
+  </section>
+    <!-- WHAT WE OFFER -->
+  <section class="hyw-section">
+    <div class="container">
+
+      <h2 class="hyw-section-title text-center">What we offer</h2>
+
+      <p class="hyw-section-intro text-center mx-auto">
+        Whether it’s your first time in Orlando, a once‑in‑a‑lifetime bucket‑list trip or a quick escape somewhere sunny,
+        I’ll help you plan a holiday that actually fits how you travel.
+      </p>
+
+      <div class="row g-4">
+
+        <!-- ORLANDO HOLIDAYS -->
+        <div class="col-md-6 col-lg-4">
+          <div class="hyw-card">
+            <span class="hyw-tag">Orlando holidays</span>
+            <h3>Universal, Disney, SeaWorld & more</h3>
+            <p>
+              Universal, Disney, SeaWorld, I‑Drive and off‑site stays – I’ll help you put together an Orlando trip that actually fits your family,
+              your pace and your budget.
+            </p>
+            <a href="orlando.html" class="btn-hyw-link">Start with Orlando</a>
+          </div>
+        </div>
+
+        <!-- WORLDWIDE ESCAPES -->
+        <div class="col-md-6 col-lg-4">
+          <div class="hyw-card">
+            <span class="hyw-tag">Worldwide escapes</span>
+            <h3>Beach, city & bucket‑list trips</h3>
+            <p>
+              From Maldives and Mexico to Greece, Cyprus, Türkiye, Vietnam and more – I plan beach breaks, city stays and multi‑centre trips
+              around what you actually enjoy.
+            </p>
+            <a href="destinations.html" class="btn-hyw-link">Explore destinations</a>
+          </div>
+        </div>
+
+        <!-- FIRST TIMERS -->
+        <div class="col-md-6 col-lg-4">
+          <div class="hyw-card">
+            <span class="hyw-tag">First timers</span>
+            <h3>New to Orlando or long‑haul?</h3>
+            <p>
+              Not sure where to start? I’ll walk you through when to go, where to stay, how long for and what to prioritise – without overwhelming you.
+            </p>
+            <a href="services.html" class="btn-hyw-link">See how I can help</a>
+          </div>
+        </div>
+
+        <!-- FAMILIES -->
+        <div class="col-md-6 col-lg-4">
+          <div class="hyw-card">
+            <span class="hyw-tag">Families</span>
+            <h3>Travelling with kids & teens</h3>
+            <p>
+              Different ages need different plans. I’ve created separate guides for younger children, teens and adults so everyone gets a holiday
+              they actually enjoy.
+            </p>
+            <a href="universal-with-kids.html" class="btn-hyw-link">Younger children</a>
+            <a href="universal-with-teens.html" class="btn-hyw-link">Teens</a>
+          </div>
+        </div>
+
+        <!-- ADULTS -->
+        <div class="col-md-6 col-lg-4">
+          <div class="hyw-card">
+            <span class="hyw-tag">Adults</span>
+            <h3>Grown‑ups only trips</h3>
+            <p>
+              Maybe it’s just us grown‑ups this time. Slower mornings, nicer dinners, later nights and a different pace – in Orlando or anywhere else.
+            </p>
+            <a href="universal-for-adults.html" class="btn-hyw-link">See adults guide</a>
+          </div>
+        </div>
+
+        <!-- HONEST ADVICE -->
+        <div class="col-md-6 col-lg-4">
+          <div class="hyw-card">
+            <span class="hyw-tag">Honest advice</span>
+            <h3>Straight answers, not sales talk</h3>
+            <p>
+              Not sure if a car is worth it? Confused by park tickets? Wondering if a resort is right for you? Ask. I’ll give you straight answers,
+              not scripts.
+            </p>
+            <a href="contact.html" class="btn-hyw-link">Ask a question</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="hyw-section hyw-final-cta">
+    <div class="container">
+
+      <h2 class="hyw-section-title">Ready to talk about your holiday?</h2>
+
+      <p class="hyw-section-intro mx-auto">
+        Whether you know exactly what you want or you’re staring at a blank page thinking “where do we even start?” –
+        send me a message and we’ll figure it out together.
+      </p>
+
+      <a href="contact.html" class="btn btn-hyw-hero-blue">Tell me about your trip</a>
 
     </div>
-  </div>
-</section>
-
-
-
-<!-- WHAT WE OFFER -->
-<section class="hyw-section">
-  <div class="container">
-
-    <h2 class="hyw-section-title text-center">What we offer</h2>
-
-    <p class="hyw-section-intro text-center mx-auto">
-      Whether it’s your first time in Orlando, a once‑in‑a‑lifetime bucket‑list trip or a quick escape somewhere sunny,
-      I’ll help you plan a holiday that actually fits how you travel.
-    </p>
-
-    <div class="row g-4">
-
-      <!-- ORLANDO HOLIDAYS -->
-      <div class="col-md-6 col-lg-4">
-        <div class="hyw-card">
-          <span class="hyw-tag">Orlando holidays</span>
-          <h3>Universal, Disney, SeaWorld & more</h3>
-          <p>
-            Universal, Disney, SeaWorld, I‑Drive and off‑site stays – I’ll help you put together an Orlando trip that actually fits your family,
-            your pace and your budget.
-          </p>
-          <a href="orlando.html" class="btn-hyw-link">Start with Orlando</a>
-        </div>
-      </div>
-
-      <!-- WORLDWIDE ESCAPES -->
-      <div class="col-md-6 col-lg-4">
-        <div class="hyw-card">
-          <span class="hyw-tag">Worldwide escapes</span>
-          <h3>Beach, city & bucket‑list trips</h3>
-          <p>
-            From Maldives and Mexico to Greece, Cyprus, Türkiye, Vietnam and more – I plan beach breaks, city stays and multi‑centre trips
-            around what you actually enjoy.
-          </p>
-          <a href="destinations.html" class="btn-hyw-link">Explore destinations</a>
-        </div>
-      </div>
-
-      <!-- FIRST TIMERS -->
-      <div class="col-md-6 col-lg-4">
-        <div class="hyw-card">
-          <span class="hyw-tag">First timers</span>
-          <h3>New to Orlando or long‑haul?</h3>
-          <p>
-            Not sure where to start? I’ll walk you through when to go, where to stay, how long for and what to prioritise – without overwhelming you.
-          </p>
-          <a href="services.html" class="btn-hyw-link">See how I can help</a>
-        </div>
-      </div>
-
-      <!-- FAMILIES -->
-      <div class="col-md-6 col-lg-4">
-        <div class="hyw-card">
-          <span class="hyw-tag">Families</span>
-          <h3>Travelling with kids & teens</h3>
-          <p>
-            Different ages need different plans. I’ve created separate guides for younger children, teens and adults so everyone gets a holiday
-            they actually enjoy.
-          </p>
-          <a href="universal-with-kids.html" class="btn-hyw-link">Younger children</a>
-          <a href="universal-with-teens.html" class="btn-hyw-link">Teens</a>
-        </div>
-      </div>
-
-      <!-- ADULTS -->
-      <div class="col-md-6 col-lg-4">
-        <div class="hyw-card">
-          <span class="hyw-tag">Adults</span>
-          <h3>Grown‑ups only trips</h3>
-          <p>
-            Maybe it’s just us grown‑ups this time. Slower mornings, nicer dinners, later nights and a different pace – in Orlando or anywhere else.
-          </p>
-          <a href="universal-for-adults.html" class="btn-hyw-link">See adults guide</a>
-        </div>
-      </div>
-
-      <!-- HONEST ADVICE -->
-      <div class="col-md-6 col-lg-4">
-        <div class="hyw-card">
-          <span class="hyw-tag">Honest advice</span>
-          <h3>Straight answers, not sales talk</h3>
-          <p>
-            Not sure if a car is worth it? Confused by park tickets? Wondering if a resort is right for you? Ask. I’ll give you straight answers,
-            not scripts.
-          </p>
-          <a href="contact.html" class="btn-hyw-link">Ask a question</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-
-<!-- FINAL CTA -->
-<section class="hyw-section hyw-final-cta">
-  <div class="container">
-
-    <h2 class="hyw-section-title">Ready to talk about your holiday?</h2>
-
-    <p class="hyw-section-intro mx-auto">
-      Whether you know exactly what you want or you’re staring at a blank page thinking “where do we even start?” –
-      send me a message and we’ll figure it out together.
-    </p>
-
-    <!-- ⭐ BLUE BUTTON HERE TOO -->
-    <a href="contact.html" class="btn btn-hyw-hero-blue">Tell me about your trip</a>
-
-  </div>
-</section>
-
-
-
-<!-- FOOTER -->
+  </section>
+    <!-- FOOTER -->
   <footer class="hyw-footer">
     <div class="container">
-      <p class="mb-0">© 2024 Holidays Your Way. All rights reserved. </p>
+      <p class="mb-0">© 2024 Holidays Your Way. All rights reserved.</p>
     </div>
   </footer>
 
@@ -522,6 +656,7 @@
 
       <!-- FEATURE STRIP -->
       <div class="legal-features">
+
         <div class="feature-item">
           <img src="images/atol-exotic.png" alt="ATOL Protected" class="feature-icon">
           <span>ATOL Protected</span>
@@ -551,11 +686,13 @@
           <img src="images/icon-calendar.png" alt="2027/2028 Packages" class="feature-icon">
           <span>2027/2028 Packages Available</span>
         </div>
+
       </div>
 
     </div>
   </section>
 
+  <!-- SCRIPTS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
