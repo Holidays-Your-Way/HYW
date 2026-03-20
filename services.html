@@ -14,6 +14,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
   <style>
+
     :root {
       --hyw-blue: #0A3161;
       --hyw-blue-dark: #07203F;
@@ -21,6 +22,7 @@
       --hyw-white: #FFFFFF;
       --hyw-text: #1F2430;
       --hyw-grey: #f7f7f7;
+      --hyw-soft-cream: #FFFFFF;
     }
 
     body {
@@ -34,20 +36,50 @@
       font-family: "Poppins", sans-serif;
     }
 
-    /* NAVBAR */
-    .hyw-nav {
+    /* ============================
+       PARTNERSHIP HEADER
+       ============================ */
+    .hyw-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.6rem 1rem;
       background-color: var(--hyw-white);
       border-bottom: 1px solid #e3e6ee;
-      padding: 0.4rem 0;
     }
 
-    .hyw-logo {
-      height: 180px;
+    .hyw-header-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .hyw-logo-main {
+      height: 120px;
       width: auto;
     }
 
-    @media (max-width: 991.98px) { .hyw-logo { height: 140px; } }
-    @media (max-width: 575.98px) { .hyw-logo { height: 90px; } }
+    .hyw-partner-group {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .hyw-partner-logo {
+      height: 96px;
+      width: auto;
+    }
+
+    .hyw-atol-logo {
+      height: 120px;
+      width: auto;
+    }
+
+    /* NAVIGATION */
+    .hyw-nav {
+      background-color: var(--hyw-white);
+      padding: 0;
+    }
 
     .navbar-nav .nav-link {
       font-weight: 600;
@@ -60,6 +92,29 @@
     .navbar-nav .nav-link:hover,
     .navbar-nav .nav-link.active {
       color: var(--hyw-blue);
+    }
+
+    /* MOBILE HEADER */
+    @media (max-width: 991.98px) {
+      .hyw-logo-main { height: 90px; }
+      .hyw-partner-logo,
+      .hyw-atol-logo { height: 72px; }
+    }
+
+    @media (max-width: 575.98px) {
+      .hyw-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+      }
+
+      .hyw-header-left {
+        flex-direction: column;
+      }
+
+      .hyw-logo-main { height: 70px; }
+      .hyw-partner-logo,
+      .hyw-atol-logo { height: 50px; }
     }
 
     /* HERO */
@@ -79,7 +134,6 @@
     .hyw-hero h1 {
       font-size: 3rem;
       color: var(--hyw-blue-dark);
-      text-shadow: none;
       font-weight: 700;
     }
 
@@ -124,23 +178,105 @@
       text-align: center;
       font-size: 0.85rem;
     }
+
+    /* LEGAL FOOTER */
+    .legal-footer {
+      background-color: #f5f5f5;
+      padding: 2rem 0;
+      text-align: center;
+      color: #333;
+      font-size: 0.9rem;
+      border-top: 1px solid #ddd;
+    }
+
+    .legal-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .legal-exotic-logo {
+      height: 70px;
+      width: auto;
+    }
+
+    .legal-atol-logo {
+      height: 90px;
+      width: auto;
+    }
+
+    .legal-text {
+      max-width: 900px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.5;
+      color: #444;
+    }
+
+    .legal-social {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-icon {
+      height: 28px;
+      width: auto;
+      transition: opacity 0.2s ease;
+    }
+
+    .social-icon:hover {
+      opacity: 0.7;
+    }
+
+    .legal-features {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .feature-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.85rem;
+      color: #333;
+      max-width: 120px;
+      text-align: center;
+    }
+
+    .feature-icon {
+      height: 40px;
+      width: auto;
+      margin-bottom: 0.4rem;
+    }
+
   </style>
 </head>
 
 <body class="services-page">
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg hyw-nav">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="images/holidays-your-way-logo.png" alt="Holidays Your Way" class="hyw-logo" />
-      </a>
+  <!-- PARTNERSHIP HEADER -->
+  <header class="hyw-header">
+    <div class="hyw-header-left">
+      <img src="images/holidays-your-way-logo.png" alt="Holidays Your Way" class="hyw-logo-main">
 
+      <div class="hyw-partner-group">
+        <img src="images/exotic-travel.jpeg" alt="Exotic World Travel" class="hyw-partner-logo">
+        <img src="images/atol-exotic.png" alt="ATOL Protected" class="hyw-atol-logo">
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg hyw-nav">
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#hywNav">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="hywNav">
+      <div class="collapse navbar-collapse justify-content-end" id="hywNav">
         <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
@@ -150,10 +286,9 @@
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
       </div>
-    </div>
-  </nav>
-
-  <!-- HERO -->
+    </nav>
+  </header>
+    <!-- HERO -->
   <section class="hyw-hero">
     <div>
       <h1>What We Offer</h1>
@@ -187,8 +322,7 @@
 
     </div>
   </section>
-
- <!-- FOOTER -->
+    <!-- FOOTER -->
   <footer class="hyw-footer">
     <div class="container">
       <p class="mb-0">© 2024 Holidays Your Way. All rights reserved. </p>
@@ -222,6 +356,7 @@
 
       <!-- FEATURE STRIP -->
       <div class="legal-features">
+
         <div class="feature-item">
           <img src="images/atol-exotic.png" alt="ATOL Protected" class="feature-icon">
           <span>ATOL Protected</span>
@@ -251,11 +386,13 @@
           <img src="images/icon-calendar.png" alt="2027/2028 Packages" class="feature-icon">
           <span>2027/2028 Packages Available</span>
         </div>
+
       </div>
 
     </div>
   </section>
 
+  <!-- SCRIPTS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

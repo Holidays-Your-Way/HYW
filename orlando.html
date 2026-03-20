@@ -23,6 +23,7 @@
       --hyw-light: #F5F7FA;
       --hyw-soft-cream: #FFFFFF;
       --hyw-text: #1F2430;
+      --hyw-grey: #f7f7f7;
     }
 
     body {
@@ -36,20 +37,48 @@
       font-family: "Poppins", sans-serif;
     }
 
-    /* NAVBAR */
-    .hyw-nav {
+    /* PARTNERSHIP HEADER */
+    .hyw-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.6rem 1rem;
       background-color: var(--hyw-white);
       border-bottom: 1px solid #e3e6ee;
-      padding: 0.4rem 0;
     }
 
-    .hyw-logo {
-      height: 180px;
+    .hyw-header-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .hyw-logo-main {
+      height: 120px;
       width: auto;
     }
 
-    @media (max-width: 991.98px) { .hyw-logo { height: 140px; } }
-    @media (max-width: 575.98px) { .hyw-logo { height: 90px; } }
+    .hyw-partner-group {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .hyw-partner-logo {
+      height: 96px;
+      width: auto;
+    }
+
+    .hyw-atol-logo {
+      height: 120px;
+      width: auto;
+    }
+
+    /* NAVBAR */
+    .hyw-nav {
+      background-color: var(--hyw-white);
+      padding: 0;
+    }
 
     .navbar-nav .nav-link {
       font-weight: 600;
@@ -64,11 +93,34 @@
       color: var(--hyw-blue);
     }
 
+    /* MOBILE HEADER */
+    @media (max-width: 991.98px) {
+      .hyw-logo-main { height: 90px; }
+      .hyw-partner-logo,
+      .hyw-atol-logo { height: 72px; }
+    }
+
+    @media (max-width: 575.98px) {
+      .hyw-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+      }
+
+      .hyw-header-left {
+        flex-direction: column;
+      }
+
+      .hyw-logo-main { height: 70px; }
+      .hyw-partner-logo,
+      .hyw-atol-logo { height: 50px; }
+    }
+
     /* HERO */
     .hyw-hero-wrapper { position: relative; }
 
     .hyw-hero-carousel .carousel-item {
-      height: 75vh; /* SHORTER HERO */
+      height: 75vh;
       min-height: 500px;
       background-size: cover;
       background-position: center;
@@ -119,6 +171,7 @@
       margin-bottom: 1.2rem;
     }
 
+    /* BUTTONS */
     .btn-hyw-primary {
       background-color: var(--hyw-white);
       color: var(--hyw-blue);
@@ -206,6 +259,12 @@
       line-height: 1.5;
     }
 
+    /* FINAL CTA */
+    .hyw-final-cta {
+      text-align: center;
+      background-color: var(--hyw-white);
+    }
+
     /* FOOTER */
     .hyw-footer {
       background-color: #050816;
@@ -214,53 +273,163 @@
       text-align: center;
       font-size: 0.85rem;
     }
- /* ORLANDO PAGE TYPOGRAPHY — MATCH ORIGINAL DESIGN EXACTLY */
 
-.orlando-page .hyw-section-title {
-  font-size: 8.1rem;
-  line-height: 1.25;
-}
+    /* LEGAL FOOTER */
+    .legal-footer {
+      background-color: #f5f5f5;
+      padding: 2rem 0;
+      text-align: center;
+      color: #333;
+      font-size: 0.9rem;
+      border-top: 1px solid #ddd;
+    }
 
-.orlando-page .hyw-section-intro {
-  font-size: 5.2rem;
-  line-height: 1.75;
-}
+    .legal-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 1rem;
+    }
 
-.orlando-page .hyw-card {
-  padding: 2.4rem;
-}
+    .legal-exotic-logo {
+      height: 70px;
+      width: auto;
+    }
 
-.orlando-page .hyw-card h3 {
-  font-size: 1.7rem;
-  line-height: 1.35;
-}
+    .legal-atol-logo {
+      height: 90px;
+      width: auto;
+    }
 
-.orlando-page .hyw-card p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-}
+    .legal-text {
+      max-width: 900px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.5;
+      color: #444;
+    }
 
-.orlando-page .hyw-tag {
-  font-size: 0.9rem;
-  letter-spacing: 0.12em;
-}
+    .legal-social {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .social-icon {
+      height: 28px;
+      width: auto;
+      transition: opacity 0.2s ease;
+    }
+
+    .social-icon:hover {
+      opacity: 0.7;
+    }
+
+    .legal-features {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .feature-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.85rem;
+      color: #333;
+      max-width: 120px;
+      text-align: center;
+    }
+
+    .feature-icon {
+      height: 40px;
+      width: auto;
+      margin-bottom: 0.4rem;
+    }
+
+    @media (max-width: 575.98px) {
+      .legal-exotic-logo,
+      .legal-atol-logo {
+        height: 50px;
+      }
+
+      .legal-text {
+        font-size: 0.85rem;
+      }
+
+      .legal-features {
+        gap: 1.2rem;
+      }
+
+      .feature-icon {
+        height: 32px;
+      }
+
+      .feature-item {
+        font-size: 0.75rem;
+      }
+    }
+
+    /* ORLANDO PAGE TYPOGRAPHY — MATCH ORIGINAL DESIGN */
+    .orlando-page .hyw-section-title {
+      font-size: 8.1rem;
+      line-height: 1.25;
+    }
+
+    .orlando-page .hyw-section-intro {
+      font-size: 5.2rem;
+      line-height: 1.75;
+    }
+
+    .orlando-page .hyw-card {
+      padding: 2.4rem;
+    }
+
+    .orlando-page .hyw-card h3 {
+      font-size: 1.7rem;
+      line-height: 1.35;
+    }
+
+    .orlando-page .hyw-card p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .orlando-page .hyw-tag {
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+    }
   </style>
 </head>
 
-<body>
+<body class="orlando-page">
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg hyw-nav">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="images/holidays-your-way-logo.png" alt="Holidays Your Way" class="hyw-logo" />
-      </a>
+  <!-- PARTNERSHIP HEADER -->
+  <header class="hyw-header">
+    <div class="hyw-header-left">
+      <img src="images/holidays-your-way-logo.png" alt="Holidays Your Way" class="hyw-logo-main">
 
+      <div class="hyw-partner-group">
+        <img src="images/exotic-travel.jpeg" alt="Exotic World Travel" class="hyw-partner-logo">
+        <img src="images/atol-exotic.png" alt="ATOL Protected" class="hyw-atol-logo">
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg hyw-nav">
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#hywNav">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="hywNav">
+      <div class="collapse navbar-collapse justify-content-end" id="hywNav">
         <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
@@ -270,16 +439,14 @@
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
       </div>
-    </div>
-  </nav>
-
-  <!-- HERO -->
+    </nav>
+  </header>
+    <!-- HERO -->
   <div class="hyw-hero-wrapper">
 
     <div id="orlandoHeroCarousel" class="carousel slide carousel-fade hyw-hero-carousel" data-bs-ride="carousel">
       <div class="carousel-inner">
 
-        <!-- 22 Orlando images -->
         <div class="carousel-item active" style="background-image: url('images/orlando1.jpg');"></div>
         <div class="carousel-item" style="background-image: url('images/orlando2.jpg');"></div>
         <div class="carousel-item" style="background-image: url('images/orlando3.jpg');"></div>
@@ -331,165 +498,153 @@
   </div>
 
   <!-- WELCOME TO ORLANDO -->
-<section class="hyw-section hyw-section-light">
-  <div class="container">
-    <h2 class="hyw-section-title text-center">Welcome to Orlando</h2>
+  <section class="hyw-section hyw-section-light">
+    <div class="container">
+      <h2 class="hyw-section-title text-center">Welcome to Orlando</h2>
 
-    <p class="hyw-section-intro text-center mx-auto">
-      Orlando is big, bold and full of choice — but that also means it can feel overwhelming.
-      My job is to help you understand the parks, hotels, tickets and planning so your holiday
-      feels exciting, not stressful.
-    </p>
+      <p class="hyw-section-intro text-center mx-auto">
+        Orlando is big, bold and full of choice — but that also means it can feel overwhelming.
+        My job is to help you understand the parks, hotels, tickets and planning so your holiday
+        feels exciting, not stressful.
+      </p>
 
-    <div class="row g-4 mt-4">
+      <div class="row g-4 mt-4">
 
-      <!-- REAL EXPERIENCE -->
-      <div class="col-md-4">
-        <div class="hyw-card text-center">
-          <span class="hyw-tag">Real experience</span>
-          <h3>I’ve actually been — a lot</h3>
-          <p>
-            I visit Orlando multiple times a year. Everything I recommend comes from real trips,
-            real mistakes and real wins — not scripts.
-          </p>
+        <div class="col-md-4">
+          <div class="hyw-card text-center">
+            <span class="hyw-tag">Real experience</span>
+            <h3>I’ve actually been — a lot</h3>
+            <p>
+              I visit Orlando multiple times a year. Everything I recommend comes from real trips,
+              real mistakes and real wins — not scripts.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <!-- TAILORED PLANNING -->
-      <div class="col-md-4">
-        <div class="hyw-card text-center">
-          <span class="hyw-tag">Tailored planning</span>
-          <h3>Your family, your way</h3>
-          <p>
-            Every family travels differently. I help you plan a holiday that fits your pace,
-            your budget and your must‑dos.
-          </p>
+        <div class="col-md-4">
+          <div class="hyw-card text-center">
+            <span class="hyw-tag">Tailored planning</span>
+            <h3>Your family, your way</h3>
+            <p>
+              Every family travels differently. I help you plan a holiday that fits your pace,
+              your budget and your must‑dos.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <!-- HONEST GUIDANCE -->
-      <div class="col-md-4">
-        <div class="hyw-card text-center">
-          <span class="hyw-tag">Honest guidance</span>
-          <h3>Straight answers, no scripts</h3>
-          <p>
-            Not sure about tickets? Confused by resorts? Wondering if a car is worth it?
-            I’ll give you honest, practical advice — not sales talk.
-          </p>
+        <div class="col-md-4">
+          <div class="hyw-card text-center">
+            <span class="hyw-tag">Honest guidance</span>
+            <h3>Straight answers, no scripts</h3>
+            <p>
+              Not sure about tickets? Confused by resorts? Wondering if a car is worth it?
+              I’ll give you honest, practical advice — not sales talk.
+            </p>
+          </div>
         </div>
+
       </div>
+    </div>
+  </section>
+
+  <!-- ORLANDO HOLIDAY HUB -->
+  <section class="hyw-section">
+    <div class="container">
+
+      <h2 class="hyw-section-title text-center">Your Orlando Holiday Hub</h2>
+
+      <p class="hyw-section-intro text-center mx-auto">
+        Everything you need to plan your Orlando holiday — from parks and hotels to tickets and transport.
+      </p>
+
+      <div class="row g-4 mt-4">
+
+        <div class="col-md-6 col-lg-4" id="disney">
+          <div class="hyw-card">
+            <span class="hyw-tag">Walt Disney World</span>
+            <h3>Magic, nostalgia & family fun</h3>
+            <p>
+              Four theme parks, two water parks, dining, shows and classic Disney magic.
+            </p>
+            <a href="#" class="btn-hyw-link">Explore Disney</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4" id="universal">
+          <div class="hyw-card">
+            <span class="hyw-tag">Universal Orlando</span>
+            <h3>Thrills, coasters & Harry Potter</h3>
+            <p>
+              Universal Studios, Islands of Adventure and Volcano Bay — perfect for thrill‑seekers.
+            </p>
+            <a href="#" class="btn-hyw-link">Explore Universal</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="hyw-card">
+            <span class="hyw-tag">SeaWorld & Busch Gardens</span>
+            <h3>Big coasters & animal encounters</h3>
+            <p>
+              A mix of huge rollercoasters and family‑friendly animal experiences.
+            </p>
+            <a href="#" class="btn-hyw-link">Explore SeaWorld</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="hyw-card">
+            <span class="hyw-tag">Where to stay</span>
+            <h3>On‑site or off‑site?</h3>
+            <p>
+              Disney resorts, Universal hotels, I‑Drive, villas and more — I’ll help you choose.
+            </p>
+            <a href="#" class="btn-hyw-link">See hotel options</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="hyw-card">
+            <span class="hyw-tag">Tickets</span>
+            <h3>What do you actually need?</h3>
+            <p>
+              Park tickets can be confusing — I’ll help you pick the right ones for your trip.
+            </p>
+            <a href="#" class="btn-hyw-link">Learn about tickets</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="hyw-card">
+            <span class="hyw-tag">Transport</span>
+            <h3>Car hire, Uber or shuttles?</h3>
+            <p>
+              Orlando is easy to get around — here’s how to choose the best option.
+            </p>
+            <a href="#" class="btn-hyw-link">Transport guide</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="hyw-section hyw-final-cta text-center">
+    <div class="container">
+
+      <h2 class="hyw-section-title">Ready to talk about your holiday?</h2>
+
+      <p class="hyw-section-intro mx-auto">
+        Whether you know exactly what you want or you’re staring at a blank page thinking
+        “where do we even start?” — send me a message and we’ll figure it out together.
+      </p>
+
+      <a href="contact.html" class="btn btn-hyw-hero-blue">Tell me about your trip</a>
 
     </div>
-  </div>
-</section>
-
-
-<!-- ORLANDO HOLIDAY HUB -->
-<section class="hyw-section">
-  <div class="container">
-
-    <h2 class="hyw-section-title text-center">Your Orlando Holiday Hub</h2>
-
-    <p class="hyw-section-intro text-center mx-auto">
-      Everything you need to plan your Orlando holiday — from parks and hotels to tickets and transport.
-    </p>
-
-    <div class="row g-4 mt-4">
-
-      <!-- DISNEY -->
-      <div class="col-md-6 col-lg-4">
-        <div class="hyw-card">
-          <span class="hyw-tag">Walt Disney World</span>
-          <h3>Magic, nostalgia & family fun</h3>
-          <p>
-            Four theme parks, two water parks, dining, shows and classic Disney magic.
-          </p>
-          <a href="#" class="btn-hyw-link">Explore Disney</a>
-        </div>
-      </div>
-
-      <!-- UNIVERSAL -->
-      <div class="col-md-6 col-lg-4">
-        <div class="hyw-card">
-          <span class="hyw-tag">Universal Orlando</span>
-          <h3>Thrills, coasters & Harry Potter</h3>
-          <p>
-            Universal Studios, Islands of Adventure and Volcano Bay — perfect for thrill‑seekers.
-          </p>
-          <a href="#" class="btn-hyw-link">Explore Universal</a>
-        </div>
-      </div>
-
-      <!-- SEAWORLD -->
-      <div class="col-md-6 col-lg-4">
-        <div class="hyw-card">
-          <span class="hyw-tag">SeaWorld & Busch Gardens</span>
-          <h3>Big coasters & animal encounters</h3>
-          <p>
-            A mix of huge rollercoasters and family‑friendly animal experiences.
-          </p>
-          <a href="#" class="btn-hyw-link">Explore SeaWorld</a>
-        </div>
-      </div>
-
-      <!-- WHERE TO STAY -->
-      <div class="col-md-6 col-lg-4">
-        <div class="hyw-card">
-          <span class="hyw-tag">Where to stay</span>
-          <h3>On‑site or off‑site?</h3>
-          <p>
-            Disney resorts, Universal hotels, I‑Drive, villas and more — I’ll help you choose.
-          </p>
-          <a href="#" class="btn-hyw-link">See hotel options</a>
-        </div>
-      </div>
-
-      <!-- TICKETS -->
-      <div class="col-md-6 col-lg-4">
-        <div class="hyw-card">
-          <span class="hyw-tag">Tickets</span>
-          <h3>What do you actually need?</h3>
-          <p>
-            Park tickets can be confusing — I’ll help you pick the right ones for your trip.
-          </p>
-          <a href="#" class="btn-hyw-link">Learn about tickets</a>
-        </div>
-      </div>
-
-      <!-- TRANSPORT -->
-      <div class="col-md-6 col-lg-4">
-        <div class="hyw-card">
-          <span class="hyw-tag">Transport</span>
-          <h3>Car hire, Uber or shuttles?</h3>
-          <p>
-            Orlando is easy to get around — here’s how to choose the best option.
-          </p>
-          <a href="#" class="btn-hyw-link">Transport guide</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- FINAL CTA -->
-<section class="hyw-section hyw-final-cta text-center">
-  <div class="container">
-
-    <h2 class="hyw-section-title">Ready to talk about your holiday?</h2>
-
-    <p class="hyw-section-intro mx-auto">
-      Whether you know exactly what you want or you’re staring at a blank page thinking
-      “where do we even start?” — send me a message and we’ll figure it out together.
-    </p>
-
-    <a href="contact.html" class="btn btn-hyw-hero-blue">Tell me about your trip</a>
-
-  </div>
-</section>
-
-  <!-- FOOTER -->
+  </section>
+    <!-- FOOTER -->
   <footer class="hyw-footer">
     <div class="container">
       <p class="mb-0">© 2024 Holidays Your Way. All rights reserved. </p>
@@ -521,7 +676,6 @@
         </a>
       </div>
 
-      <!-- FEATURE STRIP -->
       <div class="legal-features">
         <div class="feature-item">
           <img src="images/atol-exotic.png" alt="ATOL Protected" class="feature-icon">
