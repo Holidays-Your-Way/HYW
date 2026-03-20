@@ -18,11 +18,8 @@
     :root {
       --hyw-blue: #0A3161;
       --hyw-blue-dark: #07203F;
-      --hyw-red-dark: #8A102F;
       --hyw-white: #FFFFFF;
       --hyw-text: #1F2430;
-      --hyw-grey: #f7f7f7;
-      --hyw-soft-cream: #FFFFFF;
     }
 
     body {
@@ -36,9 +33,7 @@
       font-family: "Poppins", sans-serif;
     }
 
-    /* ============================
-       PARTNERSHIP HEADER
-       ============================ */
+    /* HEADER */
     .hyw-header {
       display: flex;
       justify-content: space-between;
@@ -75,12 +70,6 @@
       width: auto;
     }
 
-    /* NAVIGATION */
-    .hyw-nav {
-      background-color: var(--hyw-white);
-      padding: 0;
-    }
-
     .navbar-nav .nav-link {
       font-weight: 600;
       font-size: 0.9rem;
@@ -94,30 +83,7 @@
       color: var(--hyw-blue);
     }
 
-    /* MOBILE HEADER */
-    @media (max-width: 991.98px) {
-      .hyw-logo-main { height: 90px; }
-      .hyw-partner-logo,
-      .hyw-atol-logo { height: 72px; }
-    }
-
-    @media (max-width: 575.98px) {
-      .hyw-header {
-        flex-direction: column;
-        text-align: center;
-        gap: 0.5rem;
-      }
-
-      .hyw-header-left {
-        flex-direction: column;
-      }
-
-      .hyw-logo-main { height: 70px; }
-      .hyw-partner-logo,
-      .hyw-atol-logo { height: 50px; }
-    }
-
-    /* HERO + CAROUSEL (NORMAL SIZE, MATCHING INDEX PAGE) */
+    /* CAROUSEL */
     .orlando-carousel .carousel-item {
       height: 75vh;
       min-height: 480px;
@@ -169,7 +135,7 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.18);
     }
 
-    /* SECTION TITLES (NORMAL SIZE) */
+    /* SECTION TITLES */
     .hyw-section-title {
       font-family: 'Playfair Display', serif;
       font-weight: 800;
@@ -178,15 +144,46 @@
       margin-bottom: 1.4rem;
     }
 
-    .hyw-section-intro {
-      max-width: 720px;
-      margin-bottom: 1.8rem;
-      font-size: 1.05rem;
-      line-height: 1.6;
-      color: #4a5264;
+    /* HOTEL TILES */
+    .hotel-card {
+      border-radius: 1rem;
+      overflow: hidden;
+      border: 1px solid #e1e4ee;
+      transition: transform 0.2s ease;
+      cursor: pointer;
     }
 
-    /* FOOTER + LEGAL FOOTER (same as other pages) */
+    .hotel-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .hotel-card img {
+      height: 220px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .hotel-card-title {
+      padding: 1rem;
+      text-align: center;
+      font-weight: 700;
+      color: var(--hyw-blue-dark);
+    }
+
+    /* PLANNING LINKS */
+    .planning-links a {
+      display: block;
+      margin-bottom: 0.6rem;
+      font-weight: 600;
+      color: var(--hyw-blue);
+      text-decoration: none;
+    }
+
+    .planning-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* FOOTER */
     .hyw-footer {
       background-color: #050816;
       color: #cfd3e3;
@@ -204,85 +201,19 @@
       border-top: 1px solid #ddd;
     }
 
-    .legal-logos {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1.2rem;
-      margin-bottom: 1rem;
-    }
-
-    .legal-exotic-logo {
-      height: 70px;
-      width: auto;
-    }
-
-    .legal-atol-logo {
-      height: 90px;
-      width: auto;
-    }
-
-    .legal-text {
-      max-width: 900px;
-      margin: 0 auto 1.5rem;
-      line-height: 1.5;
-      color: #444;
-    }
-
-    .legal-social {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .social-icon {
-      height: 28px;
-      width: auto;
-      transition: opacity 0.2s ease;
-    }
-
-    .social-icon:hover {
-      opacity: 0.7;
-    }
-
-    .legal-features {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .feature-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-size: 0.85rem;
-      color: #333;
-      max-width: 120px;
-      text-align: center;
-    }
-
-    .feature-icon {
-      height: 40px;
-      width: auto;
-      margin-bottom: 0.4rem;
-    }
-
   </style>
 </head>
 
 <body class="orlando-page">
 
-  <!-- PARTNERSHIP HEADER -->
+  <!-- HEADER -->
   <header class="hyw-header">
     <div class="hyw-header-left">
-      <img src="images/holidays-your-way-logo.png" alt="Holidays Your Way" class="hyw-logo-main">
+      <img src="images/holidays-your-way-logo.png" class="hyw-logo-main">
 
       <div class="hyw-partner-group">
-        <img src="images/exotic-travel.jpeg" alt="Exotic World Travel" class="hyw-partner-logo">
-        <img src="images/atol-exotic.png" alt="ATOL Protected" class="hyw-atol-logo">
+        <img src="images/exotic-travel.jpeg" class="hyw-partner-logo">
+        <img src="images/atol-exotic.png" class="hyw-atol-logo">
       </div>
     </div>
 
@@ -303,12 +234,10 @@
       </div>
     </nav>
   </header>
-    <!-- ORLANDO CAROUSEL (RESTORED SIZE + BEHAVIOUR) -->
+
+  <!-- CAROUSEL -->
   <div id="orlandoCarousel" class="carousel slide orlando-carousel" data-bs-ride="carousel">
-
     <div class="carousel-inner">
-
-      <!-- 22 IMAGES (RESTORED FILENAMES) -->
       <div class="carousel-item active" style="background-image: url('images/orlando1.jpg');"></div>
       <div class="carousel-item" style="background-image: url('images/orlando2.jpg');"></div>
       <div class="carousel-item" style="background-image: url('images/orlando3.jpg');"></div>
@@ -331,67 +260,97 @@
       <div class="carousel-item" style="background-image: url('images/orlando20.jpg');"></div>
       <div class="carousel-item" style="background-image: url('images/orlando21.jpg');"></div>
       <div class="carousel-item" style="background-image: url('images/orlando22.jpg');"></div>
-
     </div>
 
-    <!-- HERO OVERLAY -->
     <div class="orlando-hero-overlay"></div>
 
-    <!-- HERO TEXT (RESTORED SIZE + POSITION) -->
     <div class="orlando-hero-text">
       <h1>Orlando, Florida</h1>
       <p>The theme park capital of the world — and my second home.</p>
-
-      <div class="mt-4 d-flex gap-3 flex-wrap justify-content-center">
-        <a href="#universal" class="btn btn-hyw-hero-blue btn-lg">Universal Orlando</a>
-        <a href="#disney" class="btn btn-hyw-hero-blue btn-lg">Walt Disney World</a>
-      </div>
     </div>
-
   </div>
 
-  <!-- ORLANDO CONTENT SECTION (RESTORED ORIGINAL LAYOUT) -->
+  <!-- HOTELS SECTION -->
   <section class="py-5">
     <div class="container">
+      <h2 class="hyw-section-title text-center mb-5">Where to Stay</h2>
 
-      <h2 class="hyw-section-title text-center mb-4">Orlando Holidays</h2>
-      <p class="hyw-section-intro text-center mb-5">
-        Real experience. Real advice. Real magic.
-      </p>
+      <div class="row g-4">
 
-      <div class="row g-5">
-
-        <div class="col-lg-6">
-          <img src="images/orlando-hero.jpg" alt="Orlando" class="img-fluid rounded shadow">
+        <!-- Disney Onsite -->
+        <div class="col-md-4">
+          <a href="disney-onsite.html" class="hotel-card d-block">
+            <img src="images/orlando22.jpg" alt="Disney Onsite Hotels">
+            <div class="hotel-card-title">Disney Onsite Hotels</div>
+          </a>
         </div>
 
-        <div class="col-lg-6 d-flex flex-column justify-content-center">
-          <p>
-            Orlando isn’t just a destination — it’s a feeling. I’ve spent decades exploring every corner of this incredible city, returning multiple times a year to keep my knowledge fresh, personal, and genuinely useful.
-          </p>
-          <p>
-            Whether you’re planning your first visit or your fifteenth, I’ll help you build a holiday that’s exciting, stress‑free, and full of unforgettable moments.
-          </p>
+        <!-- Universal Onsite -->
+        <div class="col-md-4">
+          <a href="universal-onsite.html" class="hotel-card d-block">
+            <img src="images/hero18.jpg" alt="Universal Onsite Hotels">
+            <div class="hotel-card-title">Universal Onsite Hotels</div>
+          </a>
+        </div>
+
+        <!-- Lake Buena Vista -->
+        <div class="col-md-4">
+          <a href="lake-buena-vista.html" class="hotel-card d-block">
+            <img src="images/drury-inn-disney-springs.jpg" alt="Lake Buena Vista Hotels">
+            <div class="hotel-card-title">Lake Buena Vista Hotels</div>
+          </a>
+        </div>
+
+        <!-- International Drive -->
+        <div class="col-md-4">
+          <a href="international-drive.html" class="hotel-card d-block">
+            <img src="images/rosen-inn-pointe.jpg" alt="International Drive Hotels">
+            <div class="hotel-card-title">International Drive Hotels</div>
+          </a>
+        </div>
+
+        <!-- Villas -->
+        <div class="col-md-4">
+          <a href="villas.html" class="hotel-card d-block">
+            <img src="images/orlando1.jpg" alt="Orlando Villas">
+            <div class="hotel-card-title">Villas</div>
+          </a>
         </div>
 
       </div>
-
     </div>
   </section>
-    <!-- FOOTER -->
+
+  <!-- PLANNING GUIDES -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="hyw-section-title text-center mb-4">Planning Guides</h2>
+
+      <div class="planning-links text-center">
+        <a href="first-timers.html">First Timers</a>
+        <a href="disney-little-kids.html">Disney with Little Kids</a>
+        <a href="disney-teens.html">Disney with Teens</a>
+        <a href="universal-little-kids.html">Universal with Little Kids</a>
+        <a href="universal-teens.html">Universal with Teens</a>
+        <a href="adults-only.html">Adults‑Only Orlando</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer class="hyw-footer">
     <div class="container">
       <p class="mb-0">© 2024 Holidays Your Way. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- LEGAL COMPLIANCE FOOTER -->
+  <!-- LEGAL FOOTER -->
   <section class="legal-footer">
     <div class="container">
 
       <div class="legal-logos">
-        <img src="images/exotic-travel.jpeg" alt="Exotic World Travel" class="legal-exotic-logo">
-        <img src="images/atol-exotic.png" alt="ATOL Protected" class="legal-atol-logo">
+        <img src="images/exotic-travel.jpeg" class="legal-exotic-logo">
+        <img src="images/atol-exotic.png" class="legal-atol-logo">
       </div>
 
       <p class="legal-text">
@@ -402,53 +361,13 @@
       </p>
 
       <div class="legal-social">
-        <a href="#" class="social-link">
-          <img src="images/facebook-new.png" alt="Facebook" class="social-icon">
-        </a>
-        <a href="#" class="social-link">
-          <img src="images/instagram-new.png" alt="Instagram" class="social-icon">
-        </a>
-      </div>
-
-      <!-- FEATURE STRIP -->
-      <div class="legal-features">
-
-        <div class="feature-item">
-          <img src="images/atol-exotic.png" alt="ATOL Protected" class="feature-icon">
-          <span>ATOL Protected</span>
-        </div>
-
-        <div class="feature-item">
-          <img src="images/icon-deposit.png" alt="Deposits from £50pp" class="feature-icon">
-          <span>Deposits from £50pp*</span>
-        </div>
-
-        <div class="feature-item">
-          <img src="images/icon-payments.png" alt="Flexible Payments" class="feature-icon">
-          <span>Flexible Payments</span>
-        </div>
-
-        <div class="feature-item">
-          <img src="images/icon-trustpilot.png" alt="TrustPilot Rating" class="feature-icon">
-          <span>Rated 4.7 on TrustPilot</span>
-        </div>
-
-        <div class="feature-item">
-          <img src="images/icon-tailored.png" alt="Tailored Travel Experience" class="feature-icon">
-          <span>Tailored Travel Experience</span>
-        </div>
-
-        <div class="feature-item">
-          <img src="images/icon-calendar.png" alt="2027/2028 Packages" class="feature-icon">
-          <span>2027/2028 Packages Available</span>
-        </div>
-
+        <a href="#"><img src="images/facebook-new.png" class="social-icon"></a>
+        <a href="#"><img src="images/instagram-new.png" class="social-icon"></a>
       </div>
 
     </div>
   </section>
 
-  <!-- SCRIPTS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
