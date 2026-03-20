@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Destinations – Holidays Your Way</title>
+  <title>Worldwide Destinations – Holidays Your Way</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -94,47 +94,27 @@
       color: var(--hyw-blue);
     }
 
-    /* MOBILE HEADER */
-    @media (max-width: 991.98px) {
-      .hyw-logo-main { height: 90px; }
-      .hyw-partner-logo,
-      .hyw-atol-logo { height: 72px; }
-    }
-
-    @media (max-width: 575.98px) {
-      .hyw-header {
-        flex-direction: column;
-        text-align: center;
-        gap: 0.5rem;
-      }
-
-      .hyw-header-left {
-        flex-direction: column;
-      }
-
-      .hyw-logo-main { height: 70px; }
-      .hyw-partner-logo,
-      .hyw-atol-logo { height: 50px; }
-    }
-
-    /* HERO (kept exactly as-is) */
+    /* HERO (SMALLER + CLEANER) */
     .pyw-destinations-hero {
-      height: 60vh;
-      min-height: 420px;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-color: #0A3161; /* fallback so white text is readable */
+      height: 38vh;
+      min-height: 260px;
+      background-color: #f4f6fb;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
     }
 
-    .pyw-destinations-hero h1,
+    .pyw-destinations-hero h1 {
+      color: var(--hyw-blue);
+      font-weight: 700;
+      font-size: 2.4rem;
+    }
+
     .pyw-destinations-hero p {
-      color: #FFFFFF;
-      text-shadow: 0 3px 12px rgba(0,0,0,0.45);
+      color: #4a5264;
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
     }
 
     /* SECTIONS */
@@ -292,11 +272,12 @@
       </div>
     </nav>
   </header>
-    <!-- HERO -->
-  <section class="pyw-destinations-hero d-flex align-items-center">
-    <div class="container text-center text-white">
-      <h1 class="fw-bold display-4">Destinations</h1>
-      <p class="lead">From Orlando magic to worldwide adventures — explore the places I know best.</p>
+
+  <!-- WORLDWIDE HERO (SMALLER + CLEANER) -->
+  <section class="pyw-destinations-hero">
+    <div class="container text-center">
+      <h1 class="fw-bold">Worldwide Destinations</h1>
+      <p>Explore the places I know, trust, and recommend.</p>
     </div>
   </section>
 
@@ -403,7 +384,8 @@
 
     </div>
   </section>
-    <!-- FOOTER -->
+
+  <!-- FOOTER -->
   <footer class="hyw-footer">
     <div class="container">
       <p class="mb-0">© 2024 Holidays Your Way. All rights reserved.</p>
