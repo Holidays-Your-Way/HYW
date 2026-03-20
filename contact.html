@@ -231,14 +231,21 @@
       margin-bottom: 1.5rem;
     }
 
-    .legal-icon {
-      color: #0A3161;
-      font-weight: 600;
-      text-decoration: none;
+    /* SOCIAL ICONS */
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .legal-icon:hover {
-      text-decoration: underline;
+    .social-icon {
+      height: 28px;
+      width: auto;
+      transition: opacity 0.2s ease;
+    }
+
+    .social-icon:hover {
+      opacity: 0.7;
     }
 
     /* FEATURE STRIP */
@@ -371,7 +378,7 @@
 
       <div class="legal-logos">
         <img src="images/exotic-travel.jpeg" alt="Exotic World Travel" class="legal-exotic-logo">
-        <img src="images/atol-exotic.png" alt="ATOL Protected" class="legal-atol-logo"> 
+        <img src="images/atol-exotic.png" alt="ATOL Protected" class="legal-atol-logo">
       </div>
 
       <p class="legal-text">
@@ -382,19 +389,19 @@
       </p>
 
       <div class="legal-social">
-  <a href="#" class="social-link">
-    <img src="images/facebook.png" alt="Facebook" class="social-icon">
-  </a>
-  <a href="#" class="social-link">
-    <img src="images/instagram.png" alt="Instagram" class="social-icon">
-  </a>
-</div>
+        <a href="#" class="social-link">
+          <img src="images/facebook.png" alt="Facebook" class="social-icon">
+        </a>
+        <a href="#" class="social-link">
+          <img src="images/instagram.png" alt="Instagram" class="social-icon">
+        </a>
+      </div>
 
       <!-- FEATURE STRIP -->
       <div class="legal-features">
         <div class="feature-item">
           <img src="images/atol-exotic.png" alt="ATOL Protected" class="feature-icon">
-          <span>ATOL Protected </span>
+          <span>ATOL Protected</span>
         </div>
 
         <div class="feature-item">
