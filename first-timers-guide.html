@@ -2,196 +2,823 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>First‑Timers Guide to Walt Disney World – Holidays Your Way</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <title>First-Timers Guide to Orlando | Your Orlando Expert</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Brand fonts & styles assumed to be in main site CSS -->
   <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* Page-specific helpers – adjust to match your main stylesheet */
+
+    .page-hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-carousel {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      max-height: 60vh;
+      overflow: hidden;
+    }
+
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+    }
+
+    .hero-slide.active {
+      opacity: 1;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.1));
+      display: flex;
+      align-items: flex-end;
+      padding: 2rem 1.5rem;
+      color: #fff;
+    }
+
+    .hero-text {
+      max-width: 720px;
+    }
+
+    .hero-text h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-text p {
+      font-size: 1.05rem;
+      margin: 0.25rem 0;
+    }
+
+    .content-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3.5rem;
+    }
+
+    .step-banner {
+      margin: 2.5rem 0 1.5rem;
+      padding: 0.9rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      color: #fff;
+      background: var(--brand-primary, #004f7a);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .step-banner span.step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.8rem;
+      height: 1.8rem;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.18);
+      font-size: 0.85rem;
+    }
+
+    h2.section-title {
+      font-size: 1.7rem;
+      margin: 0.5rem 0 1rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    p {
+      line-height: 1.6;
+      margin: 0.4rem 0 0.8rem;
+    }
+
+    ul {
+      margin: 0.3rem 0 1rem 1.2rem;
+      padding: 0;
+    }
+
+    ul li {
+      margin: 0.2rem 0;
+    }
+
+    .highlight-box {
+      border-left: 4px solid var(--brand-primary, #004f7a);
+      background: #f7fbff;
+      padding: 0.9rem 1rem;
+      margin: 1rem 0 1.5rem;
+      border-radius: 6px;
+      font-size: 0.98rem;
+    }
+
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .link-card {
+      border-radius: 8px;
+      padding: 0.9rem 1rem;
+      background: #f8f8f8;
+      border: 1px solid #e3e3e3;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+
+    .link-card h4 {
+      margin: 0 0 0.35rem;
+      font-size: 1rem;
+    }
+
+    .link-card a {
+      text-decoration: none;
+      color: inherit;
+      display: inline-block;
+      margin-top: 0.15rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--brand-primary, #004f7a);
+    }
+
+    .link-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+      border-color: var(--brand-primary, #004f7a);
+    }
+
+    .subtle-heading {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero-carousel {
+        height: 260px;
+      }
+      .hero-text h1 {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark pyw-nav">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <img src="images/holidays-your-way-logo.png" alt="Holidays Your Way" class="pyw-logo" />
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="nav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="first-timers-guide.html">First‑Timers Guide</a></li>
-          <li class="nav-item"><a class="nav-link" href="planning.html">Planning Tools</a></li>
-        </ul>
+  <!-- SITE HEADER (use your existing global header include) -->
+  <header>
+    <!-- Example placeholder – replace with your real header -->
+    <div class="site-header">
+      <div class="content-wrapper" style="padding: 1rem 1.25rem;">
+        <a href="index.html" class="logo">Your Orlando Brand</a>
+        <!-- nav etc. -->
       </div>
     </div>
-  </nav>
+  </header>
 
-  <!-- HERO -->
-  <section class="text-white d-flex align-items-center"
-    style="background:url('images/first-timers.jpg') center/cover no-repeat; height:45vh;">
-    <div class="container">
-      <h1 class="fw-bold display-5">First‑Timers Guide to Walt Disney World</h1>
-      <p class="lead">Everything you need to know for a magical first visit.</p>
+  <main>
+
+    <!-- HERO / CAROUSEL -->
+    <section class="page-hero">
+      <div class="hero-carousel" id="orlandoHeroCarousel">
+        <div class="hero-slide active" style="background-image:url('images/orlando-hero.jpg');"></div>
+        <div class="hero-slide" style="background-image:url('images/orlando-hotel.jpg');"></div>
+        <div class="hero-slide" style="background-image:url('images/orlando1.jpg');"></div>
+        <div class="hero-slide" style="background-image:url('images/orlando2.jpg');"></div>
+        <div class="hero-slide" style="background-image:url('images/orlando3.jpg');"></div>
+        <div class="hero-slide" style="background-image:url('images/orlando4.jpg');"></div>
+        <div class="hero-slide" style="background-image:url('images/orlando5.jpg');"></div>
+        <div class="hero-slide" style="background-image:url('images/orlando6.jpg');"></div>
+        <div class="hero-slide" style="background-image:url('images/orlando8.jpg');"></div>
+        <div class="hero-slide" style="background-image:url('images/orlando9.jpg');"></div>
+        <div class="hero-slide" style="background-image:url('images/orlando10.jpg');"></div>
+        <div class="hero-slide" style="background-image:url('images/orlando12.jpg');"></div>
+        <div class="hero-slide" style="background-image:url('images/orlando13.jpg');"></div>
+        <div class="hero-slide" style="background-image:url('images/orlando14.jpg');"></div>
+        <div class="hero-slide" style="background-image:url('images/orlando15.jpg');"></div>
+        <div class="hero-slide" style="background-image:url('images/orlando16.jpg');"></div>
+        <div class="hero-slide" style="background-image:url('images/orlando17.jpg');"></div>
+        <div class="hero-slide" style="background-image:url('images/orlando18.jpg');"></div>
+        <div class="hero-slide" style="background-image:url('images/orlando19.jpg');"></div>
+        <div class="hero-slide" style="background-image:url('images/orlando20.jpg');"></div>
+        <div class="hero-slide" style="background-image:url('images/orlando21.jpg');"></div>
+
+        <div class="hero-overlay">
+          <div class="hero-text">
+            <h1>First‑Timers Guide to Orlando</h1>
+            <p>Planning your first Orlando holiday without losing your mind (or the magic).</p>
+            <p>Right, kettle on — let’s sort this out together.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <div class="content-wrapper">
+
+      <!-- INTRO -->
+      <section aria-labelledby="intro-title">
+        <h2 id="intro-title" class="section-title">Welcome to Orlando</h2>
+        <p>One of the first things I tell all my clients is this: <strong>remember to breathe</strong>. You’re meant to be going on holiday. So take a breath, relax your shoulders, and let’s make this whole thing feel a lot less overwhelming.</p>
+        <p>Planning your first Orlando holiday can feel a bit like standing in the middle of a theme park map thinking, “Where on earth do we start?” Disney, Universal, SeaWorld, waterparks, tickets, hotels, dining, transport… it’s a lot.</p>
+        <p>That’s where I come in. I don’t want you sat there stressed with twenty tabs open and a notebook full of scribbles. I want you feeling like you’ve popped the kettle on, had a chat with a friend who knows Orlando inside out, and suddenly it all makes sense.</p>
+        <p>I’ve helped so many families, couples and friends plan their first Orlando adventure — from “we’ve no idea what we’re doing” to “we can’t believe how smooth that was”. This guide is everything I’d talk you through if we were sat together over a cuppa: honest advice, real expectations, and the little tips that make a big difference.</p>
+        <p>Orlando isn’t just a holiday. It’s an experience. Let’s make sure yours is a good one.</p>
+      </section>
+
+      <!-- STEP 1 -->
+      <section aria-labelledby="step1-title">
+        <div class="step-banner">
+          <span class="step-number">1</span>
+          <span>Step 1 — When to go (for UK visitors)</span>
+        </div>
+        <h2 id="step1-title" class="section-title">When to go</h2>
+        <p>Most of us in the UK don’t have the luxury of picking any random week of the year. School holidays rule the calendar, and Orlando knows it.</p>
+
+        <h3>The busiest times of the year</h3>
+        <p>These are the most popular times for UK families:</p>
+        <ul>
+          <li>Easter</li>
+          <li>Summer holidays</li>
+          <li>Christmas &amp; New Year</li>
+        </ul>
+        <p>Yes, they’re busy — but they’re also brilliant. Longer park hours, more entertainment, a buzzing atmosphere, and that “everyone’s in it together” feeling. With the right plan, you can absolutely have an amazing first trip in these periods without feeling like you’ve spent the whole time in a queue.</p>
+
+        <h3>If you’re more flexible</h3>
+        <p>Lovely times to visit include:</p>
+        <ul>
+          <li>Late April to mid‑May</li>
+          <li>Mid‑September to mid‑November</li>
+        </ul>
+        <p>You’ll usually find a nice balance of warmth, value and slightly calmer crowds. I’ll never tell you “don’t go” at peak times. My job is to help you make it work, not make you feel bad about your dates.</p>
+      </section>
+
+      <!-- STEP 2 -->
+      <section aria-labelledby="step2-title">
+        <div class="step-banner">
+          <span class="step-number">2</span>
+          <span>Step 2 — How long to stay</span>
+        </div>
+        <h2 id="step2-title" class="section-title">How long to stay</h2>
+        <p>For UK visitors, Orlando isn’t a quick week in the sun — it’s a proper adventure.</p>
+        <p>Most of my clients stay <strong>14 to 21 nights</strong>, and honestly, that’s where Orlando really shines. It gives you time to:</p>
+        <ul>
+          <li>Spread out your park days</li>
+          <li>Build in pool days and lazy mornings</li>
+          <li>Go back to favourite parks</li>
+          <li>Enjoy evenings at Disney Springs, CityWalk or International Drive</li>
+          <li>Actually breathe, instead of marching from ride to ride</li>
+        </ul>
+        <p>You don’t have to do everything (and you won’t — no one does), but a longer stay means you don’t feel like you’re on a military operation. You get the fun <em>and</em> the memories, without the burnout.</p>
+      </section>
+
+      <!-- STEP 3 -->
+      <section aria-labelledby="step3-title">
+        <div class="step-banner">
+          <span class="step-number">3</span>
+          <span>Step 3 — Understanding tickets</span>
+        </div>
+        <h2 id="step3-title" class="section-title">Understanding tickets (UK‑friendly, no jargon)</h2>
+        <p>One of the biggest advantages we have in the UK is the ticket options. They’re different to what you see on American sites, and they’re usually much better value.</p>
+
+        <h3>Walt Disney World – 14‑Day Magic Ticket</h3>
+        <p>You get:</p>
+        <ul>
+          <li>All <strong>4 Disney theme parks</strong></li>
+          <li>Both <strong>Disney water parks</strong></li>
+          <li><strong>Park hopping</strong></li>
+          <li><strong>Memory Maker</strong></li>
+          <li>Mini golf</li>
+          <li>Parking <strong>only if staying at a Disney resort</strong></li>
+        </ul>
+
+        <h3>Universal Orlando – All Parks Ticket</h3>
+        <p>You get:</p>
+        <ul>
+          <li><strong>Universal Studios</strong></li>
+          <li><strong>Islands of Adventure</strong></li>
+          <li><strong>Epic Universe</strong></li>
+          <li><strong>Volcano Bay</strong></li>
+        </ul>
+        <p><strong>Important:</strong> from 20 Oct 2026 to 25 Mar 2027, Volcano Bay is closed for refurbishment. During this time, the ticket becomes a <strong>3 Park Adventure Ticket</strong>.</p>
+
+        <h3>SeaWorld Parks &amp; Discovery Cove</h3>
+        <p>Popular options include:</p>
+        <ul>
+          <li><strong>3‑Park Ticket</strong> – SeaWorld, Aquatica, Busch Gardens</li>
+          <li><strong>14‑Day Unlimited Ticket</strong> – unlimited entry to all three</li>
+          <li><strong>Discovery Cove</strong> – one‑day experience, can be bundled with 14‑day access to SeaWorld/Aquatica/Busch</li>
+        </ul>
+      </section>
+
+      <!-- STEP 4 -->
+      <section aria-labelledby="step4-title">
+        <div class="step-banner">
+          <span class="step-number">4</span>
+          <span>Step 4 — Where to stay</span>
+        </div>
+        <h2 id="step4-title" class="section-title">Where to stay</h2>
+        <p>Where you stay isn’t just “somewhere to sleep” — it completely shapes how your days feel.</p>
+
+        <h3>Staying in the Disney area</h3>
+        <p>Perfect if you want to be wrapped in Disney magic from morning to night. You get early entry, Disney transport, and the full “Disney bubble” feeling. Great for families and first‑timers.</p>
+
+        <h3>Staying in the Universal area</h3>
+        <p>Brilliant for teens, coaster lovers and Harry Potter fans. You get early entry, walkable access, water taxis, and Express Pass included at select hotels. Parking is <strong>not free</strong> — Universal hotel guests pay at the resort.</p>
+
+        <h3>Staying on International Drive</h3>
+        <p>Great for value, flexibility, restaurants, attractions and longer stays. Ideal if you want a bit of everything and don’t want to be tied to one resort bubble.</p>
+
+        <h3>Staying in Lake Buena Vista</h3>
+        <p>A lovely middle ground — close to Disney Springs with great hotel options and easy access to the parks.</p>
+      </section>
+
+      <!-- STEP 5 -->
+      <section aria-labelledby="step5-title">
+        <div class="step-banner">
+          <span class="step-number">5</span>
+          <span>Step 5 — The parks</span>
+        </div>
+        <h2 id="step5-title" class="section-title">The parks: what first‑timers really need to know</h2>
+        <p>This is where the magic happens — and where the overwhelm usually starts. Let’s break it down simply.</p>
+
+        <h3 class="subtle-heading">Walt Disney World</h3>
+
+        <h3>Magic Kingdom</h3>
+        <p>The classic. The castle. The fireworks. The nostalgia.</p>
+        <p><strong>My tips:</strong></p>
+        <ul>
+          <li>Arrive early</li>
+          <li>Don’t rush — soak it in</li>
+          <li>Save energy for the fireworks</li>
+        </ul>
+
+        <h3>EPCOT</h3>
+        <p>Food, festivals, culture, and Guardians of the Galaxy.</p>
+        <p><strong>My tips:</strong></p>
+        <ul>
+          <li>Guardians is unmissable</li>
+          <li>Festivals are brilliant</li>
+          <li>World Showcase is best enjoyed slowly</li>
+        </ul>
+
+        <h3>Hollywood Studios</h3>
+        <p>Star Wars, Toy Story, big thrills.</p>
+        <p><strong>My tips:</strong></p>
+        <ul>
+          <li>Rise of the Resistance is worth it</li>
+          <li>Plan shade breaks — it gets hot</li>
+          <li>Great for teens</li>
+        </ul>
+
+        <h3>Animal Kingdom</h3>
+        <p>Stunning, immersive, and home to Pandora.</p>
+        <p><strong>My tips:</strong></p>
+        <ul>
+          <li>Safari early</li>
+          <li>Flight of Passage is a must</li>
+          <li>Don’t skip the shows</li>
+        </ul>
+
+        <h3>Disney water parks</h3>
+        <p>Typhoon Lagoon &amp; Blizzard Beach are perfect for cooling off and breaking up your park days.</p>
+        <p><strong>My tips:</strong></p>
+        <ul>
+          <li>Go early</li>
+          <li>Bring water shoes</li>
+          <li>Use them as mid‑holiday reset days</li>
+        </ul>
+
+        <h3>Lightning Lanes (Multi, Single &amp; Premier Pass)</h3>
+        <p>Disney’s queue‑skipping system. There are different types of Lightning Lane passes, and how you use them depends on your plans, priorities and budget. I’ve got full guides on each type that walk you through it without the headache.</p>
+
+        <h3 class="subtle-heading">Universal Orlando</h3>
+
+        <h3>Universal Studios</h3>
+        <p>Movies, Minions, Diagon Alley and a great mix of rides and shows.</p>
+        <p><strong>My tips:</strong></p>
+        <ul>
+          <li>Take your time in Diagon Alley</li>
+          <li>Bourne Stuntacular is much better than you’d expect</li>
+          <li>Good balance for mixed‑age groups</li>
+        </ul>
+
+        <h3>Islands of Adventure</h3>
+        <p>Coasters, Jurassic Park, Marvel and Seuss Landing.</p>
+        <p><strong>My tips:</strong></p>
+        <ul>
+          <li>Hagrid’s is incredible</li>
+          <li>VelociCoaster is intense but amazing</li>
+          <li>Seuss Landing is lovely for little ones</li>
+        </ul>
+
+        <h3>Epic Universe</h3>
+        <p>The brand‑new park that’s going to change how people plan their holidays.</p>
+        <p><strong>My tips:</strong></p>
+        <ul>
+          <li>Give it a full day</li>
+          <li>Expect queues — it’s new and exciting</li>
+          <li>Onsite hotels with early entry will be a big help</li>
+        </ul>
+
+        <h3>Volcano Bay</h3>
+        <p>A beautiful, tropical‑style water park with slides, a central volcano and plenty of space to relax.</p>
+        <p><strong>My tips:</strong></p>
+        <ul>
+          <li>Arrive early for the most popular slides</li>
+          <li>Mix slides with chill time</li>
+          <li>Great mid‑holiday reset day</li>
+        </ul>
+
+        <h3>Express Pass</h3>
+        <p>Universal’s queue‑skipping system. It can be included with certain hotels or bought separately. It’s not cheap, but on busy days it can be worth its weight in gold. I’ve got a full Express Pass guide that breaks down when it’s worth it and how to get the most out of it.</p>
+
+        <h3 class="subtle-heading">SeaWorld, Aquatica &amp; Busch Gardens</h3>
+
+        <h3>SeaWorld</h3>
+        <p>Coasters, shows and animal encounters.</p>
+        <p><strong>My tips:</strong></p>
+        <ul>
+          <li>Check showtimes early and plan around them</li>
+          <li>Mako is brilliant for thrill‑seekers</li>
+          <li>Animal exhibits are lovely for slower moments</li>
+        </ul>
+
+        <h3>Aquatica</h3>
+        <p>Warm water, colourful slides and lazy rivers.</p>
+        <p><strong>My tips:</strong></p>
+        <ul>
+          <li>Go early for the best chairs</li>
+          <li>Great for mixed ages</li>
+          <li>Nice balance of fun and relaxation</li>
+        </ul>
+
+        <h3>Busch Gardens</h3>
+        <p>Big coasters plus wildlife. If it’s included in your ticket and you love thrills, it’s worth the trip.</p>
+      </section>
+
+      <!-- STEP 6 -->
+      <section aria-labelledby="step6-title">
+        <div class="step-banner">
+          <span class="step-number">6</span>
+          <span>Step 6 — Getting around</span>
+        </div>
+        <h2 id="step6-title" class="section-title">Getting around Orlando</h2>
+        <p>Orlando looks huge on a map, and the first time you see the size of Disney alone you might think, “How are we getting anywhere without a helicopter?” But once you know the basics, it’s much easier than it seems.</p>
+
+        <h3>Disney transport</h3>
+        <p>If you’re staying in the Disney area, you’re basically in a bubble where everything is connected for you.</p>
+        <ul>
+          <li>Buses</li>
+          <li>Monorail</li>
+          <li>Skyliner</li>
+          <li>Boats</li>
+        </ul>
+        <p>It’s all free and runs constantly. Just give yourself time — it’s reliable, but it’s not teleportation.</p>
+
+        <h3>Universal transport</h3>
+        <p>Universal is much more compact than Disney, and that’s one of the reasons people love it.</p>
+        <ul>
+          <li>Water taxis</li>
+          <li>Shuttle buses</li>
+          <li>Walking paths</li>
+        </ul>
+
+        <h3>Car hire vs ride‑share</h3>
+        <p><strong>Car hire is great if:</strong></p>
+        <ul>
+          <li>You want total flexibility</li>
+          <li>You’re staying offsite</li>
+          <li>You’re visiting Busch Gardens</li>
+          <li>You like doing big shopping trips</li>
+        </ul>
+        <p><strong>Uber/Lyft is great if:</strong></p>
+        <ul>
+          <li>You don’t want to drive abroad</li>
+          <li>You’re staying in Disney or Universal</li>
+          <li>You want to avoid parking fees</li>
+          <li>You’re mainly doing the main parks</li>
+        </ul>
+
+        <div class="highlight-box">
+          <strong>Parking costs (current):</strong><br />
+          Disney: $32 per day (unless you’re staying at a Disney resort).<br />
+          Universal: $32 per day (including hotel guests, who pay at the resort).
+        </div>
+      </section>
+
+      <!-- STEP 7 -->
+      <section aria-labelledby="step7-title">
+        <div class="step-banner">
+          <span class="step-number">7</span>
+          <span>Step 7 — Dining</span>
+        </div>
+        <h2 id="step7-title" class="section-title">Dining in Orlando</h2>
+        <p>Orlando is a dream for food lovers — and a bit of a minefield for first‑timers. There’s just <em>so much</em> choice. But don’t worry, I’ve got you.</p>
+
+        <h3>Disney dining</h3>
+        <ul>
+          <li><strong>Character meals</strong> – brilliant for families and a lovely way to meet characters without queueing</li>
+          <li><strong>Table‑Service</strong> – great for a slower, more relaxed meal (some book up fast)</li>
+          <li><strong>Quick‑Service</strong> – perfect for grabbing something tasty without losing park time</li>
+        </ul>
+        <p><strong>My tip:</strong> use mobile ordering where it’s available. It saves so much time and avoids the “hangry family meltdown” moment.</p>
+
+        <h3>Universal dining</h3>
+        <p>Universal is fantastic for food — especially around CityWalk. You’ll find big American classics, great quick‑service options, brilliant snacks and some surprisingly good sit‑down restaurants.</p>
+
+        <h3>International Drive &amp; Lake Buena Vista</h3>
+        <p>If you’re staying offsite, you’ll be spoiled for choice. Everything from budget‑friendly chains to lovely local restaurants. On a longer stay, mixing parks, I‑Drive, Disney Springs and CityWalk keeps things fresh.</p>
+      </section>
+
+      <!-- STEP 8 -->
+      <section aria-labelledby="step8-title">
+        <div class="step-banner">
+          <span class="step-number">8</span>
+          <span>Step 8 — Budgeting</span>
+        </div>
+        <h2 id="step8-title" class="section-title">Budgeting for Orlando</h2>
+        <p>Let’s be honest — Orlando isn’t cheap. But it <em>is</em> worth every penny when you plan it right.</p>
+
+        <h3>Where the money goes</h3>
+        <ul>
+          <li>Flights</li>
+          <li>Hotel</li>
+          <li>Park tickets</li>
+          <li>Food</li>
+          <li>Transport</li>
+          <li>Extras (Lightning Lanes, Express Pass, souvenirs, etc.)</li>
+        </ul>
+
+        <h3>Money‑saving tips</h3>
+        <ul>
+          <li>Travel outside peak if you can</li>
+          <li>Stay offsite for more value</li>
+          <li>Bring snacks and refillable bottles</li>
+          <li>Use ride‑share instead of hiring a car for the whole trip</li>
+          <li>Plan your dining — impulse eating adds up fast</li>
+        </ul>
+      </section>
+
+      <!-- STEP 9 -->
+      <section aria-labelledby="step9-title">
+        <div class="step-banner">
+          <span class="step-number">9</span>
+          <span>Step 9 — What to pack</span>
+        </div>
+        <h2 id="step9-title" class="section-title">What to pack</h2>
+        <p>Orlando weather has a mind of its own. One minute it’s blazing sunshine, the next it’s a five‑minute tropical downpour.</p>
+
+        <h3>Essentials</h3>
+        <ul>
+          <li>Comfortable shoes</li>
+          <li>Ponchos</li>
+          <li>Portable chargers</li>
+          <li>Sun cream</li>
+          <li>Refillable water bottles</li>
+          <li>Cooling towels</li>
+          <li>Plasters</li>
+        </ul>
+
+        <h3>Things people forget</h3>
+        <ul>
+          <li>Swimwear for water rides and water parks</li>
+          <li>A lightweight jumper or cardigan for air‑con</li>
+          <li>A small park bag</li>
+          <li>Snacks for the kids</li>
+        </ul>
+      </section>
+
+      <!-- STEP 10 -->
+      <section aria-labelledby="step10-title">
+        <div class="step-banner">
+          <span class="step-number">10</span>
+          <span>Step 10 — Final thoughts</span>
+        </div>
+        <h2 id="step10-title" class="section-title">Final thoughts</h2>
+        <p>Here’s what I always tell my clients:</p>
+        <p>Orlando is magical — but it’s big, busy and full of moving parts. You are not expected to know everything, and you are definitely not expected to plan it all alone.</p>
+        <p>Pick your must‑dos. Take breaks. Drink water. Enjoy the moments that make you smile — the first time you see the castle, the kids’ faces on their favourite ride, the quiet evening by the pool.</p>
+        <p>And if at any point it all feels a bit much, that’s where I come in. My job is to take the overwhelm away and help you plan a holiday that feels exciting, not exhausting.</p>
+      </section>
+
+      <!-- HOW I CAN HELP -->
+      <section aria-labelledby="help-title">
+        <h2 id="help-title" class="section-title">How I can help you plan</h2>
+        <p>Planning Orlando can feel like a full‑time job — and that’s before you’ve even packed a suitcase. My job is to take all that stress off your shoulders.</p>
+        <p>Here’s what I do for you:</p>
+        <ul>
+          <li>Help you choose the right dates, parks and tickets</li>
+          <li>Match you to the best hotel for <em>your</em> family</li>
+          <li>Build a plan that fits your pace — not a military schedule</li>
+          <li>Help you understand Lightning Lanes, Express Pass and all the time‑saving tools</li>
+          <li>Give you honest advice, not sales talk</li>
+          <li>Support you before, during and after your holiday</li>
+        </ul>
+        <p>Think of me as your Orlando big sister — the one who’s been a million times, knows all the tricks, and genuinely wants you to have the best time ever.</p>
+      </section>
+
+      <!-- COMMON MISTAKES -->
+      <section aria-labelledby="mistakes-title">
+        <h2 id="mistakes-title" class="section-title">Common mistakes first‑timers make</h2>
+        <p>Don’t worry — everyone makes these at first. But you won’t, because you’ve got me.</p>
+        <ul>
+          <li>Trying to do <em>everything</em> in one trip</li>
+          <li>Not planning rest days</li>
+          <li>Booking the wrong tickets for their holiday length</li>
+          <li>Underestimating how big the parks are</li>
+          <li>Arriving too late in the day</li>
+          <li>Forgetting to factor in heat, rain and tired legs</li>
+          <li>Leaving dining reservations too late</li>
+          <li>Thinking they need a car for the whole holiday</li>
+          <li>Not budgeting for parking</li>
+          <li>Not understanding Lightning Lanes or Express Pass</li>
+        </ul>
+        <p>These are the things I help you avoid — so your holiday feels exciting, not exhausting.</p>
+      </section>
+
+      <!-- WHAT I WISH EVERYONE KNEW -->
+      <section aria-labelledby="wish-title">
+        <h2 id="wish-title" class="section-title">What I wish everyone knew (without giving away the gold)</h2>
+        <p>I won’t give away all my best insider tips here — those are for my clients — but here’s the one thing I wish every first‑timer knew:</p>
+        <div class="highlight-box">
+          <p><strong>Orlando is meant to be enjoyed, not conquered.</strong><br />
+          You don’t need to do everything. You just need to do the things that make <em>your</em> family happy.</p>
+        </div>
+        <p>The rest? That’s what I’m here for.</p>
+      </section>
+
+      <!-- USEFUL LINKS -->
+      <section aria-labelledby="links-title">
+        <h2 id="links-title" class="section-title">Useful links to my other guides</h2>
+        <p>When you’re ready to dive deeper, these guides will walk you through each part of your Orlando holiday in more detail.</p>
+
+        <h3>Disney guides</h3>
+        <div class="links-grid">
+          <div class="link-card">
+            <h4>Best Disney Hotels</h4>
+            <a href="best-disney-hotels.html">View guide</a>
+          </div>
+          <div class="link-card">
+            <h4>Disney Resorts Guide</h4>
+            <a href="disney-resorts.html">View guide</a>
+          </div>
+          <div class="link-card">
+            <h4>Disney Springs</h4>
+            <a href="disney-springs.html">View guide</a>
+          </div>
+          <div class="link-card">
+            <h4>Character Dining</h4>
+            <a href="character-dining.html">View guide</a>
+          </div>
+          <div class="link-card">
+            <h4>Quick‑Service Dining</h4>
+            <a href="disney-quick-service-dining.html">View guide</a>
+          </div>
+          <div class="link-card">
+            <h4>Table‑Service Dining</h4>
+            <a href="disney-table-service-dining.html">View guide</a>
+          </div>
+          <div class="link-card">
+            <h4>Lightning Lane Guides</h4>
+            <a href="lightning-lane-multi-pass.html">Multi Pass</a><br />
+            <a href="lightning-lane-single-pass.html">Single Pass</a><br />
+            <a href="lightning-lane-premier-pass.html">Premier Pass</a>
+          </div>
+          <div class="link-card">
+            <h4>Disney for Adults</h4>
+            <a href="disney-for-adults.html">View guide</a>
+          </div>
+          <div class="link-card">
+            <h4>Disney with Teens</h4>
+            <a href="disney-with-teens.html">View guide</a>
+          </div>
+          <div class="link-card">
+            <h4>Disney with Young Children</h4>
+            <a href="disney-with-young-children.html">View guide</a>
+          </div>
+          <div class="link-card">
+            <h4>Disney FAQs</h4>
+            <a href="disney-faqs.html">View guide</a>
+          </div>
+          <div class="link-card">
+            <h4>Disney Itineraries</h4>
+            <a href="disney-itineraries.html">View guide</a>
+          </div>
+          <div class="link-card">
+            <h4>All Disney Parks</h4>
+            <a href="disney-parks.html">View guide</a>
+          </div>
+          <div class="link-card">
+            <h4>When to Visit Disney</h4>
+            <a href="when-to-visit-disney.html">View guide</a>
+          </div>
+          <div class="link-card">
+            <h4>Planning Disney</h4>
+            <a href="planning-disney.html">View guide</a>
+          </div>
+          <div class="link-card">
+            <h4>Disney Mini Golf</h4>
+            <a href="disney-mini-golf.html">View guide</a>
+          </div>
+        </div>
+
+        <h3>Universal guides</h3>
+        <div class="links-grid">
+          <div class="link-card">
+            <h4>Universal First‑Timers</h4>
+            <a href="universal-first-timers.html">View guide</a>
+          </div>
+          <div class="link-card">
+            <h4>Universal for Adults, Teens &amp; Kids</h4>
+            <a href="universal-for-everyone.html">View guide</a>
+          </div>
+          <div class="link-card">
+            <h4>Universal Dining Guide</h4>
+            <a href="universal-dining.html">View guide</a>
+          </div>
+          <div class="link-card">
+            <h4>Universal Itineraries</h4>
+            <a href="universal-itineraries.html">View guide</a>
+          </div>
+          <div class="link-card">
+            <h4>Universal Resorts</h4>
+            <a href="universal-resorts.html">View guide</a>
+          </div>
+          <div class="link-card">
+            <h4>Express Pass Guide</h4>
+            <a href="express-pass-guide.html">View guide</a>
+          </div>
+          <div class="link-card">
+            <h4>All Universal Parks</h4>
+            <a href="universal-parks.html">View guide</a>
+          </div>
+          <div class="link-card">
+            <h4>Planning Universal</h4>
+            <a href="planning-universal.html">View guide</a>
+          </div>
+        </div>
+
+        <h3>General Orlando guides</h3>
+        <div class="links-grid">
+          <div class="link-card">
+            <h4>How Many Days Guide</h4>
+            <a href="how-many-days.html">View guide</a>
+          </div>
+          <div class="link-card">
+            <h4>Packing List</h4>
+            <a href="packing-list.html">View guide</a>
+          </div>
+          <div class="link-card">
+            <h4>Resort Comparison</h4>
+            <a href="resort-comparison.html">View guide</a>
+          </div>
+          <div class="link-card">
+            <h4>Disney vs Universal</h4>
+            <a href="disney-vs-universal.html">View guide</a>
+          </div>
+        </div>
+      </section>
+
     </div>
-  </section>
+  </main>
 
-  <!-- INTRO -->
-  <section class="py-5">
-    <div class="container">
-      <h2 class="fw-bold mb-3">Welcome to Your First Disney Adventure</h2>
-      <p>
-        Planning your first trip to Walt Disney World can feel overwhelming — four theme parks, two water parks,
-        hundreds of restaurants and more magic than you can imagine. But with the right guidance, it becomes exciting,
-        simple and stress‑free.
-      </p>
-      <p>
-        This guide covers everything you need to know to plan the perfect first visit, from choosing your dates to
-        navigating the parks like a pro.
-      </p>
+  <!-- SITE FOOTER (use your existing global footer include) -->
+  <footer>
+    <!-- Example placeholder – replace with your real footer & legal footer -->
+    <div class="content-wrapper" style="padding: 2rem 1.25rem; border-top: 1px solid #e3e3e3;">
+      <p>&copy; <!-- current year --> Your Orlando Brand. All rights reserved.</p>
+      <p style="font-size:0.85rem; color:#777;">All information correct at time of writing. Prices and park operations are subject to change.</p>
     </div>
-  </section>
-
-  <!-- STEP 1 -->
-  <section class="py-4 bg-light">
-    <div class="container">
-      <h3 class="fw-bold mb-3">1. Choose the Best Time to Visit</h3>
-      <p>
-        The time of year you visit can make a big difference. For first‑timers, I recommend:
-      </p>
-      <ul>
-        <li>Mid‑January to early March</li>
-        <li>Late April to mid‑May</li>
-        <li>Mid‑September to mid‑November</li>
-      </ul>
-      <p>
-        These months offer lower crowds, comfortable weather and great value.
-      </p>
-      <a href="when-to-visit-disney.html" class="btn btn-outline-primary mt-2">Read the full “When to Visit” guide</a>
-    </div>
-  </section>
-
-  <!-- STEP 2 -->
-  <section class="py-5">
-    <div class="container">
-      <h3 class="fw-bold mb-3">2. Choose Your Disney Resort</h3>
-      <p>
-        Staying at a Disney Resort makes your first visit easier and more magical. You’ll enjoy early park entry,
-        complimentary transport and incredible theming.
-      </p>
-      <ul>
-        <li><strong>Value Resorts:</strong> Great for families on a budget</li>
-        <li><strong>Moderate Resorts:</strong> A balance of comfort and value</li>
-        <li><strong>Deluxe Resorts:</strong> Best locations, best amenities, most magical</li>
-      </ul>
-      <a href="resorts.html" class="btn btn-outline-primary mt-2">Explore Disney Resorts</a>
-    </div>
-  </section>
-
-  <!-- STEP 3 -->
-  <section class="py-4 bg-light">
-    <div class="container">
-      <h3 class="fw-bold mb-3">3. Decide How Many Days You Need</h3>
-      <p>
-        For a first visit, I recommend:
-      </p>
-      <ul>
-        <li>4 park days (one for each theme park)</li>
-        <li>1–2 rest days or Disney Springs days</li>
-        <li>Optional: Water parks or mini golf</li>
-      </ul>
-      <p>
-        A 7–10 night holiday gives you the perfect balance of fun and relaxation.
-      </p>
-    </div>
-  </section>
-
-  <!-- STEP 4 -->
-  <section class="py-5">
-    <div class="container">
-      <h3 class="fw-bold mb-3">4. Understand Lightning Lanes</h3>
-      <p>
-        Lightning Lanes help you skip the queues for Disney’s most popular attractions. There are three types:
-      </p>
-      <ul>
-        <li><strong>Lightning Lane Multi Pass</strong> – book multiple rides in advance</li>
-        <li><strong>Lightning Lane Single Pass</strong> – pay per ride for top attractions</li>
-        <li><strong>Lightning Lane Premier Pass</strong> – unlimited access (no planning needed)</li>
-      </ul>
-      <a href="lightning-lane.html" class="btn btn-outline-primary mt-2">Learn more about Lightning Lanes</a>
-    </div>
-  </section>
-
-  <!-- STEP 5 -->
-  <section class="py-4 bg-light">
-    <div class="container">
-      <h3 class="fw-bold mb-3">5. Plan Your Dining</h3>
-      <p>
-        Disney dining is a big part of the experience — and it books up quickly. First‑timers should consider:
-      </p>
-      <ul>
-        <li>1–2 character meals</li>
-        <li>1–2 Table‑Service meals</li>
-        <li>Quick‑Service for flexibility</li>
-      </ul>
-      <a href="dining.html" class="btn btn-outline-primary mt-2">Explore dining guides</a>
-    </div>
-  </section>
-
-  <!-- STEP 6 -->
-  <section class="py-5">
-    <div class="container">
-      <h3 class="fw-bold mb-3">6. Learn the Basics of Getting Around</h3>
-      <p>
-        Disney transport is free, easy and fun. You can travel by:
-      </p>
-      <ul>
-        <li>Disney buses</li>
-        <li>Monorail</li>
-        <li>Boats</li>
-        <li>Disney Skyliner</li>
-      </ul>
-      <p>
-        Each resort connects differently — I’ll help you choose the best one for your plans.
-      </p>
-    </div>
-  </section>
-
-  <!-- STEP 7 -->
-  <section class="py-4 bg-light">
-    <div class="container">
-      <h3 class="fw-bold mb-3">7. Pack Smart</h3>
-      <p>
-        Florida weather can be unpredictable. First‑timers should pack:
-      </p>
-      <ul>
-        <li>Comfortable walking shoes</li>
-        <li>Ponchos or light rain jackets</li>
-        <li>Portable chargers</li>
-        <li>Refillable water bottles</li>
-        <li>Sun protection</li>
-      </ul>
-      <a href="packing-list.html" class="btn btn-outline-primary mt-2">See the full packing list</a>
-    </div>
-  </section>
-
-  <!-- WHY I RECOMMEND -->
-  <section class="py-5">
-    <div class="container">
-      <h3 class="fw-bold mb-3">Why This Guide Helps First‑Timers</h3>
-      <p>
-        Your first Disney holiday should feel magical — not overwhelming. With the right planning, you’ll enjoy shorter
-        queues, better dining, smoother days and more magical moments. I’m here to guide you every step of the way and
-        help you create a holiday your family will never forget.
-      </p>
-      <a href="contact.html" class="btn btn-primary btn-lg mt-2">Ask me to help plan your first Disney holiday</a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="pyw-footer text-white text-center py-3">
-    <p class="small mb-0">© 2024 Holidays Your Way. All rights reserved.</p>
   </footer>
 
+  <script>
+    // Simple hero carousel rotation – replace or integrate with your main JS if needed
+    (function () {
+      const slides = document.querySelectorAll('#orlandoHeroCarousel .hero-slide');
+      if (!slides.length) return;
+      let index = 0;
+      setInterval(() => {
+        slides[index].classList.remove('active');
+        index = (index + 1) % slides.length;
+        slides[index].classList.add('active');
+      }, 5000);
+    })();
+  </script>
 </body>
 </html>
