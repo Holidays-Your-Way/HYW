@@ -14,65 +14,113 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
   <style>
-    /* GLOBAL */
+    :root {
+      --hyw-blue: #005bbb;
+      --hyw-blue-dark: #003f7d;
+      --hyw-dark: #050816;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Nunito', sans-serif;
       background-color: #ffffff;
       margin: 0;
       padding: 0;
-    }
-
-    :root {
-      --hyw-blue: #005bbb;
-      --hyw-blue-dark: #003f7d;
+      color: #222;
     }
 
     /* HEADER */
+
     .hyw-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
+      padding: 0.75rem 2rem;
       background: #ffffff;
       border-bottom: 1px solid #e5e5e5;
+      gap: 1.5rem;
+    }
+
+    .hyw-header-left {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
     }
 
     .hyw-logo-main {
-      height: 70px;
+      height: 52px;
+      width: auto;
     }
 
     .hyw-partner-group {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.75rem;
     }
 
     .hyw-partner-logo {
-      height: 60px;
+      height: 46px;
+      width: auto;
+      object-fit: contain;
     }
 
     .hyw-atol-logo {
-      height: 60px;
+      height: 52px;
+      width: auto;
+      object-fit: contain;
     }
 
     /* NAVIGATION */
+
+    .hyw-nav .navbar-nav {
+      gap: 0.25rem;
+    }
+
     .hyw-nav .nav-link {
       font-weight: 600;
       color: #003f7d;
-      padding: 0.75rem 1rem;
+      padding: 0.5rem 0.9rem;
+      font-size: 0.95rem;
+    }
+
+    .hyw-nav .nav-link:hover {
+      color: var(--hyw-blue);
     }
 
     .hyw-nav .nav-link.active {
-      color: #005bbb;
+      color: var(--hyw-blue);
     }
 
-    /* CAROUSEL */
+    .navbar-toggler {
+      border: none;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280,0,0,0.7%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    /* HERO CAROUSEL */
+
+    .hyw-hero-carousel {
+      margin-bottom: 2.5rem;
+    }
+
     .hyw-hero-carousel img {
-      height: 550px;
+      height: 520px;
       object-fit: cover;
     }
 
+    @media (max-width: 768px) {
+      .hyw-hero-carousel img {
+        height: 320px;
+      }
+    }
+
     /* SECTION TITLES */
+
     .hyw-section-title {
       font-family: 'Playfair Display', serif;
       font-weight: 800;
@@ -81,58 +129,89 @@
       margin-bottom: 1.4rem;
     }
 
-    /* HOTEL TILES */
+    /* WHERE TO STAY – HOTEL CARDS */
+
     .hotel-card {
       border-radius: 1rem;
       overflow: hidden;
       border: 1px solid #e1e4ee;
-      transition: transform 0.2s ease;
+      background: #ffffff;
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
       cursor: pointer;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
     }
 
     .hotel-card:hover {
       transform: translateY(-4px);
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
     }
 
     .hotel-card img {
-      height: 220px;
+      height: 210px;
       width: 100%;
       object-fit: cover;
     }
 
     .hotel-card-title {
-      padding: 1rem;
+      padding: 0.9rem 0.75rem 1rem;
       text-align: center;
       font-weight: 700;
       color: var(--hyw-blue-dark);
+      font-size: 0.98rem;
     }
 
-    /* PLANNING LINKS */
+    /* PLANNING GUIDES */
+
+    .planning-links {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
     .planning-links a {
       display: block;
       margin-bottom: 0.6rem;
       font-weight: 600;
       color: var(--hyw-blue);
       text-decoration: none;
+      padding: 0.65rem 0.9rem;
+      border-radius: 0.6rem;
+      border: 1px solid #e1e4ee;
+      background: #f8fafc;
+      transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+      font-size: 0.95rem;
     }
 
     .planning-links a:hover {
-      text-decoration: underline;
+      background: #e0efff;
+      color: var(--hyw-blue-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
     }
 
     /* MAIN FOOTER */
+
     .hyw-footer {
-      background-color: #050816;
+      background-color: var(--hyw-dark);
       color: #cfd3e3;
-      padding: 1.5rem 0;
+      padding: 1.6rem 0;
       text-align: center;
-      font-size: 0.85rem;
+      font-size: 0.86rem;
+      margin-top: 1rem;
+    }
+
+    .hyw-footer p {
+      margin: 0;
     }
 
     /* LEGAL FOOTER */
+
     .legal-footer {
       background-color: #f5f5f5;
-      padding: 2rem 0;
+      padding: 2.2rem 1rem 2.6rem;
       text-align: center;
       color: #333;
       font-size: 0.9rem;
@@ -143,39 +222,50 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 1.2rem;
-      margin-bottom: 1rem;
+      gap: 1.4rem;
+      margin-bottom: 1.4rem;
+      flex-wrap: wrap;
     }
 
     .legal-exotic-logo {
       height: 70px;
+      width: auto;
+      object-fit: contain;
     }
 
     .legal-atol-logo {
       height: 90px;
+      width: auto;
+      object-fit: contain;
     }
 
     .legal-text {
       max-width: 900px;
-      margin: 0 auto 1.5rem;
+      margin: 0 auto 1.6rem;
       line-height: 1.5;
       color: #444;
+      font-size: 0.88rem;
     }
 
     .legal-social {
       display: flex;
       justify-content: center;
       gap: 1rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.6rem;
+      flex-wrap: wrap;
     }
 
     .social-icon {
       height: 28px;
-      transition: opacity 0.2s ease;
+      width: auto;
+      object-fit: contain;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      cursor: pointer;
     }
 
     .social-icon:hover {
-      opacity: 0.7;
+      opacity: 0.75;
+      transform: translateY(-1px);
     }
 
     .legal-features {
@@ -183,7 +273,7 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 2rem;
-      margin-top: 2rem;
+      margin-top: 1.8rem;
     }
 
     .feature-item {
@@ -192,13 +282,43 @@
       align-items: center;
       font-size: 0.85rem;
       color: #333;
-      max-width: 120px;
+      max-width: 130px;
       text-align: center;
     }
 
     .feature-icon {
       height: 40px;
+      width: auto;
+      object-fit: contain;
       margin-bottom: 0.4rem;
+    }
+
+    @media (max-width: 768px) {
+      .hyw-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hyw-header-left {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .hyw-logo-main {
+        height: 46px;
+      }
+
+      .hyw-partner-logo {
+        height: 40px;
+      }
+
+      .hyw-atol-logo {
+        height: 46px;
+      }
+
+      .legal-features {
+        gap: 1.4rem;
+      }
     }
   </style>
 </head>
@@ -217,7 +337,7 @@
     </div>
 
     <nav class="navbar navbar-expand-lg hyw-nav">
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#hywNav">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hywNav">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -238,31 +358,28 @@
   <section class="hyw-hero-carousel">
     <div id="orlandoCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-
-        <!-- 22 IMAGES -->
-        <div class="carousel-item active"><img src="images/orlando1.jpg" class="d-block w-100"></div>
-        <div class="carousel-item"><img src="images/orlando2.jpg" class="d-block w-100"></div>
-        <div class="carousel-item"><img src="images/orlando3.jpg" class="d-block w-100"></div>
-        <div class="carousel-item"><img src="images/orlando4.jpg" class="d-block w-100"></div>
-        <div class="carousel-item"><img src="images/orlando5.jpg" class="d-block w-100"></div>
-        <div class="carousel-item"><img src="images/orlando6.jpg" class="d-block w-100"></div>
-        <div class="carousel-item"><img src="images/orlando7.jpg" class="d-block w-100"></div>
-        <div class="carousel-item"><img src="images/orlando8.jpg" class="d-block w-100"></div>
-        <div class="carousel-item"><img src="images/orlando9.jpg" class="d-block w-100"></div>
-        <div class="carousel-item"><img src="images/orlando10.jpg" class="d-block w-100"></div>
-        <div class="carousel-item"><img src="images/orlando11.jpg" class="d-block w-100"></div>
-        <div class="carousel-item"><img src="images/orlando12.jpg" class="d-block w-100"></div>
-        <div class="carousel-item"><img src="images/orlando13.jpg" class="d-block w-100"></div>
-        <div class="carousel-item"><img src="images/orlando14.jpg" class="d-block w-100"></div>
-        <div class="carousel-item"><img src="images/orlando15.jpg" class="d-block w-100"></div>
-        <div class="carousel-item"><img src="images/orlando16.jpg" class="d-block w-100"></div>
-        <div class="carousel-item"><img src="images/orlando17.jpg" class="d-block w-100"></div>
-        <div class="carousel-item"><img src="images/orlando18.jpg" class="d-block w-100"></div>
-        <div class="carousel-item"><img src="images/orlando19.jpg" class="d-block w-100"></div>
-        <div class="carousel-item"><img src="images/orlando20.jpg" class="d-block w-100"></div>
-        <div class="carousel-item"><img src="images/orlando21.jpg" class="d-block w-100"></div>
-        <div class="carousel-item"><img src="images/orlando22.jpg" class="d-block w-100"></div>
-
+        <div class="carousel-item active"><img src="images/orlando1.jpg" class="d-block w-100" alt="Orlando 1"></div>
+        <div class="carousel-item"><img src="images/orlando2.jpg" class="d-block w-100" alt="Orlando 2"></div>
+        <div class="carousel-item"><img src="images/orlando3.jpg" class="d-block w-100" alt="Orlando 3"></div>
+        <div class="carousel-item"><img src="images/orlando4.jpg" class="d-block w-100" alt="Orlando 4"></div>
+        <div class="carousel-item"><img src="images/orlando5.jpg" class="d-block w-100" alt="Orlando 5"></div>
+        <div class="carousel-item"><img src="images/orlando6.jpg" class="d-block w-100" alt="Orlando 6"></div>
+        <div class="carousel-item"><img src="images/orlando7.jpg" class="d-block w-100" alt="Orlando 7"></div>
+        <div class="carousel-item"><img src="images/orlando8.jpg" class="d-block w-100" alt="Orlando 8"></div>
+        <div class="carousel-item"><img src="images/orlando9.jpg" class="d-block w-100" alt="Orlando 9"></div>
+        <div class="carousel-item"><img src="images/orlando10.jpg" class="d-block w-100" alt="Orlando 10"></div>
+        <div class="carousel-item"><img src="images/orlando11.jpg" class="d-block w-100" alt="Orlando 11"></div>
+        <div class="carousel-item"><img src="images/orlando12.jpg" class="d-block w-100" alt="Orlando 12"></div>
+        <div class="carousel-item"><img src="images/orlando13.jpg" class="d-block w-100" alt="Orlando 13"></div>
+        <div class="carousel-item"><img src="images/orlando14.jpg" class="d-block w-100" alt="Orlando 14"></div>
+        <div class="carousel-item"><img src="images/orlando15.jpg" class="d-block w-100" alt="Orlando 15"></div>
+        <div class="carousel-item"><img src="images/orlando16.jpg" class="d-block w-100" alt="Orlando 16"></div>
+        <div class="carousel-item"><img src="images/orlando17.jpg" class="d-block w-100" alt="Orlando 17"></div>
+        <div class="carousel-item"><img src="images/orlando18.jpg" class="d-block w-100" alt="Orlando 18"></div>
+        <div class="carousel-item"><img src="images/orlando19.jpg" class="d-block w-100" alt="Orlando 19"></div>
+        <div class="carousel-item"><img src="images/orlando20.jpg" class="d-block w-100" alt="Orlando 20"></div>
+        <div class="carousel-item"><img src="images/orlando21.jpg" class="d-block w-100" alt="Orlando 21"></div>
+        <div class="carousel-item"><img src="images/orlando22.jpg" class="d-block w-100" alt="Orlando 22"></div>
       </div>
 
       <button class="carousel-control-prev" type="button" data-bs-target="#orlandoCarousel" data-bs-slide="prev">
@@ -272,16 +389,14 @@
       <button class="carousel-control-next" type="button" data-bs-target="#orlandoCarousel" data-bs-slide="next">
         <span class="carousel-control-next-icon"></span>
       </button>
-
     </div>
   </section>
-    <!-- WHERE TO STAY -->
+
+  <!-- WHERE TO STAY -->
   <section class="container py-5">
     <h2 class="hyw-section-title text-center mb-4">Where to Stay</h2>
 
     <div class="row g-4">
-
-      <!-- Disney Onsite Hotels -->
       <div class="col-md-4 col-lg-3">
         <div class="hotel-card">
           <img src="images/disney-onsite.jpg" alt="Disney Onsite Hotels">
@@ -289,7 +404,6 @@
         </div>
       </div>
 
-      <!-- Universal Onsite Hotels -->
       <div class="col-md-4 col-lg-3">
         <div class="hotel-card">
           <img src="images/universal-onsite.jpg" alt="Universal Onsite Hotels">
@@ -297,7 +411,6 @@
         </div>
       </div>
 
-      <!-- Lake Buena Vista Hotels -->
       <div class="col-md-4 col-lg-3">
         <div class="hotel-card">
           <img src="images/lbv-hotels.jpg" alt="Lake Buena Vista Hotels">
@@ -305,7 +418,6 @@
         </div>
       </div>
 
-      <!-- International Drive Hotels -->
       <div class="col-md-4 col-lg-3">
         <div class="hotel-card">
           <img src="images/idrive-hotels.jpg" alt="International Drive Hotels">
@@ -313,17 +425,14 @@
         </div>
       </div>
 
-      <!-- Villas -->
       <div class="col-md-4 col-lg-3">
         <div class="hotel-card">
           <img src="images/orlando-villas.jpg" alt="Orlando Villas">
           <div class="hotel-card-title">Villas</div>
         </div>
       </div>
-
     </div>
   </section>
-
 
   <!-- PLANNING GUIDES -->
   <section class="container py-5">
@@ -331,35 +440,28 @@
 
     <div class="row justify-content-center">
       <div class="col-md-6 col-lg-4 planning-links">
-
         <a href="#">First Timers</a>
         <a href="#">Disney with Little Kids</a>
         <a href="#">Disney with Teens</a>
         <a href="#">Universal with Little Kids</a>
         <a href="#">Universal with Teens</a>
         <a href="#">Adults-Only Orlando</a>
-
       </div>
     </div>
   </section>
-
 
   <!-- MAIN FOOTER -->
   <footer class="hyw-footer">
     <p>© 2024 Holidays Your Way. All rights reserved.</p>
   </footer>
 
-
   <!-- LEGAL FOOTER -->
   <section class="legal-footer">
-
-    <!-- Logos -->
     <div class="legal-logos">
       <img src="images/exotic-travel.jpeg" class="legal-exotic-logo" alt="Exotic World Travel">
       <img src="images/atol-exotic.png" class="legal-atol-logo" alt="ATOL Protected">
     </div>
 
-    <!-- Legal Text -->
     <div class="legal-text">
       Exotic World Travel Ltd (company number 16110796) is a Member of Protected Trust Services (PTS) with member number PTS6358 and holds an ATOL Licence (number 12846).
       All the flights and flight-inclusive holidays on this website are financially protected by the ATOL scheme.
@@ -368,16 +470,13 @@
       Holidays are financially secured by PTS. All customer funds are held in an Independent Trust Account for your protection.
     </div>
 
-    <!-- Social Icons -->
     <div class="legal-social">
       <img src="images/facebook.png" class="social-icon" alt="Facebook">
       <img src="images/instagram.png" class="social-icon" alt="Instagram">
       <img src="images/tiktok.png" class="social-icon" alt="TikTok">
     </div>
 
-    <!-- Feature Icons -->
     <div class="legal-features">
-
       <div class="feature-item">
         <img src="images/atol-icon.png" class="feature-icon" alt="ATOL Protected">
         <span>ATOL Protected</span>
@@ -407,11 +506,8 @@
         <img src="images/calendar-icon.png" class="feature-icon" alt="2027/2028 Packages Available">
         <span>2027/2028 Packages Available</span>
       </div>
-
     </div>
-
   </section>
-
 
   <!-- Bootstrap Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
