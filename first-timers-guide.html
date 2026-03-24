@@ -1,945 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>First-Timers Guide to Orlando | Orlando Planning</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Basic styling – adjust colours, fonts, spacing to match your brand -->
-    <style>
-        :root {
-            --primary-bg: #ffffff;
-            --primary-text: #222222;
-            --accent: #0077b6;
-            --accent-dark: #00527f;
-            --nav-bg: #ffffff;
-            --nav-text: #222222;
-            --nav-hover-bg: #f3f6fb;
-            --dropdown-bg: #ffffff;
-            --border-light: #e2e6ee;
-            --section-bg: #f8fafc;
-            --max-width: 1100px;
-            --shadow-soft: 0 8px 20px rgba(0, 0, 0, 0.06);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: var(--primary-bg);
-            color: var(--primary-text);
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        /* Layout helpers */
-        .container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        /* Header & Navigation */
-        header {
-            background: var(--nav-bg);
-            border-bottom: 1px solid var(--border-light);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0.9rem 1.5rem;
-        }
-
-        .logo {
-            font-weight: 700;
-            font-size: 1.2rem;
-            letter-spacing: 0.03em;
-            color: var(--accent-dark);
-        }
-
-        nav {
-            position: relative;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-        }
-
-        .nav-links > li > a {
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--nav-text);
-            padding: 0.4rem 0;
-            position: relative;
-        }
-
-        .nav-links > li > a::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -0.2rem;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: width 0.2s ease;
-        }
-
-        .nav-links > li > a:hover::after,
-        .nav-links > li > a:focus-visible::after {
-            width: 100%;
-        }
-
-        /* Dropdown */
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-toggle {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.25rem;
-        }
-
-        .dropdown-toggle::after {
-            content: "▾";
-            font-size: 0.7rem;
-        }
-
-        .dropdown-menu {
-            position: absolute;
-            top: 120%;
-            left: 0;
-            min-width: 220px;
-            background: var(--dropdown-bg);
-            border-radius: 0.4rem;
-            box-shadow: var(--shadow-soft);
-            border: 1px solid var(--border-light);
-            list-style: none;
-            padding: 0.5rem 0;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(6px);
-            transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
-            z-index: 999;
-        }
-
-        .dropdown-menu li a {
-            display: block;
-            padding: 0.45rem 0.9rem;
-            font-size: 0.9rem;
-            color: var(--nav-text);
-            white-space: nowrap;
-        }
-
-        .dropdown-menu li a:hover {
-            background: var(--nav-hover-bg);
-            color: var(--accent-dark);
-        }
-
-        /* Hover behaviour on desktop */
-        .dropdown:hover .dropdown-menu,
-        .dropdown:focus-within .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        /* Mobile nav toggle */
-        .nav-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 0.25rem;
-            cursor: pointer;
-        }
-
-        .nav-toggle span {
-            width: 22px;
-            height: 2px;
-            background: var(--nav-text);
-            border-radius: 999px;
-        }
-
-        #nav-checkbox {
-            display: none;
-        }
-
-        @media (max-width: 768px) {
-            .nav-wrapper {
-                padding: 0.8rem 1.2rem;
-            }
-
-            .nav-toggle {
-                display: flex;
-            }
-
-            .nav-links {
-                position: absolute;
-                top: 100%;
-                right: 0;
-                left: 0;
-                flex-direction: column;
-                align-items: flex-start;
-                background: var(--nav-bg);
-                padding: 0.75rem 1.5rem 1rem;
-                border-bottom: 1px solid var(--border-light);
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.25s ease;
-            }
-
-            #nav-checkbox:checked ~ nav .nav-links {
-                max-height: 600px;
-            }
-
-            .nav-links > li {
-                width: 100%;
-            }
-
-            .nav-links > li > a {
-                display: block;
-                width: 100%;
-                padding: 0.5rem 0;
-            }
-
-            .dropdown-menu {
-                position: static;
-                box-shadow: none;
-                border: none;
-                border-radius: 0;
-                padding: 0.25rem 0 0.5rem;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-            }
-
-            .dropdown-toggle::after {
-                content: "";
-            }
-        }
-
-        /* Hero section */
-        .hero {
-            background: linear-gradient(135deg, #e3f2ff, #fdfbff);
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .hero-inner {
-            display: grid;
-            grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
-            gap: 2.5rem;
-            padding: 2.5rem 1.5rem 2.75rem;
-            align-items: center;
-        }
-
-        .hero-kicker {
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: var(--accent-dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .hero-title {
-            font-size: clamp(2rem, 3vw, 2.6rem);
-            line-height: 1.15;
-            margin-bottom: 0.75rem;
-        }
-
-        .hero-subtitle {
-            font-size: 0.98rem;
-            max-width: 34rem;
-            color: #4a4f5a;
-            margin-bottom: 1.4rem;
-        }
-
-        .hero-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.6rem;
-        }
-
-        .hero-badge {
-            font-size: 0.78rem;
-            padding: 0.25rem 0.6rem;
-            border-radius: 999px;
-            background: rgba(0, 119, 182, 0.06);
-            color: var(--accent-dark);
-            border: 1px solid rgba(0, 119, 182, 0.18);
-        }
-
-        .hero-cta-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            align-items: center;
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: #ffffff;
-            border-radius: 999px;
-            padding: 0.6rem 1.4rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            box-shadow: 0 8px 18px rgba(0, 119, 182, 0.25);
-        }
-
-        .btn-primary:hover {
-            background: var(--accent-dark);
-        }
-
-        .btn-ghost {
-            background: transparent;
-            border-radius: 999px;
-            padding: 0.55rem 1.2rem;
-            font-size: 0.88rem;
-            font-weight: 500;
-            border: 1px solid var(--border-light);
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            color: #4a4f5a;
-        }
-
-        .hero-note {
-            font-size: 0.8rem;
-            color: #6b7280;
-            margin-top: 0.4rem;
-        }
-
-        .hero-card {
-            background: #ffffff;
-            border-radius: 1rem;
-            padding: 1.4rem 1.3rem;
-            box-shadow: var(--shadow-soft);
-            border: 1px solid var(--border-light);
-        }
-
-        .hero-card-title {
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 0.6rem;
-        }
-
-        .hero-card-list {
-            list-style: none;
-            font-size: 0.85rem;
-            color: #4a4f5a;
-        }
-
-        .hero-card-list li {
-            display: flex;
-            gap: 0.4rem;
-            margin-bottom: 0.35rem;
-        }
-
-        .hero-card-list span {
-            color: var(--accent-dark);
-            font-weight: 600;
-        }
-
-        @media (max-width: 900px) {
-            .hero-inner {
-                grid-template-columns: 1fr;
-                padding-top: 2rem;
-                padding-bottom: 2.2rem;
-            }
-        }
-
-        /* Main content sections */
-        main {
-            padding: 2.5rem 0 3rem;
-        }
-
-        .section {
-            padding: 1.8rem 0;
-        }
-
-        .section:nth-of-type(odd) {
-            background: var(--section-bg);
-        }
-
-        .section-inner {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        .section-header {
-            margin-bottom: 1.1rem;
-        }
-
-        .section-kicker {
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            font-size: 0.72rem;
-            font-weight: 600;
-            color: var(--accent-dark);
-            margin-bottom: 0.3rem;
-        }
-
-        .section-title {
-            font-size: 1.25rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .section-intro {
-            font-size: 0.95rem;
-            color: #4a4f5a;
-            max-width: 40rem;
-        }
-
-        .two-column {
-            display: grid;
-            grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.4fr);
-            gap: 1.8rem;
-            align-items: flex-start;
-        }
-
-        @media (max-width: 900px) {
-            .two-column {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .card {
-            background: #ffffff;
-            border-radius: 0.9rem;
-            padding: 1.1rem 1.1rem 1.2rem;
-            border: 1px solid var(--border-light);
-        }
-
-        .card-title {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.6rem;
-        }
-
-        .card-list {
-            list-style: none;
-            font-size: 0.9rem;
-            color: #4a4f5a;
-        }
-
-        .card-list li {
-            margin-bottom: 0.4rem;
-            padding-left: 1.1rem;
-            position: relative;
-        }
-
-        .card-list li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            top: 0.05rem;
-            color: var(--accent-dark);
-            font-size: 0.9rem;
-        }
-
-        .pill-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-            margin-top: 0.6rem;
-        }
-
-        .pill {
-            font-size: 0.78rem;
-            padding: 0.2rem 0.6rem;
-            border-radius: 999px;
-            border: 1px solid var(--border-light);
-            background: #ffffff;
-            color: #4a4f5a;
-        }
-
-        .highlight-box {
-            border-left: 3px solid var(--accent);
-            background: #f1f7ff;
-            padding: 0.8rem 0.9rem;
-            border-radius: 0.6rem;
-            font-size: 0.9rem;
-            color: #374151;
-        }
-
-        .checklist {
-            list-style: none;
-            font-size: 0.9rem;
-            color: #4a4f5a;
-        }
-
-        .checklist li {
-            display: flex;
-            gap: 0.45rem;
-            margin-bottom: 0.35rem;
-        }
-
-        .checklist span {
-            color: var(--accent-dark);
-            font-weight: 600;
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid var(--border-light);
-            padding: 1.5rem 1.5rem 2rem;
-            font-size: 0.8rem;
-            color: #6b7280;
-        }
-
-        footer .container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>First-Timers Guide | Holidays Your Way</title>
+
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- BOOTSTRAP CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- MAIN SITE STYLES (COPIED FROM ABOUT PAGE) -->
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .hyw-header {
+      background: #ffffff;
+      padding: 15px 0;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .hyw-logo-main {
+      height: 70px;
+      margin-right: 20px;
+    }
+
+    .hyw-partner-group img {
+      height: 55px;
+      margin-left: 10px;
+    }
+
+    .hyw-nav .nav-link {
+      font-weight: 500;
+      padding: 10px 18px;
+      color: #003366;
+    }
+
+    .hyw-nav .nav-link.active {
+      color: #cc0000;
+      font-weight: 600;
+    }
+
+    /* DROPDOWN */
+    .dropdown-menu {
+      border-radius: 0;
+      border: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .dropdown-item:hover {
+      background-color: #003366;
+      color: #fff;
+    }
+
+    /* SECTIONS */
+    .hyw-section {
+      padding: 70px 0;
+    }
+
+    .hyw-section-light {
+      background: #f7f9fc;
+    }
+
+    .hyw-section-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 25px;
+      color: #003366;
+    }
+
+    .hyw-section-intro {
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    /* FOOTERS */
+    .hyw-footer {
+      background: #003366;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 15px;
+    }
+
+    .legal-footer {
+      background: #f1f1f1;
+      padding: 40px 0;
+      text-align: center;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .legal-logos img {
+      height: 55px;
+      margin: 0 10px 20px;
+    }
+
+    .legal-social img {
+      height: 35px;
+      margin: 0 10px;
+    }
+
+    .legal-features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 25px;
+      gap: 25px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 500;
+    }
+
+    .feature-item img {
+      height: 35px;
+    }
+  </style>
 </head>
+
 <body>
+    <!-- NEW PARTNERSHIP HEADER -->
+  <header class="hyw-header">
+    <div class="hyw-header-left d-flex align-items-center">
+      <img src="images/holidays-your-way-logo.png" alt="Holidays Your Way" class="hyw-logo-main">
 
-<header>
-    <div class="nav-wrapper container">
-        <div class="logo">
-            Orlando Planning
-        </div>
-
-        <!-- Mobile nav toggle -->
-        <input type="checkbox" id="nav-checkbox">
-        <label for="nav-checkbox" class="nav-toggle" aria-label="Toggle navigation">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
-
-        <nav aria-label="Main navigation">
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="orlando.html">Orlando</a></li>
-                <li><a href="worldwide.html">Worldwide</a></li>
-
-                <!-- What We Offer with hover dropdown -->
-                <li class="dropdown">
-                    <a href="what-we-offer.html" class="dropdown-toggle">
-                        What We Offer
-                    </a>
-                    <ul class="dropdown-menu" aria-label="What We Offer submenu">
-                        <li><a href="first-timers-guide.html">First-Timers Guide</a></li>
-                        <li><a href="disney-world.html">Disney World</a></li>
-                        <li><a href="universal-orlando.html">Universal Orlando</a></li>
-                        <li><a href="seaworld.html">SeaWorld</a></li>
-                        <li><a href="water-parks.html">Water Parks</a></li>
-                        <li><a href="hotels.html">Hotels</a></li>
-                        <li><a href="planning-tools.html">Planning Tools</a></li>
-                        <li><a href="tips-and-tricks.html">Tips &amp; Tricks</a></li>
-                        <li><a href="dining.html">Dining</a></li>
-                        <li><a href="shopping.html">Shopping</a></li>
-                        <li><a href="transport.html">Transport</a></li>
-                        <li><a href="budgeting.html">Budgeting</a></li>
-                        <li><a href="itineraries.html">Itineraries</a></li>
-                    </ul>
-                </li>
-
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+      <div class="hyw-partner-group d-flex align-items-center">
+        <img src="images/exotic-travel.jpeg" alt="Exotic World Travel" class="hyw-partner-logo">
+        <img src="images/atol-exotic.png" alt="ATOL Protected" class="hyw-atol-logo">
+      </div>
     </div>
-</header>
 
-<!-- HERO / INTRO -->
-<section class="hero">
-    <div class="hero-inner container">
-        <div>
-            <div class="hero-kicker">First-timers guide</div>
-            <h1 class="hero-title">Your first Orlando trip, planned properly.</h1>
-            <p class="hero-subtitle">
-                Overwhelmed by Disney, Universal, tickets, hotels and timings? This guide walks you through
-                your very first Orlando holiday step by step—so you can stop guessing and start getting excited.
-            </p>
+    <nav class="navbar navbar-expand-lg hyw-nav">
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#hywNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-            <div class="hero-badges">
-                <div class="hero-badge">For UK &amp; European travellers</div>
-                <div class="hero-badge">First-timers &amp; “it’s been years” trips</div>
-                <div class="hero-badge">Family &amp; couples friendly</div>
-            </div>
+      <div class="collapse navbar-collapse justify-content-end" id="hywNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
 
-            <div class="hero-cta-row">
-                <button class="btn-primary" type="button">
-                    Start with the basics →
-                </button>
-                <button class="btn-ghost" type="button" onclick="document.getElementById('section-mistakes').scrollIntoView({behavior:'smooth'});">
-                    Skip to common mistakes
-                </button>
-            </div>
-            <p class="hero-note">
-                Use this page as your starting point, then dive into Disney, Universal, hotels and more from the menu.
-            </p>
-        </div>
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="orlando.html">Orlando</a></li>
+          <li class="nav-item"><a class="nav-link" href="destinations.html">Worldwide</a></li>
 
-        <aside class="hero-card">
-            <div class="hero-card-title">In this guide you’ll sort out:</div>
-            <ul class="hero-card-list">
-                <li><span>1.</span> When to go and how long to stay</li>
-                <li><span>2.</span> Where to stay (on-site vs off-site)</li>
-                <li><span>3.</span> Tickets, budgets and realistic costs</li>
-                <li><span>4.</span> How to structure your park days</li>
-                <li><span>5.</span> First-timer mistakes to avoid</li>
+          <!-- DROPDOWN MENU -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="whatWeOfferDropdown" role="button" data-bs-toggle="dropdown">
+              What We Offer
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="whatWeOfferDropdown">
+              <li><a class="dropdown-item" href="services.html">Overview</a></li>
+              <li><a class="dropdown-item" href="first-timers-guide.html">First-Timers Guide</a></li>
+              <li><a class="dropdown-item" href="planning-tips.html">Planning Tips</a></li>
+              <li><a class="dropdown-item" href="booking-support.html">Booking Support</a></li>
             </ul>
-        </aside>
-    </div>
-</section>
+          </li>
 
-<main>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
 
-    <!-- SECTION: Before you book anything -->
-    <section class="section" id="section-before-you-book">
-        <div class="section-inner">
-            <header class="section-header">
-                <div class="section-kicker">Step 1</div>
-                <h2 class="section-title">Before you book anything</h2>
-                <p class="section-intro">
-                    Before you lock in flights, hotels or tickets, you need three things clear:
-                    <strong>when</strong> you’re going, <strong>how long</strong> you’re staying, and
-                    <strong>what kind of trip</strong> you actually want.
-                </p>
-            </header>
-
-            <div class="two-column">
-                <div>
-                    <div class="card">
-                        <h3 class="card-title">Decide the “feel” of your trip</h3>
-                        <ul class="card-list">
-                            <li>Is this a once-in-a-lifetime blowout, or a “we’ll be back again” kind of trip?</li>
-                            <li>Do you want full park days, or a slower mix of parks, pool and shopping?</li>
-                            <li>Are you travelling with young kids, teens, adults only, or a mix?</li>
-                            <li>Is your priority Disney, Universal, “do it all”, or “keep it simple”?</li>
-                        </ul>
-                    </div>
-
-                    <div class="pill-row">
-                        <span class="pill">First big family trip</span>
-                        <span class="pill">Adults-only Disney</span>
-                        <span class="pill">Teens &amp; thrill rides</span>
-                        <span class="pill">Multi-generational</span>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="card">
-                        <h3 class="card-title">How long should you stay?</h3>
-                        <ul class="card-list">
-                            <li><strong>7–10 nights:</strong> A “taster” trip. You’ll need to prioritise.</li>
-                            <li><strong>10–14 nights:</strong> The sweet spot for most first-timers.</li>
-                            <li><strong>14+ nights:</strong> Slower pace, more rest days, more exploring.</li>
-                        </ul>
-                    </div>
-                    <div class="highlight-box" style="margin-top:0.7rem;">
-                        <strong>First-timer tip:</strong> however long you think you need, add at least one
-                        full non-park day. Jet lag, heat and walking catch up with everyone.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION: When to go -->
-    <section class="section" id="section-when-to-go">
-        <div class="section-inner">
-            <header class="section-header">
-                <div class="section-kicker">Step 2</div>
-                <h2 class="section-title">When to go (and what to expect)</h2>
-                <p class="section-intro">
-                    Orlando is open all year, but crowds, heat and prices change a lot depending on when you go.
-                    There’s no “perfect” time—just the best time for <strong>your</strong> priorities.
-                </p>
-            </header>
-
-            <div class="two-column">
-                <div>
-                    <div class="card">
-                        <h3 class="card-title">Popular times for first-timers</h3>
-                        <ul class="card-list">
-                            <li><strong>Easter &amp; summer holidays:</strong> busy, hot, but great atmosphere and long hours.</li>
-                            <li><strong>October half-term:</strong> Halloween events, slightly cooler, still popular.</li>
-                            <li><strong>Christmas &amp; New Year:</strong> magical but extremely busy and premium pricing.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="card">
-                        <h3 class="card-title">If you can be flexible</h3>
-                        <ul class="card-list">
-                            <li>Look at shoulder seasons for slightly lower crowds and nicer weather.</li>
-                            <li>Check school holidays, US holidays and major events before you commit.</li>
-                            <li>Decide what matters more: lower crowds, lower cost, or specific seasonal events.</li>
-                        </ul>
-                    </div>
-                    <div class="highlight-box" style="margin-top:0.7rem;">
-                        <strong>First-timer tip:</strong> don’t chase the “perfect” week. Pick a realistic window,
-                        then plan smartly around crowds and heat.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION: Where to stay -->
-    <section class="section" id="section-where-to-stay">
-        <div class="section-inner">
-            <header class="section-header">
-                <div class="section-kicker">Step 3</div>
-                <h2 class="section-title">Where to stay: on-site vs off-site</h2>
-                <p class="section-intro">
-                    Your hotel choice affects your budget, transport, park access and overall stress levels.
-                    There’s no one “best” option—just what fits your family, your budget and your priorities.
-                </p>
-            </header>
-
-            <div class="two-column">
-                <div>
-                    <div class="card">
-                        <h3 class="card-title">Staying on-site (Disney or Universal)</h3>
-                        <ul class="card-list">
-                            <li>Closer to the parks, often with included transport.</li>
-                            <li>Immersive theming and “bubble” feeling.</li>
-                            <li>Early entry and other on-site perks (varies by hotel and year).</li>
-                            <li>Usually higher cost per night, especially for larger families.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="card">
-                        <h3 class="card-title">Staying off-site (villas &amp; hotels)</h3>
-                        <ul class="card-list">
-                            <li>More space for the money—great for families and groups.</li>
-                            <li>Flexibility with food, pool time and non-park days.</li>
-                            <li>Will usually need a car or to plan transport carefully.</li>
-                            <li>Less “in the bubble”, but often more relaxed.</li>
-                        </ul>
-                    </div>
-                    <div class="highlight-box" style="margin-top:0.7rem;">
-                        <strong>First-timer tip:</strong> decide if you’re a “we’ll be in the parks all day” family
-                        or a “we want space and downtime” family. That answer usually decides your hotel.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION: Tickets & budget -->
-    <section class="section" id="section-tickets-budget">
-        <div class="section-inner">
-            <header class="section-header">
-                <div class="section-kicker">Step 4</div>
-                <h2 class="section-title">Tickets, budget & realistic costs</h2>
-                <p class="section-intro">
-                    Orlando isn’t a cheap holiday, but it doesn’t have to be chaotic either. A clear ticket plan
-                    and a realistic budget will stop the “are we doing this right?” panic before it starts.
-                </p>
-            </header>
-
-            <div class="two-column">
-                <div>
-                    <div class="card">
-                        <h3 class="card-title">Start with your non-negotiables</h3>
-                        <ul class="card-list">
-                            <li>Is Disney a must-do, a nice-to-have, or not this trip?</li>
-                            <li>Is Universal (and the big coasters) essential for your group?</li>
-                            <li>Do you want water parks, or are you happy with hotel pool days?</li>
-                            <li>Are you planning shopping days and off-park exploring?</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="card">
-                        <h3 class="card-title">Build your budget around:</h3>
-                        <ul class="card-list">
-                            <li>Flights and accommodation (your biggest fixed costs).</li>
-                            <li>Park tickets (Disney, Universal, others) based on your priorities.</li>
-                            <li>Food &amp; drink—both in-park and off-site.</li>
-                            <li>Transport (car hire, parking, fuel, or transfers).</li>
-                            <li>Extras: souvenirs, photos, special experiences.</li>
-                        </ul>
-                    </div>
-                    <div class="highlight-box" style="margin-top:0.7rem;">
-                        <strong>First-timer tip:</strong> decide what you’re happy to spend <em>before</em> you start
-                        adding “just one more thing”. Orlando will always offer you more—you don’t have to say yes to everything.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION: Planning your days -->
-    <section class="section" id="section-planning-days">
-        <div class="section-inner">
-            <header class="section-header">
-                <div class="section-kicker">Step 5</div>
-                <h2 class="section-title">How to structure your park days</h2>
-                <p class="section-intro">
-                    A good plan doesn’t mean scheduling every minute. It means knowing which days are parks,
-                    which are rest, and which are flexible—so you don’t burn out halfway through.
-                </p>
-            </header>
-
-            <div class="two-column">
-                <div>
-                    <div class="card">
-                        <h3 class="card-title">A simple first-timer rhythm</h3>
-                        <ul class="card-list">
-                            <li>Alternate heavy park days with lighter or non-park days where possible.</li>
-                            <li>Plan early starts for key parks, then allow for earlier finishes.</li>
-                            <li>Keep at least one “do whatever we feel like” day in the middle of the trip.</li>
-                            <li>Don’t try to “do it all” in one visit—leave room to enjoy being there.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="card">
-                        <h3 class="card-title">Use tools, not pressure</h3>
-                        <ul class="card-list">
-                            <li>Use our itineraries as a guide, not a rulebook.</li>
-                            <li>Make a short list of “must-do” rides and experiences for each park.</li>
-                            <li>Accept that you won’t see everything—and that’s okay.</li>
-                            <li>Build in time for photos, snacks and just soaking it all in.</li>
-                        </ul>
-                    </div>
-                    <div class="highlight-box" style="margin-top:0.7rem;">
-                        <strong>First-timer tip:</strong> your future self will thank you for every rest break
-                        you plan in advance. Tired feet and hot kids don’t care how much the tickets cost.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION: Mistakes to avoid -->
-    <section class="section" id="section-mistakes">
-        <div class="section-inner">
-            <header class="section-header">
-                <div class="section-kicker">Step 6</div>
-                <h2 class="section-title">First-timer mistakes to avoid</h2>
-                <p class="section-intro">
-                    Everyone makes little mistakes on their first Orlando trip—but some are easy to dodge
-                    once you know they’re coming. Here are the big ones to watch out for.
-                </p>
-            </header>
-
-            <div class="two-column">
-                <div>
-                    <div class="card">
-                        <h3 class="card-title">Common first-timer mistakes</h3>
-                        <ul class="card-list">
-                            <li>Trying to “do everything” in one trip and ending up exhausted.</li>
-                            <li>Not planning any proper rest days or slower mornings.</li>
-                            <li>Underestimating walking distances, heat and queue times.</li>
-                            <li>Leaving dining, transport or key bookings until the last minute.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="card">
-                        <h3 class="card-title">What to do instead</h3>
-                        <ul class="card-list">
-                            <li>Pick your non-negotiables and let the rest be a bonus.</li>
-                            <li>Plan “breathing space” into your schedule on purpose.</li>
-                            <li>Wear comfortable shoes and be realistic about pace.</li>
-                            <li>Use this guide, then dive into our Disney, Universal and hotel pages for detail.</li>
-                        </ul>
-                    </div>
-                    <div class="highlight-box" style="margin-top:0.7rem;">
-                        <strong>First-timer tip:</strong> your trip doesn’t have to be perfect to be unforgettable.
-                        The goal is happy memories, not a completed checklist.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION: Checklist / next steps -->
-    <section class="section" id="section-checklist">
-        <div class="section-inner">
-            <header class="section-header">
-                <div class="section-kicker">Next steps</div>
-                <h2 class="section-title">Your simple first-timers checklist</h2>
-                <p class="section-intro">
-                    Use this as your “have we actually thought about this?” list. Once you’re comfortable with
-                    these points, you’re ready to dive deeper into the rest of the site.
-                </p>
-            </header>
-
-            <div class="two-column">
-                <div>
-                    <ul class="checklist">
-                        <li><span>□</span> We know roughly when we want to go.</li>
-                        <li><span>□</span> We’ve decided how long we want to stay.</li>
-                        <li><span>□</span> We’ve talked about the “feel” of the trip.</li>
-                        <li><span>□</span> We’ve thought about on-site vs off-site stays.</li>
-                        <li><span>□</span> We know which parks are non-negotiable for us.</li>
-                        <li><span>□</span> We have a rough budget in mind.</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <div class="card">
-                        <h3 class="card-title">Where to go next on the site</h3>
-                        <ul class="card-list">
-                            <li>Head to <strong>Disney World</strong> for park-by-park breakdowns.</li>
-                            <li>Visit <strong>Universal Orlando</strong> for coasters and Harry Potter planning.</li>
-                            <li>Check <strong>Hotels</strong> for on-site vs off-site options.</li>
-                            <li>Open <strong>Planning Tools</strong> for itineraries and deeper planning help.</li>
-                        </ul>
-                    </div>
-                    <p style="font-size:0.9rem;color:#4b5563;margin-top:0.7rem;">
-                        Bookmark this page and come back to it whenever you feel overwhelmed—it’s your calm
-                        starting point whenever the planning spiral kicks in.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-</main>
-
-<footer>
+        </ul>
+      </div>
+    </nav>
+  </header>
+    <!-- FIRST-TIMERS GUIDE: INTRO SECTION -->
+  <section class="hyw-section hyw-section-light">
     <div class="container">
-        <div>© <!-- YEAR --> Orlando Planning. All rights reserved.</div>
-        <div>First-timers Guide · Built to grow with the rest of your site.</div>
+      <h1 class="hyw-section-title">First-Timers Guide</h1>
+
+      <p class="hyw-section-intro">
+        Planning your first big holiday can feel overwhelming — but it doesn’t have to be.
+        Whether you're dreaming of Orlando theme parks, a relaxing beach escape, or a worldwide adventure,
+        this guide walks you through everything you need to know to get started with confidence.
+      </p>
+
+      <p class="hyw-section-intro">
+        We’ve created this guide to help you understand the process, avoid common mistakes,
+        and feel fully prepared from the moment you start planning to the moment you travel.
+      </p>
     </div>
-</footer>
+  </section>
+    <!-- HOW WE HELP FIRST-TIMERS -->
+  <section class="hyw-section">
+    <div class="container">
+      <h2 class="hyw-section-title">How We Help First‑Timers</h2>
+
+      <p class="hyw-section-intro">
+        Booking your first holiday can feel like stepping into the unknown — but that’s exactly where we come in.
+        Our team specialises in helping first‑time travellers understand every step of the process, from choosing the
+        right destination to navigating travel requirements and planning the perfect itinerary.
+      </p>
+
+      <p class="hyw-section-intro">
+        We break everything down clearly, answer every question (big or small), and make sure you feel confident
+        and supported from the moment you start planning until the moment you return home.
+      </p>
+    </div>
+  </section>
+    <!-- PLANNING YOUR TRIP STEP-BY-STEP -->
+  <section class="hyw-section hyw-section-light">
+    <div class="container">
+      <h2 class="hyw-section-title">Planning Your Trip Step‑by‑Step</h2>
+
+      <p class="hyw-section-intro">
+        Every great holiday starts with a solid plan — and we make that part easy.
+        Here’s how the process usually works for first‑time travellers:
+      </p>
+
+      <ul class="hyw-section-intro">
+        <li><strong>1. Tell us what you’re looking for</strong> — destination ideas, dates, budget, group size, and any must‑haves.</li>
+        <li><strong>2. We build options for you</strong> — tailored holiday suggestions that match your needs and preferences.</li>
+        <li><strong>3. We refine everything together</strong> — adjusting hotels, flights, park tickets, excursions, or extras.</li>
+        <li><strong>4. You approve the final plan</strong> — once you're happy, we lock everything in securely.</li>
+        <li><strong>5. We support you until you return home</strong> — documents, reminders, tips, and real human help whenever you need it.</li>
+      </ul>
+
+      <p class="hyw-section-intro">
+        Whether you’re planning months ahead or booking last‑minute, we guide you through each step so nothing feels confusing or rushed.
+      </p>
+    </div>
+  </section>
+    <!-- COMMON FIRST-TIMER QUESTIONS -->
+  <section class="hyw-section">
+    <div class="container">
+      <h2 class="hyw-section-title">Common First‑Timer Questions</h2>
+
+      <p class="hyw-section-intro">
+        If you’re planning your first holiday, chances are you have a lot of questions.
+        Here are some of the ones we hear most often — and the answers that help put travellers at ease.
+      </p>
+
+      <ul class="hyw-section-intro">
+        <li><strong>“When should I book?”</strong> — The earlier the better, especially for school holidays or Orlando trips.</li>
+        <li><strong>“Do I need travel insurance?”</strong> — Yes, always. We can guide you on what type you need.</li>
+        <li><strong>“What documents do I need?”</strong> — Passports, visas (if required), and any destination‑specific forms.</li>
+        <li><strong>“Can you help me budget?”</strong> — Absolutely. We break down costs clearly so there are no surprises.</li>
+        <li><strong>“What if something goes wrong?”</strong> — You’re never on your own. We’re here before, during, and after your trip.</li>
+      </ul>
+
+      <p class="hyw-section-intro">
+        No question is too small — if you’re unsure about anything, we’re here to help.
+      </p>
+    </div>
+  </section>
+    <!-- WHY BOOK WITH US -->
+  <section class="hyw-section hyw-section-light">
+    <div class="container">
+      <h2 class="hyw-section-title">Why Book With Us</h2>
+
+      <p class="hyw-section-intro">
+        When you're planning your first holiday, having the right support makes all the difference.
+        We don’t just book trips — we guide, explain, reassure, and make sure every detail is taken care of.
+      </p>
+
+      <ul class="hyw-section-intro">
+        <li><strong>Personal guidance</strong> — real people who listen, understand, and tailor everything to you.</li>
+        <li><strong>Clear, honest advice</strong> — no jargon, no confusion, no pressure.</li>
+        <li><strong>Trusted partners</strong> — ATOL‑protected holidays with reputable suppliers.</li>
+        <li><strong>Stress‑free planning</strong> — we handle the details so you can enjoy the excitement.</li>
+        <li><strong>Support from start to finish</strong> — before, during, and after your trip.</li>
+      </ul>
+
+      <p class="hyw-section-intro">
+        Your first holiday should feel exciting — not overwhelming.  
+        We’re here to make sure it’s smooth, simple, and unforgettable.
+      </p>
+    </div>
+  </section>
+    <!-- MAIN BLUE FOOTER -->
+  <footer class="hyw-footer">
+    <div class="container">
+      <p>© 2025 Holidays Your Way. All Rights Reserved.</p>
+      <p>Part of the Exotic World Travel Partnership | ATOL Protected</p>
+    </div>
+  </footer>
+    <!-- LEGAL FOOTER -->
+  <footer class="legal-footer">
+    <div class="container">
+
+      <!-- LOGOS -->
+      <div class="legal-logos">
+        <img src="images/abta.png" alt="ABTA Member">
+        <img src="images/atol-exotic.png" alt="ATOL Protected">
+        <img src="images/exotic-travel.jpeg" alt="Exotic World Travel">
+      </div>
+
+      <!-- SOCIAL ICONS -->
+      <div class="legal-social">
+        <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="images/tiktok.png" alt="TikTok"></a>
+      </div>
+
+      <!-- FEATURES -->
+      <div class="legal-features">
+        <div class="feature-item">
+          <img src="images/check.png" alt="Check">
+          <span>ATOL Protected Holidays</span>
+        </div>
+
+        <div class="feature-item">
+          <img src="images/check.png" alt="Check">
+          <span>Trusted Travel Experts</span>
+        </div>
+
+        <div class="feature-item">
+          <img src="images/check.png" alt="Check">
+          <span>Secure Payments</span>
+        </div>
+
+        <div class="feature-item">
+          <img src="images/check.png" alt="Check">
+          <span>Personalised Support</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+    <!-- BOOTSTRAP SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
