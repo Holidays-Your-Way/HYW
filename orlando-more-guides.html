@@ -93,6 +93,40 @@
       text-transform: none;
     }
 
+    /* HERO CAROUSEL */
+    .orlando-hero-carousel .carousel-item img {
+      max-height: 620px;
+      object-fit: cover;
+    }
+
+    .orlando-hero-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #FFFFFF;
+      text-align: center;
+      text-shadow: 0 4px 18px rgba(0,0,0,0.7);
+      padding: 1.5rem;
+      max-width: 900px;
+    }
+
+    .orlando-hero-title {
+      font-family: "Playfair Display", serif;
+      font-size: 3rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .orlando-hero-subtitle {
+      font-size: 1.3rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .orlando-hero-tagline {
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
     /* SECTIONS */
     .hyw-section {
       padding: 4rem 0;
@@ -275,15 +309,30 @@
     </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="hyw-section">
-    <div class="container text-center">
-      <h1 class="hyw-section-title">More Orlando Guides</h1>
-      <p class="hyw-section-intro">
-        Explore even more of what Orlando has to offer — from dining and shopping to hidden gems and local favourites.
-      </p>
+  <!-- HERO CAROUSEL -->
+  <div id="moreGuidesHero" class="carousel slide orlando-hero-carousel" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <img src="images/disney-hero-1.jpg" class="d-block w-100" alt="Orlando">
+      </div>
+
+      <div class="carousel-item">
+        <img src="images/disney-hero-2.jpg" class="d-block w-100" alt="Orlando">
+      </div>
+
+      <div class="carousel-item">
+        <img src="images/disney-hero-3.jpg" class="d-block w-100" alt="Orlando">
+      </div>
+
     </div>
-  </section>
+
+    <div class="orlando-hero-overlay">
+      <h1 class="orlando-hero-title">More Orlando Guides</h1>
+      <p class="orlando-hero-subtitle">Explore even more of Orlando</p>
+      <p class="orlando-hero-tagline">Dining, shopping, hidden gems & local favourites</p>
+    </div>
+  </div>
 
   <!-- CATEGORY GRID -->
   <section class="hyw-section-grey">
@@ -323,7 +372,8 @@
       </div>
     </div>
   </section>
-    <!-- FOOTER -->
+
+  <!-- FOOTER -->
   <footer class="hyw-footer">
     <div class="container">
       <p class="mb-0">© 2024 Holidays Your Way. All rights reserved.</p>
