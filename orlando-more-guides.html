@@ -88,11 +88,6 @@
       color: var(--hyw-blue);
     }
 
-    .dropdown-menu {
-      font-size: 0.9rem;
-      text-transform: none;
-    }
-
     /* HERO CAROUSEL */
     .orlando-hero-carousel .carousel-item img {
       max-height: 620px;
@@ -127,34 +122,38 @@
       font-weight: 600;
     }
 
-    /* SECTIONS */
+    /* SECTION SPACING */
     .hyw-section {
-      padding: 4rem 0;
+      padding: 4.5rem 0;
     }
 
     .hyw-section-grey {
-      background-color: var(--hyw-grey);
-    }
-
-    .hyw-section-title {
-      font-size: 2.2rem;
-      line-height: 1.25;
-      color: var(--hyw-blue-dark);
-      margin-bottom: 1.2rem;
-    }
-
-    .hyw-section-intro {
-      font-size: 1.05rem;
-      line-height: 1.75;
-      color: #4a5264;
-      margin-bottom: 1.1rem;
+      background-color: #f7f7f7;
     }
 
     /* CATEGORY GRID */
     .category-card {
       background-color: #ffffff;
-      border: 2px solid #e3e6ee;
+      border: 2px solid var(--hyw-blue);
       border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+      font-weight: 700;
+      color: var(--hyw-blue-dark);
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .category-card:hover {
+      background-color: var(--hyw-blue);
+      color: #ffffff;
+    }
+
+    /* GUIDE CARDS */
+    .guide-card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      border: 1px solid #e3e6ee;
       padding: 1.5rem;
       height: 100%;
       display: flex;
@@ -163,108 +162,22 @@
       box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
     }
 
-    .category-card-title {
+    .guide-card-title {
       font-size: 1.05rem;
       font-weight: 700;
       color: var(--hyw-blue-dark);
       margin-bottom: 0.5rem;
     }
 
-    .category-card-text {
+    .guide-card-text {
       font-size: 0.95rem;
       color: #4a5264;
       margin-bottom: 1rem;
     }
-
-    /* FOOTER */
-    .hyw-footer {
-      background-color: #050816;
-      color: #cfd3e3;
-      padding: 1.5rem 0;
-      text-align: center;
-      font-size: 0.85rem;
-    }
-
-    /* LEGAL FOOTER */
-    .legal-footer {
-      background-color: #f5f5f5;
-      padding: 2rem 0;
-      text-align: center;
-      color: #333;
-      font-size: 0.9rem;
-      border-top: 1px solid #ddd;
-    }
-
-    .legal-logos {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1.2rem;
-      margin-bottom: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .legal-exotic-logo {
-      height: 70px;
-      width: auto;
-    }
-
-    .legal-atol-logo {
-      height: 90px;
-      width: auto;
-    }
-
-    .legal-text {
-      max-width: 900px;
-      margin: 0 auto 1.5rem;
-      line-height: 1.5;
-      color: #444;
-    }
-
-    .legal-social {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .social-icon {
-      height: 28px;
-      width: auto;
-      transition: opacity 0.2s ease;
-    }
-
-    .social-icon:hover {
-      opacity: 0.7;
-    }
-
-    .legal-features {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .feature-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-size: 0.85rem;
-      color: #333;
-      max-width: 120px;
-      text-align: center;
-    }
-
-    .feature-icon {
-      height: 40px;
-      width: auto;
-      margin-bottom: 0.4rem;
-    }
   </style>
 </head>
 
-<body class="more-guides-page">
+<body class="more-orlando-page">
 
   <!-- HEADER -->
   <header class="hyw-header">
@@ -310,60 +223,455 @@
   </header>
 
   <!-- HERO CAROUSEL -->
-  <div id="moreGuidesHero" class="carousel slide orlando-hero-carousel" data-bs-ride="carousel">
-    <div class="carousel-inner">
+  <section class="orlando-hero-carousel">
+    <div id="moreGuidesHeroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+      <div class="carousel-inner">
 
-      <div class="carousel-item active">
-        <img src="images/disney-hero-1.jpg" class="d-block w-100" alt="Orlando">
+        <!-- FIRST SLIDE WITH TEXT OVERLAY -->
+        <div class="carousel-item active">
+          <img src="images/orlando-hero.jpg" class="d-block w-100" alt="More Orlando Guides">
+          <div class="orlando-hero-overlay">
+            <h1 class="orlando-hero-title">Your Guide to Orlando Beyond the Parks</h1>
+            <p class="orlando-hero-subtitle">Attractions, nature, beaches, shows, shopping & non‑park days</p>
+            <p class="orlando-hero-tagline">Plan the perfect balance to your holiday</p>
+          </div>
+        </div>
+
+        <!-- REMAINING SLIDES -->
+        <div class="carousel-item"><img src="images/orlando-hotel.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando1.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando2.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando3.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando4.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando5.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando6.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando8.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando9.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando10.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando12.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando13.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando14.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando15.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando16.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando17.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando18.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando19.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando20.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando21.jpg" class="d-block w-100" alt=""></div>
+
       </div>
 
-      <div class="carousel-item">
-        <img src="images/disney-hero-2.jpg" class="d-block w-100" alt="Orlando">
-      </div>
+      <!-- CONTROLS -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#moreGuidesHeroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#moreGuidesHeroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
 
-      <div class="carousel-item">
-        <img src="images/disney-hero-3.jpg" class="d-block w-100" alt="Orlando">
+      <!-- INDICATORS -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#moreGuidesHeroCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#moreGuidesHeroCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#moreGuidesHeroCarousel" data-bs-slide-to="2"></button>
+        <button type="button" data-bs-target="#moreGuidesHeroCarousel" data-bs-slide-to="3"></button>
+        <button type="button" data-bs-target="#moreGuidesHeroCarousel" data-bs-slide-to="4"></button>
+        <button type="button" data-bs-target="#moreGuidesHeroCarousel" data-bs-slide-to="5"></button>
+        <button type="button" data-bs-target="#moreGuidesHeroCarousel" data-bs-slide-to="6"></button>
+        <button type="button" data-bs-target="#moreGuidesHeroCarousel" data-bs-slide-to="7"></button>
+        <button type="button" data-bs-target="#moreGuidesHeroCarousel" data-bs-slide-to="8"></button>
+        <button type="button" data-bs-target="#moreGuidesHeroCarousel" data-bs-slide-to="9"></button>
+        <button type="button" data-bs-target="#moreGuidesHeroCarousel" data-bs-slide-to="10"></button>
+        <button type="button" data-bs-target="#moreGuidesHeroCarousel" data-bs-slide-to="11"></button>
+        <button type="button" data-bs-target="#moreGuidesHeroCarousel" data-bs-slide-to="12"></button>
+        <button type="button" data-bs-target="#moreGuidesHeroCarousel" data-bs-slide-to="13"></button>
+        <button type="button" data-bs-target="#moreGuidesHeroCarousel" data-bs-slide-to="14"></button>
+        <button type="button" data-bs-target="#moreGuidesHeroCarousel" data-bs-slide-to="15"></button>
+        <button type="button" data-bs-target="#moreGuidesHeroCarousel" data-bs-slide-to="16"></button>
+        <button type="button" data-bs-target="#moreGuidesHeroCarousel" data-bs-slide-to="17"></button>
+        <button type="button" data-bs-target="#moreGuidesHeroCarousel" data-bs-slide-to="18"></button>
+        <button type="button" data-bs-target="#moreGuidesHeroCarousel" data-bs-slide-to="19"></button>
+        <button type="button" data-bs-target="#moreGuidesHeroCarousel" data-bs-slide-to="20"></button>
       </div>
 
     </div>
-
-    <div class="orlando-hero-overlay">
-      <h1 class="orlando-hero-title">More Orlando Guides</h1>
-      <p class="orlando-hero-subtitle">Explore even more of Orlando</p>
-      <p class="orlando-hero-tagline">Dining, shopping, hidden gems & local favourites</p>
-    </div>
-  </div>
+  </section>
 
   <!-- CATEGORY GRID -->
-  <section class="hyw-section-grey">
+  <section class="hyw-section hyw-section-grey">
     <div class="container">
       <div class="row g-4">
 
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="category-card">
+          <a href="#icon-park" class="text-decoration-none">
+            <div class="category-card">ICON Park & I‑Drive</div>
+          </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="#animal-nature" class="text-decoration-none">
+            <div class="category-card">Animal & Nature Experiences</div>
+          </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="#day-trips" class="text-decoration-none">
+            <div class="category-card">Day Trips & Big Experiences</div>
+          </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="#other-parks" class="text-decoration-none">
+            <div class="category-card">Other Theme Parks</div>
+          </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="#shows" class="text-decoration-none">
+            <div class="category-card">Shows & Evening Entertainment</div>
+          </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="#shopping" class="text-decoration-none">
+            <div class="category-card">Shopping & Dining Districts</div>
+          </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 mx-auto">
+          <a href="#non-park" class="text-decoration-none">
+            <div class="category-card">Relaxing & Non‑Park Days</div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+    <!-- ICON PARK & I-DRIVE -->
+  <section id="icon-park" class="hyw-section">
+    <div class="container">
+      <h2 class="hyw-section-title">ICON Park & International Drive</h2>
+      <p class="hyw-section-intro">Fun, colourful and full of surprises — I‑Drive is packed with attractions perfect for non‑park days.</p>
+
+      <div class="row g-4">
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="guide-card">
             <div>
-              <h4 class="category-card-title">Dining in Orlando</h4>
-              <p class="category-card-text">From family‑friendly restaurants to themed dining experiences.</p>
+              <h4 class="guide-card-title">ICON Park</h4>
+              <p class="guide-card-text">A lively entertainment complex with attractions, restaurants and great views.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">The Wheel</h4>
+              <p class="guide-card-text">A 400‑ft observation wheel offering stunning views across Orlando.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">WonderWorks</h4>
+              <p class="guide-card-text">The upside‑down house filled with hands‑on fun for all ages.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Ripley’s Believe It or Not</h4>
+              <p class="guide-card-text">Weird, wonderful and brilliantly quirky — perfect for a rainy afternoon.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ANIMAL & NATURE -->
+  <section id="animal-nature" class="hyw-section hyw-section-grey">
+    <div class="container">
+      <h2 class="hyw-section-title">Animal & Nature Experiences</h2>
+      <p class="hyw-section-intro">From gators to manatees, these experiences bring you closer to Florida’s wildlife.</p>
+
+      <div class="row g-4">
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Gatorland</h4>
+              <p class="guide-card-text">A classic Orlando attraction with shows, gators and a surprisingly fun vibe.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Wild Florida</h4>
+              <p class="guide-card-text">Safari drive‑thru, animal encounters and airboats — a brilliant family day out.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Boggy Creek Airboats</h4>
+              <p class="guide-card-text">Glide across the Everglades and spot wildlife in their natural habitat.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Manatee Encounters</h4>
+              <p class="guide-card-text">A magical, gentle experience — swim or snorkel with wild manatees in Crystal River.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DAY TRIPS -->
+  <section id="day-trips" class="hyw-section">
+    <div class="container">
+      <h2 class="hyw-section-title">Day Trips & Big Experiences</h2>
+      <p class="hyw-section-intro">Perfect for rest days or adding something totally different to your holiday.</p>
+
+      <div class="row g-4">
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Kennedy Space Center</h4>
+              <p class="guide-card-text">NASA’s home — rockets, astronauts and unforgettable exhibits.</p>
             </div>
             <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
           </div>
         </div>
 
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="category-card">
+          <div class="guide-card">
             <div>
-              <h4 class="category-card-title">Shopping</h4>
-              <p class="category-card-text">Discover Orlando’s outlets, malls and unique boutiques.</p>
+              <h4 class="guide-card-title">Clearwater Beach</h4>
+              <p class="guide-card-text">Soft white sand, calm waters and a relaxing break from the parks.</p>
             </div>
             <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
           </div>
         </div>
 
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="category-card">
+          <div class="guide-card">
             <div>
-              <h4 class="category-card-title">Attractions Beyond the Parks</h4>
-              <p class="category-card-text">Explore more adventures across Central Florida.</p>
+              <h4 class="guide-card-title">St. Pete Beach</h4>
+              <p class="guide-card-text">A beautiful Gulf Coast beach with a laid‑back vibe.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- OTHER THEME PARKS -->
+  <section id="other-parks" class="hyw-section hyw-section-grey">
+    <div class="container">
+      <h2 class="hyw-section-title">Other Theme Parks</h2>
+      <p class="hyw-section-intro">Beyond the big three — these parks offer something totally different.</p>
+
+      <div class="row g-4">
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Legoland Florida</h4>
+              <p class="guide-card-text">Perfect for younger families — colourful, creative and full of charm.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Peppa Pig Theme Park</h4>
+              <p class="guide-card-text">A toddler’s dream — gentle rides and adorable theming.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Fun Spot America</h4>
+              <p class="guide-card-text">Classic fairground fun with big thrills and a local feel.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWS -->
+  <section id="shows" class="hyw-section">
+    <div class="container">
+      <h2 class="hyw-section-title">Shows & Evening Entertainment</h2>
+      <p class="hyw-section-intro">Orlando comes alive at night — here are some fun ways to spend an evening.</p>
+
+      <div class="row g-4">
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Cirque du Soleil – Drawn to Life</h4>
+              <p class="guide-card-text">A stunning Disney‑inspired show blending acrobatics, music and storytelling.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Outta Control Magic Comedy Dinner Show</h4>
+              <p class="guide-card-text">A hilarious, family‑friendly dinner show with magic, jokes and pizza.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Pirates Dinner Adventure</h4>
+              <p class="guide-card-text">High‑energy stunts, acrobatics and swashbuckling fun for all ages.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOPPING -->
+  <section id="shopping" class="hyw-section hyw-section-grey">
+    <div class="container">
+      <h2 class="hyw-section-title">Shopping & Dining Districts</h2>
+      <p class="hyw-section-intro">From outlets to entertainment districts — here’s where to shop, eat and unwind.</p>
+
+      <div class="row g-4">
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Disney Springs</h4>
+              <p class="guide-card-text">Shops, restaurants and entertainment in a beautiful lakeside setting.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Universal CityWalk</h4>
+              <p class="guide-card-text">Vibrant nightlife, dining and entertainment at Universal Orlando.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">The Pointe Orlando</h4>
+              <p class="guide-card-text">Dining, bars and entertainment on International Drive.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Orlando International Premium Outlets</h4>
+              <p class="guide-card-text">Huge outlet mall with big brands and great deals.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Orlando Vineland Premium Outlets</h4>
+              <p class="guide-card-text">Designer outlets close to Disney — a shopper’s favourite.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NON-PARK DAYS -->
+  <section id="non-park" class="hyw-section">
+    <div class="container">
+      <h2 class="hyw-section-title">Relaxing & Non‑Park Days</h2>
+      <p class="hyw-section-intro">Slow down, recharge and enjoy Orlando at your own pace.</p>
+
+      <div class="row g-4">
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Mini Golf</h4>
+              <p class="guide-card-text">Fun themed courses perfect for a chilled afternoon or evening.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Bowling</h4>
+              <p class="guide-card-text">Great for families — air‑con, snacks and friendly competition.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Resort Days</h4>
+              <p class="guide-card-text">Pool time, cocktails and a well‑earned break from the parks.</p>
             </div>
             <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
           </div>
@@ -423,13 +731,15 @@
           <span>Rated 4.7 on TrustPilot</span>
         </div>
 
+        <!-- ADDED ICON 1 -->
         <div class="feature-item">
           <img src="images/icon-tailored.png" alt="Tailored Travel Experience" class="feature-icon">
           <span>Tailored Travel Experience</span>
         </div>
 
+        <!-- ADDED ICON 2 -->
         <div class="feature-item">
-          <img src="images/icon-calendar.png" alt="2027/2028 Packages" class="feature-icon">
+          <img src="images/icon-calendar.png" alt="2027/2028 Packages Available" class="feature-icon">
           <span>2027/2028 Packages Available</span>
         </div>
 
