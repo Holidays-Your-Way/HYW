@@ -13,9 +13,7 @@
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-  <!-- YOUR MAIN SITE CSS (THIS FIXES THE FOOTER) -->
-  <link rel="stylesheet" href="css/styles.css">
-
+  <!-- FULL ABOUT-PAGE CSS (YOUR MASTER STYLING) -->
   <style>
     :root {
       --hyw-blue: #0A3161;
@@ -91,12 +89,101 @@
       color: var(--hyw-blue);
     }
 
-    .dropdown-menu {
-      font-size: 0.9rem;
-      text-transform: none;
+    /* SECTION SPACING */
+    .hyw-section {
+      padding: 4.5rem 0;
     }
 
-    /* HERO */
+    .hyw-section-light {
+      background-color: #FFFFFF;
+    }
+
+    /* FOOTER */
+    .hyw-footer {
+      background-color: #050816;
+      color: #cfd3e3;
+      padding: 1.5rem 0;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    /* LEGAL FOOTER */
+    .legal-footer {
+      background-color: #f5f5f5;
+      padding: 2rem 0;
+      text-align: center;
+      color: #333;
+      font-size: 0.9rem;
+      border-top: 1px solid #ddd;
+    }
+
+    .legal-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .legal-exotic-logo {
+      height: 70px;
+      width: auto;
+    }
+
+    .legal-atol-logo {
+      height: 90px;
+      width: auto;
+    }
+
+    .legal-text {
+      max-width: 900px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.5;
+      color: #444;
+    }
+
+    .legal-social {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-icon {
+      height: 28px;
+      width: auto;
+      transition: opacity 0.2s ease;
+    }
+
+    .social-icon:hover {
+      opacity: 0.7;
+    }
+
+    .legal-features {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .feature-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.85rem;
+      color: #333;
+      max-width: 120px;
+      text-align: center;
+    }
+
+    .feature-icon {
+      height: 40px;
+      width: auto;
+      margin-bottom: 0.4rem;
+    }
+
+    /* SEAWORLD PAGE EXTRAS */
     .orlando-hero-carousel .carousel-item img {
       max-height: 620px;
       object-fit: cover;
@@ -125,27 +212,8 @@
       margin-bottom: 0.6rem;
     }
 
-    /* SECTIONS */
-    .hyw-section {
-      padding: 4rem 0;
-    }
-
     .hyw-section-grey {
       background-color: #f7f7f7;
-    }
-
-    .hyw-section-title {
-      font-size: 2.2rem;
-      line-height: 1.25;
-      color: var(--hyw-blue-dark);
-      margin-bottom: 1.2rem;
-    }
-
-    .hyw-section-intro {
-      font-size: 1.05rem;
-      line-height: 1.75;
-      color: #4a5264;
-      margin-bottom: 1.1rem;
     }
 
     .guide-card {
@@ -220,12 +288,11 @@
     </nav>
   </header>
 
-  <!-- HERO CAROUSEL -->
+  <!-- HERO -->
   <section class="orlando-hero-carousel">
     <div id="seaworldHeroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
       <div class="carousel-inner">
 
-        <!-- FIRST SLIDE WITH TEXT -->
         <div class="carousel-item active">
           <img src="images/orlando-hero.jpg" class="d-block w-100" alt="SeaWorld Parks">
           <div class="orlando-hero-overlay">
@@ -234,7 +301,6 @@
           </div>
         </div>
 
-        <!-- OTHER SLIDES -->
         <div class="carousel-item">
           <img src="images/orlando1.jpg" class="d-block w-100" alt="Orlando">
         </div>
@@ -244,6 +310,7 @@
         <div class="carousel-item">
           <img src="images/orlando3.jpg" class="d-block w-100" alt="Orlando">
         </div>
+
       </div>
 
       <button class="carousel-control-prev" type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide="prev">
@@ -277,59 +344,45 @@
       </p>
 
       <div class="row g-4">
-
-        <!-- SEAWORLD -->
         <div class="col-12 col-md-6 col-lg-3">
           <div class="guide-card">
             <div>
               <h4 class="guide-card-title">SeaWorld Orlando</h4>
-              <p class="guide-card-text">
-                Big coasters, big shows and a surprisingly chilled vibe. A great mix for families.
-              </p>
+              <p class="guide-card-text">Big coasters, big shows and a surprisingly chilled vibe. A great mix for families.</p>
             </div>
             <a href="seaworld-orlando.html" class="btn btn-outline-primary btn-sm">Read guide</a>
           </div>
         </div>
 
-        <!-- DISCOVERY COVE -->
         <div class="col-12 col-md-6 col-lg-3">
           <div class="guide-card">
             <div>
               <h4 class="guide-card-title">Discovery Cove</h4>
-              <p class="guide-card-text">
-                A tropical, all‑inclusive day that feels nothing like a theme park — in the best way.
-              </p>
+              <p class="guide-card-text">A tropical, all‑inclusive day that feels nothing like a theme park — in the best way.</p>
             </div>
             <a href="discovery-cove.html" class="btn btn-outline-primary btn-sm">Read guide</a>
           </div>
         </div>
 
-        <!-- AQUATICA -->
         <div class="col-12 col-md-6 col-lg-3">
           <div class="guide-card">
             <div>
               <h4 class="guide-card-title">Aquatica</h4>
-              <p class="guide-card-text">
-                Colourful slides, lazy rivers and warm‑weather fun. A brilliant water park for all ages.
-              </p>
+              <p class="guide-card-text">Colourful slides, lazy rivers and warm‑weather fun. A brilliant water park for all ages.</p>
             </div>
             <a href="aquatica.html" class="btn btn-outline-primary btn-sm">Read guide</a>
           </div>
         </div>
 
-        <!-- BUSCH GARDENS -->
         <div class="col-12 col-md-6 col-lg-3">
           <div class="guide-card">
             <div>
               <h4 class="guide-card-title">Busch Gardens</h4>
-              <p class="guide-card-text">
-                Huge coasters, animals and a totally different feel. Worth the drive — trust me.
-              </p>
+              <p class="guide-card-text">Huge coasters, animals and a totally different feel. Worth the drive — trust me.</p>
             </div>
             <a href="busch-gardens.html" class="btn btn-outline-primary btn-sm">Read guide</a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
