@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>More Orlando Guides – Holidays Your Way</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Poppins:wght@500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- FULL ABOUT-PAGE CSS -->
+  <style>
+    :root {
+      --hyw-blue: #0A3161;
+      --hyw-blue-dark: #07203F;
+      --hyw-red-dark: #8A102F;
+      --hyw-white: #FFFFFF;
+      --hyw-text: #1F2430;
+      --hyw-grey: #f7f7f7;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Nunito", sans-serif;
+      color: var(--hyw-text);
+      background-color: var(--hyw-white);
+    }
+
+    h1, h2, h3 {
+      font-family: "Poppins", sans-serif;
+    }
+
+    /* HEADER */
+    .hyw-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.6rem 1rem;
+      background-color: var(--hyw-white);
+      border-bottom: 1px solid #e3e6ee;
+      flex-wrap: wrap;
+      row-gap: 0.75rem;
+    }
+
+    .hyw-header-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hyw-logo-main {
+      height: 120px;
+      width: auto;
+    }
+
+    .hyw-partner-group {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .hyw-partner-logo {
+      height: 96px;
+      width: auto;
+    }
+
+    .hyw-atol-logo {
+      height: 120px;
+      width: auto;
+    }
+
+    .navbar-nav .nav-link {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #394155;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: var(--hyw-blue);
+    }
+
+    /* SECTION SPACING */
+    .hyw-section {
+      padding: 4.5rem 0;
+    }
+
+    .hyw-section-grey {
+      background-color: #f7f7f7;
+    }
+
+    /* CATEGORY GRID */
+    .category-card {
+      background-color: #ffffff;
+      border: 2px solid var(--hyw-blue);
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+      font-weight: 700;
+      color: var(--hyw-blue-dark);
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .category-card:hover {
+      background-color: var(--hyw-blue);
+      color: #ffffff;
+    }
+
+    /* GUIDE CARDS */
+    .guide-card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      border: 1px solid #e3e6ee;
+      padding: 1.5rem;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+    }
+
+    .guide-card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--hyw-blue-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .guide-card-text {
+      font-size: 0.95rem;
+      color: #4a5264;
+      margin-bottom: 1rem;
+    }
+
+    /* FOOTER */
+    .hyw-footer {
+      background-color: #050816;
+      color: #cfd3e3;
+      padding: 1.5rem 0;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    /* LEGAL FOOTER */
+    .legal-footer {
+      background-color: #f5f5f5;
+      padding: 2rem 0;
+      text-align: center;
+      color: #333;
+      font-size: 0.9rem;
+      border-top: 1px solid #ddd;
+    }
+
+    .legal-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .legal-exotic-logo {
+      height: 70px;
+      width: auto;
+    }
+
+    .legal-atol-logo {
+      height: 90px;
+      width: auto;
+    }
+
+    .legal-text {
+      max-width: 900px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.5;
+      color: #444;
+    }
+
+    .legal-social {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-icon {
+      height: 28px;
+      width: auto;
+      transition: opacity 0.2s ease;
+    }
+
+    .social-icon:hover {
+      opacity: 0.7;
+    }
+
+    .legal-features {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .feature-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.85rem;
+      color: #333;
+      max-width: 120px;
+      text-align: center;
+    }
+
+    .feature-icon {
+      height: 40px;
+      width: auto;
+      margin-bottom: 0.4rem;
+    }
+  </style>
+</head>
+
+<body class="more-orlando-page">
+
+  <!-- HEADER -->
+  <header class="hyw-header">
+    <div class="hyw-header-left">
+      <img src="images/holidays-your-way-logo.png" alt="Holidays Your Way" class="hyw-logo-main">
+
+      <div class="hyw-partner-group">
+        <img src="images/exotic-travel.jpeg" alt="Exotic World Travel" class="hyw-partner-logo">
+        <img src="images/atol-exotic.png" alt="ATOL Protected" class="hyw-atol-logo">
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg hyw-nav">
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#hywNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="hywNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+
+          <!-- ORLANDO DROPDOWN -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" id="orlandoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Orlando
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="orlandoDropdown">
+              <li><a class="dropdown-item" href="orlando-first-timers-guide.html">First‑Timers Guide</a></li>
+              <li><a class="dropdown-item" href="disney-guide.html">Disney</a></li>
+              <li><a class="dropdown-item" href="universal-orlando-guide.html">Universal</a></li>
+              <li><a class="dropdown-item" href="seaworld-parks.html">SeaWorld Parks</a></li>
+              <li><a class="dropdown-item" href="orlando-more-guides.html">More Guides</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="destinations.html">Worldwide</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">What We Offer</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hyw-section">
+    <div class="container text-center">
+      <h1 class="hyw-section-title">More Orlando Guides</h1>
+      <p class="hyw-section-intro">
+        Orlando is so much more than theme parks. From wildlife encounters to dinner shows, day trips, shopping districts and hidden gems — here’s your friendly guide to everything else that makes Orlando unforgettable.
+      </p>
+    </div>
+  </section>
+
+  <!-- CATEGORY GRID -->
+  <section class="hyw-section hyw-section-grey">
+    <div class="container">
+      <div class="row g-4">
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="#icon-park" class="text-decoration-none">
+            <div class="category-card">ICON Park & I‑Drive</div>
+          </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="#animal-nature" class="text-decoration-none">
+            <div class="category-card">Animal & Nature Experiences</div>
+          </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="#day-trips" class="text-decoration-none">
+            <div class="category-card">Day Trips & Big Experiences</div>
+          </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="#other-parks" class="text-decoration-none">
+            <div class="category-card">Other Theme Parks</div>
+          </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="#shows" class="text-decoration-none">
+            <div class="category-card">Shows & Evening Entertainment</div>
+          </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="#shopping" class="text-decoration-none">
+            <div class="category-card">Shopping & Dining Districts</div>
+          </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 mx-auto">
+          <a href="#non-park" class="text-decoration-none">
+            <div class="category-card">Relaxing & Non‑Park Days</div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+    <!-- ICON PARK & I-DRIVE -->
+  <section id="icon-park" class="hyw-section">
+    <div class="container">
+      <h2 class="hyw-section-title">ICON Park & International Drive</h2>
+      <p class="hyw-section-intro">Fun, colourful and full of surprises — I‑Drive is packed with attractions perfect for non‑park days.</p>
+
+      <div class="row g-4">
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">ICON Park</h4>
+              <p class="guide-card-text">A lively entertainment complex with attractions, restaurants and great views.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">The Wheel</h4>
+              <p class="guide-card-text">A 400‑ft observation wheel offering stunning views across Orlando.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">WonderWorks</h4>
+              <p class="guide-card-text">The upside‑down house filled with hands‑on fun for all ages.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Ripley’s Believe It or Not</h4>
+              <p class="guide-card-text">Weird, wonderful and brilliantly quirky — perfect for a rainy afternoon.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ANIMAL & NATURE -->
+  <section id="animal-nature" class="hyw-section hyw-section-grey">
+    <div class="container">
+      <h2 class="hyw-section-title">Animal & Nature Experiences</h2>
+      <p class="hyw-section-intro">From gators to manatees, these experiences bring you closer to Florida’s wildlife.</p>
+
+      <div class="row g-4">
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Gatorland</h4>
+              <p class="guide-card-text">A classic Orlando attraction with shows, gators and a surprisingly fun vibe.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Wild Florida</h4>
+              <p class="guide-card-text">Safari drive‑thru, animal encounters and airboats — a brilliant family day out.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Boggy Creek Airboats</h4>
+              <p class="guide-card-text">Glide across the Everglades and spot wildlife in their natural habitat.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Manatee Encounters</h4>
+              <p class="guide-card-text">A magical, gentle experience — swim or snorkel with wild manatees in Crystal River.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DAY TRIPS -->
+  <section id="day-trips" class="hyw-section">
+    <div class="container">
+      <h2 class="hyw-section-title">Day Trips & Big Experiences</h2>
+      <p class="hyw-section-intro">Perfect for rest days or adding something totally different to your holiday.</p>
+
+      <div class="row g-4">
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Kennedy Space Center</h4>
+              <p class="guide-card-text">NASA’s home — rockets, astronauts and unforgettable exhibits.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Clearwater Beach</h4>
+              <p class="guide-card-text">Soft white sand, calm waters and a relaxing break from the parks.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">St. Pete Beach</h4>
+              <p class="guide-card-text">A beautiful Gulf Coast beach with a laid‑back vibe.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- OTHER THEME PARKS -->
+  <section id="other-parks" class="hyw-section hyw-section-grey">
+    <div class="container">
+      <h2 class="hyw-section-title">Other Theme Parks</h2>
+      <p class="hyw-section-intro">Beyond the big three — these parks offer something totally different.</p>
+
+      <div class="row g-4">
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Legoland Florida</h4>
+              <p class="guide-card-text">Perfect for younger families — colourful, creative and full of charm.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Peppa Pig Theme Park</h4>
+              <p class="guide-card-text">A toddler’s dream — gentle rides and adorable theming.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Fun Spot America</h4>
+              <p class="guide-card-text">Classic fairground fun with big thrills and a local feel.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWS -->
+  <section id="shows" class="hyw-section">
+    <div class="container">
+      <h2 class="hyw-section-title">Shows & Evening Entertainment</h2>
+      <p class="hyw-section-intro">Orlando comes alive at night — here are some fun ways to spend an evening.</p>
+
+      <div class="row g-4">
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Cirque du Soleil – Drawn to Life</h4>
+              <p class="guide-card-text">A stunning Disney‑inspired show blending acrobatics, music and storytelling.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Outta Control Magic Comedy Dinner Show</h4>
+              <p class="guide-card-text">A hilarious, family‑friendly dinner show with magic, jokes and pizza.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Pirates Dinner Adventure</h4>
+              <p class="guide-card-text">High‑energy stunts, acrobatics and swashbuckling fun for all ages.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOPPING -->
+  <section id="shopping" class="hyw-section hyw-section-grey">
+    <div class="container">
+      <h2 class="hyw-section-title">Shopping & Dining Districts</h2>
+      <p class="hyw-section-intro">From outlets to entertainment districts — here’s where to shop, eat and unwind.</p>
+
+      <div class="row g-4">
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Disney Springs</h4>
+              <p class="guide-card-text">Shops, restaurants and entertainment in a beautiful lakeside setting.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Universal CityWalk</h4>
+              <p class="guide-card-text">Vibrant nightlife, dining and entertainment at Universal Orlando.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">The Pointe Orlando</h4>
+              <p class="guide-card-text">Dining, bars and entertainment on International Drive.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Orlando International Premium Outlets</h4>
+              <p class="guide-card-text">Huge outlet mall with big brands and great deals.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Orlando Vineland Premium Outlets</h4>
+              <p class="guide-card-text">Designer outlets close to Disney — a shopper’s favourite.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NON-PARK DAYS -->
+  <section id="non-park" class="hyw-section">
+    <div class="container">
+      <h2 class="hyw-section-title">Relaxing & Non‑Park Days</h2>
+      <p class="hyw-section-intro">Slow down, recharge and enjoy Orlando at your own pace.</p>
+
+      <div class="row g-4">
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Mini Golf</h4>
+              <p class="guide-card-text">Fun themed courses perfect for a chilled afternoon or evening.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Bowling</h4>
+              <p class="guide-card-text">Great for families — air‑con, snacks and friendly competition.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="guide-card">
+            <div>
+              <h4 class="guide-card-title">Resort Days</h4>
+              <p class="guide-card-text">Pool time, cocktails and a well‑earned break from the parks.</p>
+            </div>
+            <a href="#" class="btn btn-outline-primary btn-sm">Coming soon</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="hyw-footer">
+    <div class="container">
+      <p class="mb-0">© 2024 Holidays Your Way. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- LEGAL FOOTER -->
+  <section class="legal-footer">
+    <div class="container">
+
+      <div class="legal-logos">
+        <img src="images/exotic-travel.jpeg" alt="Exotic World Travel" class="legal-exotic-logo">
+        <img src="images/atol-exotic.png" alt="ATOL Protected" class="legal-atol-logo">
+      </div>
+
+      <p class="legal-text">
+        Exotic World Travel Ltd (company number 16110795) is a Member of Protected Trust Services (PTS) with member number PTS6358 and holds an ATOL Licence (number 12846).
+        All the flights and flight-inclusive holidays on this website are financially protected by the ATOL scheme. When you pay you will be supplied with an ATOL Certificate.
+        Please ask for it and check to ensure that everything you booked (flights, hotels and other services) is listed on it. For more information about financial protection and the ATOL Certificate go to www.caa.co.uk.
+        Holidays are financially secured by PTS. All customer funds are held in an Independent Trust Account for your protection.
+      </p>
+
+      <div class="legal-social">
+        <a href="#"><img src="images/facebook-new.png" alt="Facebook" class="social-icon"></a>
+        <a href="#"><img src="images/instagram-new.png" alt="Instagram" class="social-icon"></a>
+      </div>
+
+      <div class="legal-features">
+        <div class="feature-item">
+          <img src="images/atol-exotic.png" alt="ATOL Protected" class="feature-icon">
+          <span>ATOL Protected</span>
+        </div>
+
+        <div class="feature-item">
+          <img src="images/icon-deposit.png" alt="Deposits from £50pp" class="feature-icon">
+          <span>Deposits from £50pp*</span>
+        </div>
+
+        <div class="feature-item">
+          <img src="images/icon-payments.png" alt="Flexible Payments" class="feature-icon">
+          <span>Flexible Payments</span>
+        </div>
+
+        <div class="feature-item">
+          <img src="images/icon-trustpilot.png" alt="TrustPilot Rating" class="feature-icon">
+          <span>Rated 4.7 on TrustPilot</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
