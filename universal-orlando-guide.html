@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Start Your Universal Adventure Here – Holidays Your Way</title>
+  <title>Your Guide to Universal – Holidays Your Way</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -88,12 +88,69 @@
       color: var(--hyw-blue);
     }
 
-    .dropdown-menu {
-      font-size: 0.9rem;
-      text-transform: none;
+    /* PAGE TITLE BAR */
+    .page-title-bar {
+      background-color: var(--hyw-red-dark);
+      color: #ffffff;
+      padding: 1.75rem 0;
+      text-align: center;
     }
 
-    /* TYPOGRAPHY & SECTIONS */
+    .page-title-bar h1 {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* UNIVERSAL HERO OVERLAY (CINEMATIC, LOWER THIRD) */
+    .universal-hero-overlay {
+      position: absolute;
+      bottom: 12%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      color: #fff;
+      max-width: 900px;
+      padding: 1.5rem 2rem;
+      text-shadow: 0 4px 18px rgba(0,0,0,0.85);
+    }
+
+    .universal-hero-title {
+      font-family: "Playfair Display", serif;
+      font-size: 3rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .universal-hero-subtitle {
+      font-size: 1.25rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .universal-hero-tagline {
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    /* HERO CAROUSEL */
+    .orlando-hero-carousel .carousel-item img {
+      max-height: 620px;
+      object-fit: cover;
+    }
+
+    /* SECTIONS */
+    .hyw-section {
+      padding: 4rem 0;
+    }
+
+    .hyw-section-light {
+      background-color: #FFFFFF;
+    }
+
+    .hyw-section-grey {
+      background-color: var(--hyw-grey);
+    }
+
     .hyw-section-title {
       font-size: 2.2rem;
       line-height: 1.25;
@@ -108,18 +165,6 @@
       margin-bottom: 1.1rem;
     }
 
-    .hyw-section {
-      padding: 4rem 0;
-    }
-
-    .hyw-section-light {
-      background-color: #FFFFFF;
-    }
-
-    .hyw-section-grey {
-      background-color: var(--hyw-grey);
-    }
-
     .step-label {
       font-size: 0.85rem;
       font-weight: 700;
@@ -127,126 +172,6 @@
       text-transform: uppercase;
       color: var(--hyw-red-dark);
       margin-bottom: 0.4rem;
-    }
-
-    /* FOOTER */
-    .hyw-footer {
-      background-color: #050816;
-      color: #cfd3e3;
-      padding: 1.5rem 0;
-      text-align: center;
-      font-size: 0.85rem;
-    }
-
-    /* LEGAL FOOTER */
-    .legal-footer {
-      background-color: #f5f5f5;
-      padding: 2rem 0;
-      text-align: center;
-      color: #333;
-      font-size: 0.9rem;
-      border-top: 1px solid #ddd;
-    }
-
-    .legal-logos {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1.2rem;
-      margin-bottom: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .legal-exotic-logo {
-      height: 70px;
-      width: auto;
-    }
-
-    .legal-atol-logo {
-      height: 90px;
-      width: auto;
-    }
-
-    .legal-text {
-      max-width: 900px;
-      margin: 0 auto 1.5rem;
-      line-height: 1.5;
-      color: #444;
-    }
-
-    .legal-social {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .social-icon {
-      height: 28px;
-      width: auto;
-      transition: opacity 0.2s ease;
-    }
-
-    .social-icon:hover {
-      opacity: 0.7;
-    }
-
-    .legal-features {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .feature-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-size: 0.85rem;
-      color: #333;
-      max-width: 120px;
-      text-align: center;
-    }
-
-    .feature-icon {
-      height: 40px;
-      width: auto;
-      margin-bottom: 0.4rem;
-    }
-
-    /* HERO CAROUSEL */
-    .orlando-hero-carousel .carousel-item img {
-      max-height: 620px;
-      object-fit: cover;
-    }
-
-    .orlando-hero-overlay {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: #FFFFFF;
-      text-align: center;
-      text-shadow: 0 4px 18px rgba(0,0,0,0.7);
-      padding: 1.5rem;
-      max-width: 900px;
-    }
-
-    .orlando-hero-title {
-      font-family: "Playfair Display", serif;
-      font-size: 3rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .orlando-hero-subtitle {
-      font-size: 1.3rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .orlando-hero-tagline {
-      font-size: 1.05rem;
-      font-weight: 600;
     }
 
     /* GUIDE GRID */
@@ -267,14 +192,14 @@
     }
 
     .guide-card-title {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 700;
       color: var(--hyw-blue-dark);
       margin-bottom: 0.5rem;
     }
 
     .guide-card-text {
-      font-size: 0.98rem;
+      font-size: 0.95rem;
       color: #4a5264;
       margin-bottom: 1rem;
     }
@@ -287,25 +212,12 @@
       letter-spacing: 0.08em;
     }
 
-    @media (max-width: 991.98px) {
-      .hyw-header {
-        justify-content: center;
-      }
-    }
-
+    /* RESPONSIVE */
     @media (max-width: 767.98px) {
-      .orlando-hero-title {
-        font-size: 2.1rem;
-      }
-      .orlando-hero-subtitle {
-        font-size: 1.05rem;
-      }
-      .orlando-hero-tagline {
-        font-size: 0.95rem;
-      }
-      .orlando-hero-overlay {
-        padding: 1rem;
-      }
+      .universal-hero-title { font-size: 2.2rem; }
+      .universal-hero-subtitle { font-size: 1.05rem; }
+      .universal-hero-tagline { font-size: 0.95rem; }
+      .universal-hero-overlay { padding: 1rem; }
     }
   </style>
 </head>
@@ -335,10 +247,10 @@
 
           <!-- ORLANDO DROPDOWN -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="orlando-universal.html" id="orlandoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle active" href="universal-orlando-guide.html" id="orlandoDropdown" role="button" data-bs-toggle="dropdown">
               Orlando
             </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="orlandoDropdown">
+            <ul class="dropdown-menu dropdown-menu-end">
               <li><a class="dropdown-item" href="orlando-first-timers.html">First‑Timers Guide</a></li>
               <li><a class="dropdown-item" href="disney-guide.html">Disney</a></li>
               <li><a class="dropdown-item" href="universal-orlando-guide.html">Universal</a></li>
@@ -355,129 +267,88 @@
     </nav>
   </header>
 
-  <!-- HERO CAROUSEL (same images as Orlando for now) -->
+  <!-- PAGE TITLE BAR -->
+  <section class="page-title-bar">
+    <h1>Your Guide to Universal</h1>
+  </section>
+
+  <!-- HERO CAROUSEL -->
   <section class="orlando-hero-carousel">
     <div id="universalHeroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
       <div class="carousel-inner">
 
-        <!-- FIRST SLIDE WITH TEXT OVERLAY -->
+        <!-- FIRST SLIDE WITH UNIVERSAL OVERLAY -->
         <div class="carousel-item active">
           <img src="images/orlando-hero.jpg" class="d-block w-100" alt="Universal Orlando">
-          <div class="orlando-hero-overlay">
-            <h1 class="orlando-hero-title">Start Your Universal Adventure Here</h1>
-            <p class="orlando-hero-subtitle">A calm, clear starting point for planning your Universal Orlando holiday</p>
-            <p class="orlando-hero-tagline">Pop the kettle on, and let’s walk through Universal together — one step at a time</p>
+          <div class="universal-hero-overlay">
+            <h1 class="universal-hero-title">Start Your Universal Adventure Here</h1>
+            <p class="universal-hero-subtitle">A calm, clear starting point for planning your Universal Orlando holiday</p>
+            <p class="universal-hero-tagline">Pop the kettle on, and let’s walk through Universal together — one step at a time</p>
           </div>
         </div>
 
-        <!-- REMAINING SLIDES (IMAGES ONLY) -->
-        <div class="carousel-item">
-          <img src="images/orlando-hotel.jpg" class="d-block w-100" alt="Orlando Hotel">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando1.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando2.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando3.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando4.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando5.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando6.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando8.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando9.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando10.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando12.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando13.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando14.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando15.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando16.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando17.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando18.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando19.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando20.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando21.jpg" class="d-block w-100" alt="Orlando">
-        </div>
+        <!-- REMAINING SLIDES -->
+        <div class="carousel-item"><img src="images/orlando-hotel.jpg" class="d-block w-100"></div>
+        <div class="carousel-item"><img src="images/orlando1.jpg" class="d-block w-100"></div>
+        <div class="carousel-item"><img src="images/orlando2.jpg" class="d-block w-100"></div>
+        <div class="carousel-item"><img src="images/orlando3.jpg" class="d-block w-100"></div>
+        <div class="carousel-item"><img src="images/orlando4.jpg" class="d-block w-100"></div>
+        <div class="carousel-item"><img src="images/orlando5.jpg" class="d-block w-100"></div>
+        <div class="carousel-item"><img src="images/orlando6.jpg" class="d-block w-100"></div>
+        <div class="carousel-item"><img src="images/orlando8.jpg" class="d-block w-100"></div>
+        <div class="carousel-item"><img src="images/orlando9.jpg" class="d-block w-100"></div>
+        <div class="carousel-item"><img src="images/orlando10.jpg" class="d-block w-100"></div>
+        <div class="carousel-item"><img src="images/orlando12.jpg" class="d-block w-100"></div>
+        <div class="carousel-item"><img src="images/orlando13.jpg" class="d-block w-100"></div>
+        <div class="carousel-item"><img src="images/orlando14.jpg" class="d-block w-100"></div>
+        <div class="carousel-item"><img src="images/orlando15.jpg" class="d-block w-100"></div>
+        <div class="carousel-item"><img src="images/orlando16.jpg" class="d-block w-100"></div>
+        <div class="carousel-item"><img src="images/orlando17.jpg" class="d-block w-100"></div>
+        <div class="carousel-item"><img src="images/orlando18.jpg" class="d-block w-100"></div>
+        <div class="carousel-item"><img src="images/orlando19.jpg" class="d-block w-100"></div>
+        <div class="carousel-item"><img src="images/orlando20.jpg" class="d-block w-100"></div>
+        <div class="carousel-item"><img src="images/orlando21.jpg" class="d-block w-100"></div>
       </div>
 
-      <button class="carousel-control-prev" type="button" data-bs-target="#universalHeroCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#universalHeroCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-
+      <!-- INDICATORS -->
       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
-        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
-        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
-        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
-        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="9" aria-label="Slide 10"></button>
-        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="10" aria-label="Slide 11"></button>
-        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="11" aria-label="Slide 12"></button>
-        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="12" aria-label="Slide 13"></button>
-        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="13" aria-label="Slide 14"></button>
-        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="14" aria-label="Slide 15"></button>
-        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="15" aria-label="Slide 16"></button>
-        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="16" aria-label="Slide 17"></button>
-        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="17" aria-label="Slide 18"></button>
-        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="18" aria-label="Slide 19"></button>
-        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="19" aria-label="Slide 20"></button>
-        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="20" aria-label="Slide 21"></button>
+        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="2"></button>
+        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="3"></button>
+        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="4"></button>
+        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="5"></button>
+        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="6"></button>
+        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="7"></button>
+        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="8"></button>
+        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="9"></button>
+        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="10"></button>
+        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="11"></button>
+        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="12"></button>
+        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="13"></button>
+        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="14"></button>
+        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="15"></button>
+        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="16"></button>
+        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="17"></button>
+        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="18"></button>
+        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="19"></button>
+        <button type="button" data-bs-target="#universalHeroCarousel" data-bs-slide-to="20"></button>
       </div>
     </div>
   </section>
-
-  <!-- UNIVERSAL HUB CONTENT -->
+    <!-- UNIVERSAL HUB CONTENT -->
   <section class="hyw-section hyw-section-light">
     <div class="container">
       <h2 class="hyw-section-title">Start Your Universal Adventure Here</h2>
+
       <p class="hyw-section-intro">
         Universal Orlando is one of my favourite places in the world. It’s full of energy, imagination and those “we’ll talk about this for years” moments. I’ve been visiting Orlando for over <strong>40 years</strong>, and I’ve been exploring Universal since it first opened its gates in <strong>June 1990</strong>.
       </p>
+
       <p class="hyw-section-intro">
         I’ve watched it grow from a single park into a full resort with four theme parks, brilliant hotels, fantastic dining and so much to explore. This page is your calm, clear starting point — a hub that brings everything together and helps you find the guides that fit your family, your pace and your style.
       </p>
+
       <p class="hyw-section-intro">
         Whether you’re travelling with little ones, teens, adults, first‑timers or a mix of everything, you don’t need to know it all. You just need someone who does. That’s where I come in.
       </p>
@@ -489,11 +360,13 @@
     <div class="container">
       <p class="step-label">Universal guides</p>
       <h2 class="hyw-section-title">Choose the guide that feels most like you</h2>
+
       <p class="hyw-section-intro">
         Think of this as your Universal “menu”. Pick the guide that matches your travel style, and dive deeper from there. You can read one, a few, or all of them — there’s no wrong way to plan your Universal adventure.
       </p>
 
       <div class="row guide-grid g-4">
+
         <!-- Universal Studios -->
         <div class="col-12 col-md-6 col-lg-4">
           <div class="guide-card">
@@ -636,6 +509,7 @@
             <a href="universal-dining-guide.html" class="btn btn-outline-primary btn-sm">Read guide</a>
           </div>
         </div>
+
       </div>
 
       <div class="mt-4">
@@ -643,13 +517,13 @@
           You don’t have to read everything or plan every minute. Pick the guides that speak to you, and if it still feels like a lot, that’s exactly what I’m here for — to turn all of this into a holiday that feels exciting, not exhausting.
         </p>
       </div>
+
     </div>
   </section>
-
-  <!-- FOOTER -->
+    <!-- FOOTER -->
   <footer class="hyw-footer">
     <div class="container">
-      <p class="mb-0">© 2024 Holidays Your Way. All rights reserved. </p>
+      <p class="mb-0">© 2024 Holidays Your Way. All rights reserved.</p>
     </div>
   </footer>
 
@@ -713,6 +587,8 @@
     </div>
   </section>
 
+  <!-- BOOTSTRAP JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
