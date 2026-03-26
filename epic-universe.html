@@ -88,45 +88,64 @@
       color: var(--hyw-blue);
     }
 
-    /* HERO CAROUSEL */
-    .orlando-hero-carousel {
-      position: relative; /* REQUIRED for overlay to anchor correctly */
+    /* PAGE TITLE BAR */
+    .page-title-bar {
+      background-color: var(--hyw-red-dark);
+      color: #ffffff;
+      padding: 1.75rem 0;
+      text-align: center;
     }
 
+    .page-title-bar h1 {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* HERO CAROUSEL */
     .orlando-hero-carousel .carousel-item img {
       max-height: 620px;
       object-fit: cover;
     }
 
-    /* FIXED OVERLAY — ALWAYS VISIBLE */
-    .orlando-hero-overlay {
+    /* LOWER-THIRD OVERLAY */
+    .epic-hero-overlay {
       position: absolute;
-      z-index: 10; /* ensures overlay stays above all slides */
-      bottom: 12%; /* OPTION B — lower cinematic placement */
+      bottom: 12%;
       left: 50%;
       transform: translateX(-50%);
-      color: #FFFFFF;
       text-align: center;
-      text-shadow: 0 4px 18px rgba(0,0,0,0.7);
-      padding: 1.5rem;
+      color: #fff;
       max-width: 900px;
-      width: 100%;
+      padding: 1.5rem 2rem;
+      text-shadow: 0 4px 18px rgba(0,0,0,0.85);
+      z-index: 10;
     }
 
-    .orlando-hero-title {
+    .epic-hero-title {
       font-family: "Playfair Display", serif;
       font-size: 3rem;
       margin-bottom: 0.8rem;
     }
 
-    .orlando-hero-subtitle {
-      font-size: 1.3rem;
-      margin-bottom: 0.6rem;
+    .epic-hero-subtitle {
+      font-size: 1.25rem;
+      margin-bottom: 0.4rem;
     }
 
-    .orlando-hero-tagline {
+    .epic-hero-tagline {
       font-size: 1.05rem;
       font-weight: 600;
+    }
+
+    /* CONTENT SECTIONS */
+    .hyw-section {
+      padding: 4rem 0;
+    }
+
+    .hyw-section-grey {
+      background-color: var(--hyw-grey);
     }
 
     /* FOOTER */
@@ -241,10 +260,10 @@
 
           <!-- ORLANDO DROPDOWN -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" id="orlandoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle active" href="#" id="orlandoDropdown" role="button" data-bs-toggle="dropdown">
               Orlando
             </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="orlandoDropdown">
+            <ul class="dropdown-menu dropdown-menu-end">
               <li><a class="dropdown-item" href="orlando-first-timers-guide.html">First‑Timers Guide</a></li>
               <li><a class="dropdown-item" href="disney-guide.html">Disney</a></li>
               <li><a class="dropdown-item" href="universal-orlando-guide.html">Universal</a></li>
@@ -261,11 +280,16 @@
     </nav>
   </header>
 
+  <!-- PAGE TITLE BAR -->
+  <section class="page-title-bar">
+    <h1>Epic Universe</h1>
+  </section>
+
   <!-- HERO CAROUSEL -->
   <section class="orlando-hero-carousel">
     <div id="epicUniverseHeroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
-      <div class="carousel-inner">
 
+      <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="images/orlando-hero.jpg" class="d-block w-100" alt="Epic Universe">
         </div>
@@ -290,7 +314,13 @@
         <div class="carousel-item"><img src="images/orlando19.jpg" class="d-block w-100" alt=""></div>
         <div class="carousel-item"><img src="images/orlando20.jpg" class="d-block w-100" alt=""></div>
         <div class="carousel-item"><img src="images/orlando21.jpg" class="d-block w-100" alt=""></div>
+      </div>
 
+      <!-- LOWER-THIRD OVERLAY -->
+      <div class="epic-hero-overlay">
+        <h1 class="epic-hero-title">Epic Universe</h1>
+        <p class="epic-hero-subtitle">Visually stunning by day… unforgettable after dark</p>
+        <p class="epic-hero-tagline">Your guide to the park’s best experiences</p>
       </div>
 
       <!-- CONTROLS -->
@@ -300,23 +330,17 @@
       <button class="carousel-control-next" type="button" data-bs-target="#epicUniverseHeroCarousel" data-bs-slide="next">
         <span class="carousel-control-next-icon"></span>
       </button>
-    </div>
 
-    <!-- FIXED OVERLAY (always visible) -->
-    <div class="orlando-hero-overlay">
-      <h1 class="orlando-hero-title">Epic Universe</h1>
-      <p class="orlando-hero-subtitle">Visually stunning by day… unforgettable after dark</p>
-      <p class="orlando-hero-tagline">Your guide to the park’s best experiences</p>
     </div>
   </section>
-
-  <!-- MAIN CONTENT -->
-  <section class="py-5">
+    <!-- MAIN CONTENT -->
+  <section class="hyw-section">
     <div class="container">
-       <h2 class="fw-bold mt-5">Epic Universe</h2>
 
-       
-            <h2 class="fw-bold mt-5">The Wizarding World of Harry Potter – Ministry of Magic</h2>
+      <h2 class="fw-bold mt-5">Epic Universe</h2>
+
+      <!-- MINISTRY OF MAGIC -->
+      <h2 class="fw-bold mt-5">The Wizarding World of Harry Potter – Ministry of Magic</h2>
       <p>Stylish, atmospheric and incredibly detailed.</p>
       <p>
         This land blends 1920s Paris from <em>Fantastic Beasts</em> with the iconic British Ministry of Magic. It’s one of the most
@@ -341,6 +365,7 @@
         <li>Anyone who loves immersive storytelling</li>
       </ul>
 
+      <!-- SUPER NINTENDO WORLD -->
       <h2 class="fw-bold mt-5">Super Nintendo World</h2>
       <p>Bright, colourful and full of energy, but very visually stimulating.</p>
       <p>
@@ -368,6 +393,7 @@
         <li>Anyone who loves bright, interactive lands</li>
       </ul>
 
+      <!-- ISLE OF BERK -->
       <h2 class="fw-bold mt-5">How to Train Your Dragon – Isle of Berk</h2>
       <p>Warm, lively, beautifully themed, and absolutely stunning.</p>
       <p>
@@ -398,6 +424,7 @@
         <li>Anyone who loves warm, character‑driven theming</li>
       </ul>
 
+      <!-- DARK UNIVERSE -->
       <h2 class="fw-bold mt-5">Dark Universe</h2>
       <p>Moody, atmospheric and brilliantly themed.</p>
       <p>
@@ -423,6 +450,7 @@
         <li>Fans of darker, moodier theming</li>
       </ul>
 
+      <!-- DINING -->
       <h2 class="fw-bold mt-5">Dining at Epic Universe</h2>
       <p>Epic Universe has some of the most exciting dining options in Universal.</p>
 
@@ -447,6 +475,7 @@
 
       <p>Other lands also offer themed eateries, snacks and grab‑and‑go options.</p>
 
+      <!-- SHOWS -->
       <h2 class="fw-bold mt-5">Shows & Entertainment</h2>
       <p>Epic Universe has some fantastic live entertainment — absolutely worth making time for.</p>
 
@@ -456,6 +485,7 @@
         <li><strong>Character encounters</strong> in Super Nintendo World and the Wizarding World.</li>
       </ul>
 
+      <!-- FAMILY TIPS -->
       <h2 class="fw-bold mt-5">Tips for Families</h2>
       <ul>
         <li>Super Nintendo World and Isle of Berk are the most family‑friendly areas.</li>
@@ -465,6 +495,7 @@
         <li>The Untrainable Dragon show is a must‑see.</li>
       </ul>
 
+      <!-- TEEN TIPS -->
       <h2 class="fw-bold mt-5">Tips for Teens</h2>
       <ul>
         <li>Stardust Racers is a must‑do for coaster fans.</li>
@@ -473,6 +504,7 @@
         <li>Ministry of Magic is worth the early start.</li>
       </ul>
 
+      <!-- ADULT TIPS -->
       <h2 class="fw-bold mt-5">Tips for Adults</h2>
       <ul>
         <li>Celestial Park is lovely for slower moments.</li>
@@ -481,6 +513,7 @@
         <li>The shows are surprisingly good, especially in Berk.</li>
       </ul>
 
+      <!-- PLANNING -->
       <h2 class="fw-bold mt-5">Planning Your Day at Epic Universe</h2>
       <ul>
         <li>Start early — the park gets busy quickly.</li>
@@ -490,6 +523,7 @@
         <li>Staying at an Epic Universe hotel is a huge perk.</li>
       </ul>
 
+      <!-- AFTER DARK -->
       <h2 class="fw-bold mt-5">Epic Universe After Dark</h2>
       <p>
         Epic Universe completely transforms once the sun goes down. The lighting, music and atmosphere shift into something magical.
@@ -504,6 +538,7 @@
 
       <p>If you can stay until closing, it’s absolutely worth it.</p>
 
+      <!-- TRANSPORT -->
       <h2 class="fw-bold mt-5">Transport & Access</h2>
       <p>Depending on your hotel:</p>
 
@@ -513,6 +548,7 @@
         <li>Parking is well organised but busy — currently $32 per day (subject to change).</li>
       </ul>
 
+      <!-- HONEST ADVICE -->
       <h2 class="fw-bold mt-5">My Honest Advice</h2>
       <p>
         Epic Universe is absolutely worth a full day — ideally more than one. It’s beautifully designed, easy to navigate and full of
@@ -524,6 +560,7 @@
         prepared for long waits on the biggest attractions, and plan around them.
       </p>
 
+      <!-- STILL UNSURE -->
       <h2 class="fw-bold mt-5">Still Unsure? Ask Me.</h2>
       <p>
         If you’re not sure how to plan your Epic Universe day, or how it fits into a wider Universal holiday, just ask. Tell me your
@@ -532,6 +569,7 @@
 
       <p>I’ve been visiting Orlando for decades — it’s always easier when someone guides you through it.</p>
 
+      <!-- QUICK LINKS -->
       <section class="py-5 border-top">
         <div class="container">
           <h3 class="fw-bold mb-3">Explore More Universal Guides</h3>
@@ -553,8 +591,7 @@
 
     </div>
   </section>
-
-  <!-- FOOTER -->
+    <!-- FOOTER -->
   <footer class="hyw-footer">
     <div class="container">
       <p class="mb-0">© 2024 Holidays Your Way. All rights reserved.</p>
