@@ -88,149 +88,45 @@
       color: var(--hyw-blue);
     }
 
-    .dropdown-menu {
-      font-size: 0.9rem;
-      text-transform: none;
+    /* RED PAGE TITLE BAR */
+    .page-title-bar {
+      background-color: var(--hyw-red-dark);
+      padding: 0.8rem 0;
+      text-align: center;
     }
 
-    /* TYPOGRAPHY & SECTIONS */
-    .hyw-section-title {
-      font-size: 2.2rem;
-      line-height: 1.25;
-      color: var(--hyw-blue-dark);
-      margin-bottom: 1.2rem;
-    }
-
-    .hyw-section-intro {
-      font-size: 1.05rem;
-      line-height: 1.75;
-      color: #4a5264;
-      margin-bottom: 1.1rem;
-    }
-
-    .hyw-section {
-      padding: 4rem 0;
-    }
-
-    .hyw-section-light {
-      background-color: #FFFFFF;
-    }
-
-    .hyw-section-grey {
-      background-color: var(--hyw-grey);
-    }
-
-    .step-label {
-      font-size: 0.85rem;
+    .page-title {
+      color: #ffffff;
+      font-size: 1.8rem;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      margin: 0;
       text-transform: uppercase;
-      color: var(--hyw-red-dark);
-      margin-bottom: 0.4rem;
-    }
-
-    /* FOOTER */
-    .hyw-footer {
-      background-color: #050816;
-      color: #cfd3e3;
-      padding: 1.5rem 0;
-      text-align: center;
-      font-size: 0.85rem;
-    }
-
-    /* LEGAL FOOTER */
-    .legal-footer {
-      background-color: #f5f5f5;
-      padding: 2rem 0;
-      text-align: center;
-      color: #333;
-      font-size: 0.9rem;
-      border-top: 1px solid #ddd;
-    }
-
-    .legal-logos {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1.2rem;
-      margin-bottom: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .legal-exotic-logo {
-      height: 70px;
-      width: auto;
-    }
-
-    .legal-atol-logo {
-      height: 90px;
-      width: auto;
-    }
-
-    .legal-text {
-      max-width: 900px;
-      margin: 0 auto 1.5rem;
-      line-height: 1.5;
-      color: #444;
-    }
-
-    .legal-social {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .social-icon {
-      height: 28px;
-      width: auto;
-      transition: opacity 0.2s ease;
-    }
-
-    .social-icon:hover {
-      opacity: 0.7;
-    }
-
-    .legal-features {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .feature-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-size: 0.85rem;
-      color: #333;
-      max-width: 120px;
-      text-align: center;
-    }
-
-    .feature-icon {
-      height: 40px;
-      width: auto;
-      margin-bottom: 0.4rem;
+      letter-spacing: 0.05em;
     }
 
     /* HERO CAROUSEL */
+    .orlando-hero-carousel {
+      position: relative; /* REQUIRED for overlay */
+    }
+
     .orlando-hero-carousel .carousel-item img {
       max-height: 620px;
       object-fit: cover;
     }
 
+    /* FIXED OVERLAY */
     .orlando-hero-overlay {
       position: absolute;
-      top: 50%;
+      z-index: 10;
+      bottom: 12%; /* Option B – lower cinematic placement */
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translateX(-50%);
       color: #FFFFFF;
       text-align: center;
       text-shadow: 0 4px 18px rgba(0,0,0,0.7);
       padding: 1.5rem;
       max-width: 900px;
+      width: 100%;
     }
 
     .orlando-hero-title {
@@ -249,26 +145,42 @@
       font-weight: 600;
     }
 
-    @media (max-width: 991.98px) {
-      .hyw-header {
-        justify-content: center;
-      }
+    /* SECTION STYLES */
+    .hyw-section {
+      padding: 4rem 0;
     }
 
-    @media (max-width: 767.98px) {
-      .orlando-hero-title {
-        font-size: 2.1rem;
-      }
-      .orlando-hero-subtitle {
-        font-size: 1.05rem;
-      }
-      .orlando-hero-tagline {
-        font-size: 0.95rem;
-      }
-      .orlando-hero-overlay {
-        padding: 1rem;
-      }
+    .hyw-section-light {
+      background-color: #FFFFFF;
     }
+
+    .hyw-section-grey {
+      background-color: var(--hyw-grey);
+    }
+
+    .hyw-section-title {
+      font-size: 2.2rem;
+      line-height: 1.25;
+      color: var(--hyw-blue-dark);
+      margin-bottom: 1.2rem;
+    }
+
+    .hyw-section-intro {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #4a5264;
+      margin-bottom: 1.1rem;
+    }
+
+    .step-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--hyw-red-dark);
+      margin-bottom: 0.4rem;
+    }
+
   </style>
 </head>
 
@@ -297,17 +209,17 @@
 
           <!-- ORLANDO DROPDOWN -->
           <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle active" href="orlando.html" id="orlandoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Orlando
-  </a>
-  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="orlandoDropdown">
-    <li><a class="dropdown-item" href="first-timers-guide.html">First‑Timers Guide</a></li>
-    <li><a class="dropdown-item" href="disney-guide.html">Disney</a></li>
-    <li><a class="dropdown-item" href="universal-orlando-guide.html">Universal</a></li>
-    <li><a class="dropdown-item" href="seaworld-parks.html">SeaWorld Parks</a></li>
-    <li><a class="dropdown-item" href="orlando-more-guides.html">More Guides</a></li>
-  </ul>
-</li>
+            <a class="nav-link dropdown-toggle active" href="orlando.html" id="orlandoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Orlando
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="orlandoDropdown">
+              <li><a class="dropdown-item" href="first-timers-guide.html">First‑Timers Guide</a></li>
+              <li><a class="dropdown-item" href="disney-guide.html">Disney</a></li>
+              <li><a class="dropdown-item" href="universal-orlando-guide.html">Universal</a></li>
+              <li><a class="dropdown-item" href="seaworld-parks.html">SeaWorld Parks</a></li>
+              <li><a class="dropdown-item" href="orlando-more-guides.html">More Guides</a></li>
+            </ul>
+          </li>
 
           <li class="nav-item"><a class="nav-link" href="destinations.html">Worldwide</a></li>
           <li class="nav-item"><a class="nav-link" href="services.html">What We Offer</a></li>
@@ -317,122 +229,88 @@
     </nav>
   </header>
 
+  <!-- RED PAGE TITLE BAR -->
+  <section class="page-title-bar">
+    <h1 class="page-title">First‑Timers Guide to Orlando</h1>
+  </section>
+
   <!-- HERO CAROUSEL -->
   <section class="orlando-hero-carousel">
     <div id="orlandoHeroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
       <div class="carousel-inner">
 
-        <!-- FIRST SLIDE WITH TEXT OVERLAY -->
+        <!-- SLIDES (NO TEXT INSIDE ANY SLIDE) -->
         <div class="carousel-item active">
           <img src="images/orlando-hero.jpg" class="d-block w-100" alt="Orlando Theme Parks">
-          <div class="orlando-hero-overlay">
-            <h1 class="orlando-hero-title">First-Timers Guide to Orlando</h1>
-            <p class="orlando-hero-subtitle">Planning your first Orlando holiday without losing the magic (or your mind)</p>
-            <p class="orlando-hero-tagline">Right, put the kettle on, and let's sort this out together</p>
-          </div>
         </div>
 
-        <!-- REMAINING SLIDES (IMAGES ONLY) -->
-        <div class="carousel-item">
-          <img src="images/orlando-hotel.jpg" class="d-block w-100" alt="Orlando Hotel">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando1.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando2.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando3.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando4.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando5.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando6.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando8.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando9.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando10.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando12.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando13.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando14.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando15.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando16.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando17.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando18.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando19.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando20.jpg" class="d-block w-100" alt="Orlando">
-        </div>
-        <div class="carousel-item">
-          <img src="images/orlando21.jpg" class="d-block w-100" alt="Orlando">
-        </div>
+        <div class="carousel-item"><img src="images/orlando-hotel.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando1.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando2.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando3.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando4.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando5.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando6.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando8.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando9.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando10.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando12.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando13.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando14.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando15.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando16.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando17.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando18.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando19.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando20.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando21.jpg" class="d-block w-100" alt=""></div>
+
       </div>
 
+      <!-- CONTROLS -->
       <button class="carousel-control-prev" type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
+        <span class="carousel-control-prev-icon"></span>
       </button>
       <button class="carousel-control-next" type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
+        <span class="carousel-control-next-icon"></span>
       </button>
 
+      <!-- INDICATORS -->
       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
-        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
-        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
-        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
-        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="9" aria-label="Slide 10"></button>
-        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="10" aria-label="Slide 11"></button>
-        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="11" aria-label="Slide 12"></button>
-        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="12" aria-label="Slide 13"></button>
-        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="13" aria-label="Slide 14"></button>
-        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="14" aria-label="Slide 15"></button>
-        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="15" aria-label="Slide 16"></button>
-        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="16" aria-label="Slide 17"></button>
-        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="17" aria-label="Slide 18"></button>
-        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="18" aria-label="Slide 19"></button>
-        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="19" aria-label="Slide 20"></button>
-        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="20" aria-label="Slide 21"></button>
+        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="2"></button>
+        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="3"></button>
+        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="4"></button>
+        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="5"></button>
+        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="6"></button>
+        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="7"></button>
+        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="8"></button>
+        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="9"></button>
+        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="10"></button>
+        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="11"></button>
+        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="12"></button>
+        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="13"></button>
+        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="14"></button>
+        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="15"></button>
+        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="16"></button>
+        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="17"></button>
+        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="18"></button>
+        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="19"></button>
+        <button type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide-to="20"></button>
       </div>
+
+    </div>
+
+    <!-- FIXED OVERLAY -->
+    <div class="orlando-hero-overlay">
+      <h1 class="orlando-hero-title">First‑Timers Guide to Orlando</h1>
+      <p class="orlando-hero-subtitle">Planning your first Orlando holiday without losing the magic (or your mind)</p>
+      <p class="orlando-hero-tagline">Right, put the kettle on, and let's sort this out together</p>
     </div>
   </section>
 
   <!-- ORLANDO GUIDE CONTENT -->
-
-  <!-- INTRO -->
   <section class="hyw-section hyw-section-light">
     <div class="container">
       <h2 class="hyw-section-title">Welcome to Orlando</h2>
@@ -453,8 +331,7 @@
       </p>
     </div>
   </section>
-
-  <!-- STEP 1 -->
+    <!-- STEP 1 -->
   <section class="hyw-section hyw-section-grey">
     <div class="container">
       <p class="step-label">Step 1 — When to go (for UK visitors)</p>
@@ -462,24 +339,30 @@
       <p class="hyw-section-intro">
         Most of us in the UK don’t have the luxury of picking any random week of the year. School holidays rule the calendar, and Orlando knows it.
       </p>
+
       <p class="hyw-section-intro"><strong>The busiest times of the year</strong><br>
         These are the most popular times for UK families:
       </p>
+
       <p class="hyw-section-intro">
         Easter<br>
         Summer holidays<br>
         Christmas &amp; New Year
       </p>
+
       <p class="hyw-section-intro">
         Yes, they’re busy — but they’re also brilliant. Longer park hours, more entertainment, a buzzing atmosphere, and that “everyone’s in it together” feeling. With the right plan, you can absolutely have an amazing first trip in these periods without feeling like you’ve spent the whole time in a queue.
       </p>
+
       <p class="hyw-section-intro"><strong>If you’re more flexible</strong><br>
         Lovely times to visit include:
       </p>
+
       <p class="hyw-section-intro">
         Late April to mid‑May<br>
         Mid‑September to mid‑November
       </p>
+
       <p class="hyw-section-intro">
         You’ll usually find a nice balance of warmth, value and slightly calmer crowds. I’ll never tell you “don’t go” at peak times. My job is to help you make it work, not make you feel bad about your dates.
       </p>
@@ -494,9 +377,11 @@
       <p class="hyw-section-intro">
         For UK visitors, Orlando isn’t a quick week in the sun — it’s a proper adventure.
       </p>
+
       <p class="hyw-section-intro">
         Most of my clients stay 14 to 21 nights, and honestly, that’s where Orlando really shines. It gives you time to:
       </p>
+
       <p class="hyw-section-intro">
         Spread out your park days<br>
         Build in pool days and lazy mornings<br>
@@ -504,6 +389,7 @@
         Enjoy evenings at Disney Springs, CityWalk or International Drive<br>
         Actually breathe, instead of marching from ride to ride
       </p>
+
       <p class="hyw-section-intro">
         You don’t have to do everything (and you won’t — no one does), but a longer stay means you don’t feel like you’re on a military operation. You get the fun and the memories, without the burnout.
       </p>
@@ -522,6 +408,7 @@
       <p class="hyw-section-intro"><strong>Walt Disney World – 14‑Day Magic Ticket</strong><br>
         You get:
       </p>
+
       <p class="hyw-section-intro">
         All 4 Disney theme parks<br>
         Both Disney water parks<br>
@@ -534,12 +421,14 @@
       <p class="hyw-section-intro"><strong>Universal Orlando – All Parks Ticket</strong><br>
         You get:
       </p>
+
       <p class="hyw-section-intro">
         Universal Studios<br>
         Islands of Adventure<br>
         Epic Universe<br>
         Volcano Bay
       </p>
+
       <p class="hyw-section-intro">
         <strong>Important:</strong> from 20 Oct 2026 to 25 Mar 2027, Volcano Bay is closed for refurbishment. During this time, the ticket becomes a 3 Park Adventure Ticket.
       </p>
@@ -547,6 +436,7 @@
       <p class="hyw-section-intro"><strong>SeaWorld Parks &amp; Discovery Cove</strong><br>
         Popular options include:
       </p>
+
       <p class="hyw-section-intro">
         3‑Park Ticket – SeaWorld, Aquatica, Busch Gardens<br>
         14‑Day Unlimited Ticket – unlimited entry to all three<br>
@@ -639,7 +529,7 @@
       </p>
 
       <p class="hyw-section-intro"><strong>Lightning Lanes (Multi, Single &amp; Premier Pass)</strong><br>
-        Disney’s queue‑skipping system. There are different types of Lightning Lane passes, and how you use them depends on your plans, priorities and budget. I’ve got full guides on each type that walk you through it without the headache.
+        Disney’s queue‑skipping system. There are different types of Lightning Lane passes, and how you use them depends on your plans, priorities and budget.
       </p>
 
       <h3 class="hyw-section-intro" style="font-weight:700; color:var(--hyw-blue-dark);">Universal Orlando</h3>
@@ -681,7 +571,7 @@
       </p>
 
       <p class="hyw-section-intro"><strong>Express Pass</strong><br>
-        Universal’s queue‑skipping system. It can be included with certain hotels or bought separately. It’s not cheap, but on busy days it can be worth its weight in gold. I’ve got a full Express Pass guide that breaks down when it’s worth it and how to get the most out of it.
+        Universal’s queue‑skipping system. It can be included with certain hotels or bought separately.
       </p>
 
       <h3 class="hyw-section-intro" style="font-weight:700; color:var(--hyw-blue-dark);">SeaWorld, Aquatica &amp; Busch Gardens</h3>
@@ -709,8 +599,7 @@
       </p>
     </div>
   </section>
-
-  <!-- STEP 6 -->
+    <!-- STEP 6 -->
   <section class="hyw-section hyw-section-light">
     <div class="container">
       <p class="step-label">Step 6 — Getting around</p>
@@ -722,12 +611,14 @@
       <p class="hyw-section-intro"><strong>Disney transport</strong><br>
         If you’re staying in the Disney area, you’re basically in a bubble where everything is connected for you.
       </p>
+
       <p class="hyw-section-intro">
         Buses<br>
         Monorail<br>
         Skyliner<br>
         Boats
       </p>
+
       <p class="hyw-section-intro">
         It’s all free and runs constantly. Just give yourself time — it’s reliable, but it’s not teleportation.
       </p>
@@ -735,6 +626,7 @@
       <p class="hyw-section-intro"><strong>Universal transport</strong><br>
         Universal is much more compact than Disney, and that’s one of the reasons people love it.
       </p>
+
       <p class="hyw-section-intro">
         Water taxis<br>
         Shuttle buses<br>
@@ -742,12 +634,14 @@
       </p>
 
       <p class="hyw-section-intro"><strong>Car hire vs ride‑share</strong></p>
+
       <p class="hyw-section-intro"><strong>Car hire is great if:</strong><br>
         You want total flexibility<br>
         You’re staying offsite<br>
         You’re visiting Busch Gardens<br>
         You like doing big shopping trips
       </p>
+
       <p class="hyw-section-intro"><strong>Uber/Lyft is great if:</strong><br>
         You don’t want to drive abroad<br>
         You’re staying in Disney or Universal<br>
@@ -776,6 +670,7 @@
         Table‑Service – great for a slower, more relaxed meal (some book up fast)<br>
         Quick‑Service – perfect for grabbing something tasty without losing park time
       </p>
+
       <p class="hyw-section-intro">
         My tip: use mobile ordering where it’s available. It saves so much time and avoids the “hangry family meltdown” moment.
       </p>
@@ -817,8 +712,7 @@
       </p>
     </div>
   </section>
-
-  <!-- STEP 9 -->
+    <!-- STEP 9 -->
   <section class="hyw-section hyw-section-grey">
     <div class="container">
       <p class="step-label">Step 9 — What to pack</p>
@@ -851,26 +745,33 @@
     <div class="container">
       <p class="step-label">Step 10 — Final thoughts</p>
       <h2 class="hyw-section-title">Final thoughts</h2>
+
       <p class="hyw-section-intro">
         Here’s what I always tell my clients:
       </p>
+
       <p class="hyw-section-intro">
         Orlando is magical — but it’s big, busy and full of moving parts. You are not expected to know everything, and you are definitely not expected to plan it all alone.
       </p>
+
       <p class="hyw-section-intro">
         Pick your must‑dos. Take breaks. Drink water. Enjoy the moments that make you smile — the first time you see the castle, the kids’ faces on their favourite ride, the quiet evening by the pool.
       </p>
+
       <p class="hyw-section-intro">
         And if at any point it all feels a bit much, that’s where I come in. My job is to take the overwhelm away and help you plan a holiday that feels exciting, not exhausting.
       </p>
 
       <h3 class="hyw-section-intro" style="font-weight:700; color:var(--hyw-blue-dark);">How I can help you plan</h3>
+
       <p class="hyw-section-intro">
         Planning Orlando can feel like a full‑time job — and that’s before you’ve even packed a suitcase. My job is to take all that stress off your shoulders.
       </p>
+
       <p class="hyw-section-intro">
         Here’s what I do for you:
       </p>
+
       <p class="hyw-section-intro">
         Help you choose the right dates, parks and tickets<br>
         Match you to the best hotel for your family<br>
@@ -879,14 +780,17 @@
         Give you honest advice, not sales talk<br>
         Support you before, during and after your holiday
       </p>
+
       <p class="hyw-section-intro">
         Think of me as your Orlando big sister — the one who’s been a million times, knows all the tricks, and genuinely wants you to have the best time ever.
       </p>
 
       <h3 class="hyw-section-intro" style="font-weight:700; color:var(--hyw-blue-dark);">Common mistakes first‑timers make</h3>
+
       <p class="hyw-section-intro">
         Don’t worry — everyone makes these at first. But you won’t, because you’ve got me.
       </p>
+
       <p class="hyw-section-intro">
         Trying to do everything in one trip<br>
         Not planning rest days<br>
@@ -899,14 +803,17 @@
         Not budgeting for parking<br>
         Not understanding Lightning Lanes or Express Pass
       </p>
+
       <p class="hyw-section-intro">
         These are the things I help you avoid — so your holiday feels exciting, not exhausting.
       </p>
 
       <h3 class="hyw-section-intro" style="font-weight:700; color:var(--hyw-blue-dark);">What I wish everyone knew (without giving away the gold)</h3>
+
       <p class="hyw-section-intro">
         I won’t give away all my best insider tips here — those are for my clients — but here’s the one thing I wish every first‑timer knew:
       </p>
+
       <p class="hyw-section-intro">
         <strong>Orlando is meant to be enjoyed, not conquered.</strong><br>
         You don’t need to do everything. You just need to do the things that make your family happy.
@@ -917,11 +824,11 @@
   <!-- FOOTER -->
   <footer class="hyw-footer">
     <div class="container">
-      <p class="mb-0">© 2024 Holidays Your Way. All rights reserved. </p>
+      <p class="mb-0">© 2024 Holidays Your Way. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- LEGAL COMPLIANCE FOOTER -->
+  <!-- LEGAL FOOTER -->
   <section class="legal-footer">
     <div class="container">
 
@@ -933,20 +840,17 @@
       <p class="legal-text">
         Exotic World Travel Ltd (company number 16110795) is a Member of Protected Trust Services (PTS) with member number PTS6358 and holds an ATOL Licence (number 12846).
         All the flights and flight-inclusive holidays on this website are financially protected by the ATOL scheme. When you pay you will be supplied with an ATOL Certificate.
-        Please ask for it and check to ensure that everything you booked (flights, hotels and other services) is listed on it. For more information about financial protection and the ATOL Certificate go to www.caa.co.uk.
-        Holidays are financially secured by PTS. All customer funds are held in an Independent Trust Account for your protection.
+        Please ask for it and check to ensure that everything you booked (flights, hotels and other services) is listed on it. For more information about financial protection
+        and the ATOL Certificate go to www.caa.co.uk. Holidays are financially secured by PTS. All customer funds are held in an Independent Trust Account for your protection.
       </p>
 
       <div class="legal-social">
-        <a href="#" class="social-link">
-          <img src="images/facebook-new.png" alt="Facebook" class="social-icon">
-        </a>
-        <a href="#" class="social-link">
-          <img src="images/instagram-new.png" alt="Instagram" class="social-icon">
-        </a>
+        <a href="#"><img src="images/facebook-new.png" alt="Facebook" class="social-icon"></a>
+        <a href="#"><img src="images/instagram-new.png" alt="Instagram" class="social-icon"></a>
       </div>
 
       <div class="legal-features">
+
         <div class="feature-item">
           <img src="images/atol-exotic.png" alt="ATOL Protected" class="feature-icon">
           <span>ATOL Protected</span>
@@ -973,14 +877,17 @@
         </div>
 
         <div class="feature-item">
-          <img src="images/icon-calendar.png" alt="2027/2028 Packages" class="feature-icon">
+          <img src="images/icon-calendar.png" alt="2027/2028 Packages Available" class="feature-icon">
           <span>2027/2028 Packages Available</span>
         </div>
+
       </div>
 
     </div>
   </section>
 
+  <!-- SCRIPTS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
