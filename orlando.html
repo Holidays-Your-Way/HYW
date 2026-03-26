@@ -15,8 +15,12 @@
 
   <style>
     :root {
-      --hyw-blue: #005bbb;
-      --hyw-blue-dark: #003f7d;
+      --hyw-blue: #0A3161;
+      --hyw-blue-dark: #07203F;
+      --hyw-red-dark: #8A102F;
+      --hyw-white: #FFFFFF;
+      --hyw-text: #1F2430;
+      --hyw-grey: #f7f7f7;
       --hyw-dark: #050816;
     }
 
@@ -25,27 +29,34 @@
     }
 
     body {
-      font-family: 'Nunito', sans-serif;
+      font-family: "Nunito", sans-serif;
       background-color: #ffffff;
       margin: 0;
       padding: 0;
-      color: #222;
+      color: var(--hyw-text);
     }
 
-    /* NEW HEADER */
+    h1, h2, h3 {
+      font-family: "Poppins", sans-serif;
+    }
+
+    /* HEADER */
     .hyw-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.2rem 2rem;
+      padding: 0.6rem 1rem;
       background-color: var(--hyw-white);
       border-bottom: 1px solid #e3e6ee;
+      flex-wrap: wrap;
+      row-gap: 0.75rem;
     }
 
     .hyw-header-left {
       display: flex;
       align-items: center;
       gap: 1rem;
+      flex-wrap: wrap;
     }
 
     .hyw-logo-main {
@@ -57,6 +68,7 @@
       display: flex;
       align-items: center;
       gap: 0.6rem;
+      flex-wrap: wrap;
     }
 
     .hyw-partner-logo {
@@ -82,26 +94,70 @@
       color: var(--hyw-blue);
     }
 
-
-    /* HERO CAROUSEL */
-
-    .hyw-hero-carousel {
-      margin-bottom: 2.5rem;
+    /* PAGE TITLE BAR */
+    .page-title-bar {
+      background-color: var(--hyw-red-dark);
+      color: #ffffff;
+      padding: 1.75rem 0;
+      text-align: center;
     }
 
-    .hyw-hero-carousel img {
+    .page-title-bar h1 {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* HERO CAROUSEL */
+    .orlando-hero-carousel {
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+
+    .orlando-hero-carousel .carousel-item img {
+      max-height: 620px;
       height: 520px;
       object-fit: cover;
     }
 
     @media (max-width: 768px) {
-      .hyw-hero-carousel img {
+      .orlando-hero-carousel .carousel-item img {
         height: 320px;
       }
     }
 
-    /* SECTION TITLES */
+    /* LOWER-THIRD OVERLAY */
+    .orlando-hero-overlay {
+      position: absolute;
+      bottom: 12%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      color: #fff;
+      max-width: 900px;
+      padding: 1.5rem 2rem;
+      text-shadow: 0 4px 18px rgba(0,0,0,0.85);
+      z-index: 10;
+    }
 
+    .orlando-hero-title {
+      font-family: "Playfair Display", serif;
+      font-size: 3rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .orlando-hero-subtitle {
+      font-size: 1.25rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .orlando-hero-tagline {
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    /* SECTION TITLES */
     .hyw-section-title {
       font-family: 'Playfair Display', serif;
       font-weight: 800;
@@ -110,8 +166,7 @@
       margin-bottom: 1.4rem;
     }
 
-    /* WHERE TO STAY – HOTEL CARDS */
-
+    /* HOTEL CARDS */
     .hotel-card {
       border-radius: 1rem;
       overflow: hidden;
@@ -123,6 +178,7 @@
       height: 100%;
       display: flex;
       flex-direction: column;
+      text-decoration: none;
     }
 
     .hotel-card:hover {
@@ -144,8 +200,7 @@
       font-size: 0.98rem;
     }
 
-    /* PLANNING GUIDES */
-
+    /* PLANNING LINKS */
     .planning-links {
       display: flex;
       flex-direction: column;
@@ -173,12 +228,36 @@
       box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
     }
 
-    /* MAIN FOOTER */
+    /* HUB BUTTON GROUPS */
+    .hub-button-group a {
+      margin: 0.25rem;
+    }
 
+    /* CTA + WHY BOOK */
+    .orlando-cta {
+      background: var(--hyw-blue-dark);
+      color: #ffffff;
+      border-radius: 1.2rem;
+      padding: 2rem 1.5rem;
+    }
+
+    .orlando-cta h2 {
+      color: #ffffff;
+    }
+
+    .why-book-card {
+      border-radius: 1rem;
+      border: 1px solid #e1e4ee;
+      background: #ffffff;
+      padding: 1.5rem;
+      height: 100%;
+    }
+
+    /* MAIN FOOTER */
     .hyw-footer {
       background-color: var(--hyw-dark);
       color: #cfd3e3;
-      padding: 1.6rem 0;
+      padding: 1.5rem 0;
       text-align: center;
       font-size: 0.86rem;
       margin-top: 1rem;
@@ -189,10 +268,9 @@
     }
 
     /* LEGAL FOOTER */
-
     .legal-footer {
       background-color: #f5f5f5;
-      padding: 2.2rem 1rem 2.6rem;
+      padding: 2rem 1rem 2.4rem;
       text-align: center;
       color: #333;
       font-size: 0.9rem;
@@ -286,15 +364,15 @@
       }
 
       .hyw-logo-main {
-        height: 46px;
+        height: 80px;
       }
 
       .hyw-partner-logo {
-        height: 40px;
+        height: 60px;
       }
 
       .hyw-atol-logo {
-        height: 46px;
+        height: 80px;
       }
 
       .legal-features {
@@ -329,17 +407,17 @@
 
           <!-- ORLANDO DROPDOWN -->
           <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle active" href="orlando.html" id="orlandoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Orlando
-  </a>
-  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="orlandoDropdown">
-    <li><a class="dropdown-item" href="first-timers-guide.html">First‑Timers Guide</a></li>
-    <li><a class="dropdown-item" href="disney-guide.html">Disney</a></li>
-    <li><a class="dropdown-item" href="universal-orlando-guide.html">Universal</a></li>
-    <li><a class="dropdown-item" href="seaworld-parks.html">SeaWorld Parks</a></li>
-    <li><a class="dropdown-item" href="orlando-more-guides.html">More Guides</a></li>
-  </ul>
-</li>
+            <a class="nav-link dropdown-toggle active" href="orlando.html" id="orlandoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Orlando
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="orlandoDropdown">
+              <li><a class="dropdown-item" href="first-timers-guide.html">First‑Timers Guide</a></li>
+              <li><a class="dropdown-item" href="disney-guide.html">Disney</a></li>
+              <li><a class="dropdown-item" href="universal-orlando-guide.html">Universal</a></li>
+              <li><a class="dropdown-item" href="seaworld-parks.html">SeaWorld Parks</a></li>
+              <li><a class="dropdown-item" href="orlando-more-guides.html">More Guides</a></li>
+            </ul>
+          </li>
 
           <li class="nav-item"><a class="nav-link" href="destinations.html">Worldwide</a></li>
           <li class="nav-item"><a class="nav-link" href="services.html">What We Offer</a></li>
@@ -349,10 +427,14 @@
     </nav>
   </header>
 
+  <!-- PAGE TITLE BAR -->
+  <section class="page-title-bar">
+    <h1>Orlando</h1>
+  </section>
 
   <!-- HERO CAROUSEL -->
-  <section class="hyw-hero-carousel">
-    <div id="orlandoCarousel" class="carousel slide" data-bs-ride="carousel">
+  <section class="orlando-hero-carousel">
+    <div id="orlandoHeroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
       <div class="carousel-inner">
         <div class="carousel-item active"><img src="images/orlando1.jpg" class="d-block w-100" alt="Orlando 1"></div>
         <div class="carousel-item"><img src="images/orlando2.jpg" class="d-block w-100" alt="Orlando 2"></div>
@@ -378,13 +460,35 @@
         <div class="carousel-item"><img src="images/orlando22.jpg" class="d-block w-100" alt="Orlando 22"></div>
       </div>
 
-      <button class="carousel-control-prev" type="button" data-bs-target="#orlandoCarousel" data-bs-slide="prev">
+      <!-- LOWER-THIRD OVERLAY -->
+      <div class="orlando-hero-overlay">
+        <h1 class="orlando-hero-title">Orlando</h1>
+        <p class="orlando-hero-subtitle">Your friendly, honest guide to the world’s theme park capital</p>
+        <p class="orlando-hero-tagline">From first-timers to seasoned pros, we’ll help you plan Orlando your way</p>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon"></span>
       </button>
-
-      <button class="carousel-control-next" type="button" data-bs-target="#orlandoCarousel" data-bs-slide="next">
+      <button class="carousel-control-next" type="button" data-bs-target="#orlandoHeroCarousel" data-bs-slide="next">
         <span class="carousel-control-next-icon"></span>
       </button>
+    </div>
+  </section>
+
+  <!-- INTRO + HUB OVERVIEW -->
+  <section class="py-5">
+    <div class="container">
+      <p>
+        Orlando can feel overwhelming at first glance – Disney, Universal, SeaWorld, waterparks, hotels, villas, tickets and
+        planning tools everywhere you look. This page is your calm, friendly starting point: a simple hub that pulls everything
+        together in one place.
+      </p>
+      <p>
+        I’ve been visiting Orlando for over <strong>40 years</strong>, and I know how much easier it feels when someone breaks it
+        down clearly. Whether you’re planning your very first trip or your tenth, this Orlando hub is designed to help you find
+        exactly what you need, without the noise.
+      </p>
     </div>
   </section>
 
@@ -394,38 +498,38 @@
 
     <div class="row g-4">
       <div class="col-md-4 col-lg-3">
-        <div class="hotel-card">
+        <a href="#" class="hotel-card">
           <img src="images/orlando-hotel.jpg" alt="Disney On-site Hotels">
           <div class="hotel-card-title">Disney Onsite Hotels</div>
-        </div>
+        </a>
       </div>
 
       <div class="col-md-4 col-lg-3">
-        <div class="hotel-card">
+        <a href="#" class="hotel-card">
           <img src="images/hero18.jpg" alt="Universal On-site Hotels">
           <div class="hotel-card-title">Universal Onsite Hotels</div>
-        </div>
+        </a>
       </div>
 
       <div class="col-md-4 col-lg-3">
-        <div class="hotel-card">
+        <a href="#" class="hotel-card">
           <img src="images/drury-inn-disney-springs.jpg" alt="Lake Buena Vista Hotels">
           <div class="hotel-card-title">Lake Buena Vista Hotels</div>
-        </div>
+        </a>
       </div>
 
       <div class="col-md-4 col-lg-3">
-        <div class="hotel-card">
+        <a href="#" class="hotel-card">
           <img src="images/rosen-inn-pointe.jpg" alt="International Drive Hotels">
           <div class="hotel-card-title">International Drive Hotels</div>
-        </div>
+        </a>
       </div>
 
       <div class="col-md-4 col-lg-3">
-        <div class="hotel-card">
+        <a href="#" class="hotel-card">
           <img src="images/orlando1.jpg" alt="Orlando Villas">
           <div class="hotel-card-title">Villas</div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -446,60 +550,178 @@
     </div>
   </section>
 
+  <!-- DISNEY SHORTCUTS -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="hyw-section-title mb-3">Disney in Orlando</h2>
+      <p>All things Walt Disney World in one place – parks, resorts, dining and Lightning Lane planning.</p>
+      <div class="hub-button-group mb-3">
+        <a href="#" class="btn btn-outline-primary btn-sm">Magic Kingdom</a>
+        <a href="#" class="btn btn-outline-primary btn-sm">EPCOT</a>
+        <a href="#" class="btn btn-outline-primary btn-sm">Hollywood Studios</a>
+        <a href="#" class="btn btn-outline-primary btn-sm">Animal Kingdom</a>
+        <a href="#" class="btn btn-outline-primary btn-sm">Typhoon Lagoon</a>
+        <a href="#" class="btn btn-outline-primary btn-sm">Blizzard Beach</a>
+        <a href="#" class="btn btn-outline-primary btn-sm">Disney Springs</a>
+        <a href="#" class="btn btn-outline-primary btn-sm">Disney Resorts</a>
+        <a href="#" class="btn btn-outline-primary btn-sm">Disney Dining</a>
+        <a href="lightning-lane-multi-pass.html" class="btn btn-outline-primary btn-sm">Lightning Lane Multi Pass</a>
+        <a href="lightning-lane-single-pass.html" class="btn btn-outline-primary btn-sm">Lightning Lane Single Pass</a>
+        <a href="lightning-lane-premier-pass.html" class="btn btn-outline-primary btn-sm">Lightning Lane Premier Pass</a>
+        <a href="disney-guide.html" class="btn btn-outline-primary btn-sm">Disney First-Timers Guide</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNIVERSAL SHORTCUTS -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="hyw-section-title mb-3">Universal Orlando</h2>
+      <p>Thrill rides, immersive lands and brilliant hotels – all under the Universal Orlando Resort umbrella.</p>
+      <div class="hub-button-group mb-3">
+        <a href="universal-studios.html" class="btn btn-outline-primary btn-sm">Universal Studios</a>
+        <a href="islands-of-adventure.html" class="btn btn-outline-primary btn-sm">Islands of Adventure</a>
+        <a href="epic-universe.html" class="btn btn-outline-primary btn-sm">Epic Universe</a>
+        <a href="volcano-bay.html" class="btn btn-outline-primary btn-sm">Volcano Bay</a>
+        <a href="universal-resorts.html" class="btn btn-outline-primary btn-sm">Universal Resorts</a>
+        <a href="universal-first-timers.html" class="btn btn-outline-primary btn-sm">Universal First Timers</a>
+        <a href="universal-with-kids.html" class="btn btn-outline-primary btn-sm">Universal with Kids</a>
+        <a href="universal-with-teens.html" class="btn btn-outline-primary btn-sm">Universal with Teens</a>
+        <a href="universal-for-adults.html" class="btn btn-outline-primary btn-sm">Universal for Adults</a>
+        <a href="universal-express-pass.html" class="btn btn-outline-primary btn-sm">Express Pass</a>
+        <a href="universal-dining-guide.html" class="btn btn-outline-primary btn-sm">Universal Dining</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEAWORLD PARKS SHORTCUTS -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="hyw-section-title mb-3">SeaWorld Parks & More</h2>
+      <p>From coasters to animal encounters and waterparks, these parks are brilliant value on a 14-day ticket.</p>
+      <div class="hub-button-group mb-3">
+        <a href="seaworld-orlando.html" class="btn btn-outline-primary btn-sm">SeaWorld Orlando</a>
+        <a href="aquatica.html" class="btn btn-outline-primary btn-sm">Aquatica</a>
+        <a href="discovery-cove.html" class="btn btn-outline-primary btn-sm">Discovery Cove</a>
+        <a href="busch-gardens.html" class="btn btn-outline-primary btn-sm">Busch Gardens</a>
+        <a href="seaworld-parks.html" class="btn btn-outline-primary btn-sm">SeaWorld Parks Overview</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKETS & TOOLS + CTA + WHY BOOK -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="orlando-cta">
+            <h2 class="mb-3">Start Planning Your Orlando Holiday</h2>
+            <p class="mb-3">
+              Whether you’re dreaming of Disney, planning a Universal-heavy trip, or mixing it all together with SeaWorld,
+              waterparks and rest days, we’ll help you build an Orlando holiday that actually works for <strong>your</strong> family.
+            </p>
+            <ul class="mb-3">
+              <li>Honest advice based on real experience – not just what’s on a brochure.</li>
+              <li>Help choosing the right tickets, hotels and park days for your group.</li>
+              <li>Support before, during and after your trip – from someone who genuinely loves Orlando.</li>
+            </ul>
+            <a href="contact.html" class="btn btn-light btn-sm fw-semibold">Talk to us about Orlando</a>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="why-book-card">
+            <h2 class="mb-3">Why Book With Us</h2>
+            <ul class="mb-3">
+              <li>ATOL protected through Exotic World Travel Ltd.</li>
+              <li>Funds held in an independent trust account for your protection.</li>
+              <li>Deposits from as low as £50pp on many holidays.</li>
+              <li>Flexible payment options to spread the cost.</li>
+              <li>Tailored itineraries built around your pace, budget and wish list.</li>
+              <li>Real, honest advice from someone who visits Orlando multiple times a year.</li>
+            </ul>
+            <p class="mb-0">
+              Orlando is a big investment – in time, money and energy. Having someone in your corner who knows it inside out
+              can make all the difference between a stressful trip and the holiday of a lifetime.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MORE UNIVERSAL / DISNEY / ORLANDO LINKS -->
+  <section class="py-5 border-top">
+    <div class="container">
+      <h3 class="fw-bold mb-3">More Orlando Guides</h3>
+      <div class="d-flex flex-wrap gap-2">
+        <a href="orlando-more-guides.html" class="btn btn-outline-primary btn-sm">More Orlando Guides</a>
+        <a href="disney-guide.html" class="btn btn-outline-primary btn-sm">Disney Overview</a>
+        <a href="universal-orlando-guide.html" class="btn btn-outline-primary btn-sm">Universal Overview</a>
+        <a href="seaworld-parks.html" class="btn btn-outline-primary btn-sm">SeaWorld Parks Overview</a>
+        <a href="orlando-first-timers-guide.html" class="btn btn-outline-primary btn-sm">Orlando First Timers</a>
+      </div>
+    </div>
+  </section>
+
   <!-- MAIN FOOTER -->
   <footer class="hyw-footer">
-    <p>© 2024 Holidays Your Way. All rights reserved.</p>
+    <div class="container">
+      <p>© 2024 Holidays Your Way. All rights reserved.</p>
+    </div>
   </footer>
 
   <!-- LEGAL FOOTER -->
   <section class="legal-footer">
-    <div class="legal-logos">
-      <img src="images/exotic-travel.jpeg" class="legal-exotic-logo" alt="Exotic World Travel">
-      <img src="images/atol-exotic.png" class="legal-atol-logo" alt="ATOL Protected">
-    </div>
-
-    <div class="legal-text">
-      Exotic World Travel Ltd (company number 16110796) is a Member of Protected Trust Services (PTS) with member number PTS6358 and holds an ATOL Licence (number 12846).
-      All the flights and flight-inclusive holidays on this website are financially protected by the ATOL scheme.
-      When you pay you will be supplied with an ATOL Certificate. Please ask for it and check to ensure that everything you booked (flights, hotels and other services) is listed on it.
-      For more information about financial protection and the ATOL Certificate go to www.caa.co.uk.
-      Holidays are financially secured by PTS. All customer funds are held in an Independent Trust Account for your protection.
-    </div>
-
-    <div class="legal-social">
-      <img src="images/facebook-new.png" class="social-icon" alt="Facebook">
-      <img src="images/instagram-new.png" class="social-icon" alt="Instagram">
-    </div>
-
-    <div class="legal-features">
-      <div class="feature-item">
-        <img src="images/atol-exotic.png" class="feature-icon" alt="ATOL Protected">
-        <span>ATOL Protected</span>
+    <div class="container">
+      <div class="legal-logos">
+        <img src="images/exotic-travel.jpeg" class="legal-exotic-logo" alt="Exotic World Travel">
+        <img src="images/atol-exotic.png" class="legal-atol-logo" alt="ATOL Protected">
       </div>
 
-      <div class="feature-item">
-        <img src="images/icon-deposit.png" class="feature-icon" alt="Deposits from £50pp">
-        <span>Deposits from £50pp*</span>
+      <div class="legal-text">
+        Exotic World Travel Ltd (company number 16110796) is a Member of Protected Trust Services (PTS) with member number PTS6358 and holds an ATOL Licence (number 12846).
+        All the flights and flight-inclusive holidays on this website are financially protected by the ATOL scheme.
+        When you pay you will be supplied with an ATOL Certificate. Please ask for it and check to ensure that everything you booked (flights, hotels and other services) is listed on it.
+        For more information about financial protection and the ATOL Certificate go to www.caa.co.uk.
+        Holidays are financially secured by PTS. All customer funds are held in an Independent Trust Account for your protection.
       </div>
 
-      <div class="feature-item">
-        <img src="images/icon-payments.png" class="feature-icon" alt="Flexible Payments">
-        <span>Flexible Payments</span>
+      <div class="legal-social">
+        <img src="images/facebook-new.png" class="social-icon" alt="Facebook">
+        <img src="images/instagram-new.png" class="social-icon" alt="Instagram">
       </div>
 
-      <div class="feature-item">
-        <img src="images/icon-trustpilot.png" class="feature-icon" alt="Rated 4.7 on TrustPilot">
-        <span>Rated 4.7 on TrustPilot</span>
-      </div>
+      <div class="legal-features">
+        <div class="feature-item">
+          <img src="images/atol-exotic.png" class="feature-icon" alt="ATOL Protected">
+          <span>ATOL Protected</span>
+        </div>
 
-      <div class="feature-item">
-        <img src="images/icon-tailored.png" class="feature-icon" alt="Tailored Travel Experience">
-        <span>Tailored Travel Experience</span>
-      </div>
+        <div class="feature-item">
+          <img src="images/icon-deposit.png" class="feature-icon" alt="Deposits from £50pp">
+          <span>Deposits from £50pp*</span>
+        </div>
 
-      <div class="feature-item">
-        <img src="images/icon-calendar.png" class="feature-icon" alt="2027/2028 Packages Available">
-        <span>2027/2028 Packages Available</span>
+        <div class="feature-item">
+          <img src="images/icon-payments.png" class="feature-icon" alt="Flexible Payments">
+          <span>Flexible Payments</span>
+        </div>
+
+        <div class="feature-item">
+          <img src="images/icon-trustpilot.png" class="feature-icon" alt="Rated 4.7 on TrustPilot">
+          <span>Rated 4.7 on TrustPilot</span>
+        </div>
+
+        <div class="feature-item">
+          <img src="images/icon-tailored.png" class="feature-icon" alt="Tailored Travel Experience">
+          <span>Tailored Travel Experience</span>
+        </div>
+
+        <div class="feature-item">
+          <img src="images/icon-calendar.png" class="feature-icon" alt="2027/2028 Packages Available">
+          <span>2027/2028 Packages Available</span>
+        </div>
       </div>
     </div>
   </section>
