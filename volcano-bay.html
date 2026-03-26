@@ -88,41 +88,58 @@
       color: var(--hyw-blue);
     }
 
+    /* PAGE TITLE BAR */
+    .page-title-bar {
+      background-color: var(--hyw-red-dark);
+      color: #ffffff;
+      padding: 1.75rem 0;
+      text-align: center;
+    }
+
+    .page-title-bar h1 {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
     /* HERO CAROUSEL */
     .orlando-hero-carousel .carousel-item img {
       max-height: 620px;
       object-fit: cover;
     }
 
-    .orlando-hero-overlay {
+    /* LOWER-THIRD OVERLAY */
+    .vb-hero-overlay {
       position: absolute;
-      top: 50%;
+      bottom: 12%;
       left: 50%;
-      transform: translate(-50%, -50%);
-      color: #FFFFFF;
+      transform: translateX(-50%);
       text-align: center;
-      text-shadow: 0 4px 18px rgba(0,0,0,0.7);
-      padding: 1.5rem;
+      color: #fff;
       max-width: 900px;
+      padding: 1.5rem 2rem;
+      text-shadow: 0 4px 18px rgba(0,0,0,0.85);
+      z-index: 10;
     }
 
-    .orlando-hero-title {
+    .vb-hero-title {
       font-family: "Playfair Display", serif;
       font-size: 3rem;
       margin-bottom: 0.8rem;
     }
 
-    .orlando-hero-subtitle {
-      font-size: 1.3rem;
-      margin-bottom: 0.6rem;
+    .vb-hero-subtitle {
+      font-size: 1.25rem;
+      margin-bottom: 0.4rem;
     }
 
-    .orlando-hero-tagline {
+    .vb-hero-tagline {
       font-size: 1.05rem;
       font-weight: 600;
     }
 
-    /* FOOTER */
+    /* FOOTER + LEGAL FOOTER (kept for Section 3) */
     .hyw-footer {
       background-color: #050816;
       color: #cfd3e3;
@@ -131,7 +148,6 @@
       font-size: 0.85rem;
     }
 
-    /* LEGAL FOOTER */
     .legal-footer {
       background-color: #f5f5f5;
       padding: 2rem 0;
@@ -234,10 +250,10 @@
 
           <!-- ORLANDO DROPDOWN -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" id="orlandoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle active" href="#" id="orlandoDropdown" role="button" data-bs-toggle="dropdown">
               Orlando
             </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="orlandoDropdown">
+            <ul class="dropdown-menu dropdown-menu-end">
               <li><a class="dropdown-item" href="orlando-first-timers-guide.html">First‑Timers Guide</a></li>
               <li><a class="dropdown-item" href="disney-guide.html">Disney</a></li>
               <li><a class="dropdown-item" href="universal-orlando-guide.html">Universal</a></li>
@@ -254,22 +270,21 @@
     </nav>
   </header>
 
+  <!-- PAGE TITLE BAR -->
+  <section class="page-title-bar">
+    <h1>Volcano Bay</h1>
+  </section>
+
   <!-- HERO CAROUSEL -->
   <section class="orlando-hero-carousel">
     <div id="volcanoBayHeroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+
       <div class="carousel-inner">
 
-        <!-- FIRST SLIDE WITH TEXT OVERLAY -->
         <div class="carousel-item active">
           <img src="images/orlando-hero.jpg" class="d-block w-100" alt="Volcano Bay">
-          <div class="orlando-hero-overlay">
-            <h1 class="orlando-hero-title">Volcano Bay</h1>
-            <p class="orlando-hero-subtitle">A tropical escape in the heart of Universal Orlando</p>
-            <p class="orlando-hero-tagline">Your friendly guide to slides, rivers & planning tips</p>
-          </div>
         </div>
 
-        <!-- REMAINING SLIDES -->
         <div class="carousel-item"><img src="images/orlando-hotel.jpg" class="d-block w-100" alt=""></div>
         <div class="carousel-item"><img src="images/orlando1.jpg" class="d-block w-100" alt=""></div>
         <div class="carousel-item"><img src="images/orlando2.jpg" class="d-block w-100" alt=""></div>
@@ -290,7 +305,13 @@
         <div class="carousel-item"><img src="images/orlando19.jpg" class="d-block w-100" alt=""></div>
         <div class="carousel-item"><img src="images/orlando20.jpg" class="d-block w-100" alt=""></div>
         <div class="carousel-item"><img src="images/orlando21.jpg" class="d-block w-100" alt=""></div>
+      </div>
 
+      <!-- LOWER-THIRD OVERLAY -->
+      <div class="vb-hero-overlay">
+        <h1 class="vb-hero-title">Volcano Bay</h1>
+        <p class="vb-hero-subtitle">A tropical escape in the heart of Universal Orlando</p>
+        <p class="vb-hero-tagline">Your friendly guide to slides, rivers & planning tips</p>
       </div>
 
       <!-- CONTROLS -->
@@ -300,10 +321,10 @@
       <button class="carousel-control-next" type="button" data-bs-target="#volcanoBayHeroCarousel" data-bs-slide="next">
         <span class="carousel-control-next-icon"></span>
       </button>
+
     </div>
   </section>
-
-  <!-- MAIN CONTENT -->
+    <!-- MAIN CONTENT -->
   <section class="py-5">
     <div class="container">
 
@@ -369,7 +390,7 @@
         <li><strong>Base for the day:</strong> Choose loungers, shaded areas or premium seating.</li>
         <li><strong>Explore at your own pace:</strong> No schedule, no pressure, especially with a 14 day ticket.</li>
       </ul>
-            <!-- BEST SLIDES -->
+
       <h2 class="fw-bold mt-5">Best Slides at Volcano Bay</h2>
 
       <h3 class="fw-bold mt-3">Thrill Slides (for the brave)</h3>
@@ -392,7 +413,6 @@
         <li><strong>Puihi:</strong> A big raft slide with a few surprises along the way.</li>
       </ul>
 
-      <!-- RIVERS & RELAXATION -->
       <h2 class="fw-bold mt-5">Rivers & Relaxation</h2>
 
       <h3 class="fw-bold mt-3">Kopiko Wai Winding River (Lazy River)</h3>
@@ -413,7 +433,6 @@
         out of the water and enjoy the atmosphere.
       </p>
 
-      <!-- CABANAS -->
       <h2 class="fw-bold mt-5">Cabanas & Premium Seating</h2>
       <p>Volcano Bay offers:</p>
       <ul>
@@ -435,7 +454,6 @@
         easier. If you’re adults or teens and happy to move around, then standard or premium loungers are usually enough.
       </p>
 
-      <!-- DINING -->
       <h2 class="fw-bold mt-5">Dining at Volcano Bay</h2>
 
       <h3 class="fw-bold mt-3">Quick Service & Snacks</h3>
@@ -451,7 +469,6 @@
         <li><strong>Dancing Dragons Boat Bar:</strong> Great cocktails with great views.</li>
       </ul>
 
-      <!-- TIPS FOR ADULTS -->
       <h2 class="fw-bold mt-5">Tips for Adults</h2>
       <ul>
         <li>The lazy river is one of the best places to genuinely unwind.</li>
@@ -462,18 +479,16 @@
         <li>Afternoons often feel calmer as people start to drift back to the hotels.</li>
       </ul>
 
-      <!-- TIPS FOR FAMILIES -->
       <h2 class="fw-bold mt-5">Tips for Families</h2>
       <ul>
         <li>Check height requirements before you go so there are no surprises.</li>
         <li>Base yourselves near Waturi Beach for easy access to water and seating.</li>
         <li>The lazy river is perfect for younger children with supervision.</li>
         <li>Bring water shoes, the ground can get hot in the middle of the day.</li>
-        <li>Keep reapplying suncream. the reflection from the water catches people out.</li>
+        <li>Keep reapplying suncream — the reflection from the water catches people out.</li>
         <li>Use the family slides earlier in the day before queues build.</li>
       </ul>
 
-      <!-- WHAT TO BRING -->
       <h2 class="fw-bold mt-5">What to Bring to Volcano Bay</h2>
       <ul>
         <li>Waterproof phone case.</li>
@@ -486,7 +501,6 @@
         <li>A sense of adventure and a relaxed mindset.</li>
       </ul>
 
-      <!-- STRATEGY -->
       <h2 class="fw-bold mt-5">Strategy for Your Volcano Bay Day</h2>
       <ul>
         <li><strong>Arrive early:</strong> Best seats and shortest queues.</li>
@@ -497,7 +511,6 @@
         <li><strong>Head out when you’re ready:</strong> No need to “push through”, you have 14 days.</li>
       </ul>
 
-      <!-- HONEST ADVICE -->
       <h2 class="fw-bold mt-5">My Honest Advice</h2>
       <p>
         Volcano Bay is one of the most relaxing, beautiful and enjoyable parts of a Universal holiday. Whether you’re here for
@@ -510,7 +523,6 @@
         the middle of Orlando.
       </p>
 
-      <!-- QUICK LINKS -->
       <section class="py-5 border-top">
         <div class="container">
           <h3 class="fw-bold mb-3">More Universal Orlando Guides</h3>
@@ -532,8 +544,7 @@
 
     </div>
   </section>
-
-  <!-- FOOTER -->
+    <!-- FOOTER -->
   <footer class="hyw-footer">
     <div class="container">
       <p class="mb-0">© 2024 Holidays Your Way. All rights reserved.</p>
