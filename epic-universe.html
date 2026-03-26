@@ -89,22 +89,28 @@
     }
 
     /* HERO CAROUSEL */
+    .orlando-hero-carousel {
+      position: relative; /* REQUIRED for overlay to anchor correctly */
+    }
+
     .orlando-hero-carousel .carousel-item img {
       max-height: 620px;
       object-fit: cover;
     }
 
+    /* FIXED OVERLAY — ALWAYS VISIBLE */
     .orlando-hero-overlay {
       position: absolute;
-      z-index: 10; 
-      top: 50%;
+      z-index: 10; /* ensures overlay stays above all slides */
+      bottom: 12%; /* OPTION B — lower cinematic placement */
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translateX(-50%);
       color: #FFFFFF;
       text-align: center;
       text-shadow: 0 4px 18px rgba(0,0,0,0.7);
       padding: 1.5rem;
       max-width: 900px;
+      width: 100%;
     }
 
     .orlando-hero-title {
@@ -260,17 +266,10 @@
     <div id="epicUniverseHeroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
       <div class="carousel-inner">
 
-        <!-- FIRST SLIDE WITH TEXT OVERLAY -->
         <div class="carousel-item active">
           <img src="images/orlando-hero.jpg" class="d-block w-100" alt="Epic Universe">
-          <div class="orlando-hero-overlay">
-            <h1 class="orlando-hero-title">Epic Universe</h1>
-            <p class="orlando-hero-subtitle">Visually stunning by day… unforgettable after dark</p>
-            <p class="orlando-hero-tagline">Your guide to the park’s best experiences</p>
-          </div>
         </div>
 
-        <!-- REMAINING SLIDES -->
         <div class="carousel-item"><img src="images/orlando-hotel.jpg" class="d-block w-100" alt=""></div>
         <div class="carousel-item"><img src="images/orlando1.jpg" class="d-block w-100" alt=""></div>
         <div class="carousel-item"><img src="images/orlando2.jpg" class="d-block w-100" alt=""></div>
@@ -302,81 +301,18 @@
         <span class="carousel-control-next-icon"></span>
       </button>
     </div>
+
+    <!-- FIXED OVERLAY (always visible) -->
+    <div class="orlando-hero-overlay">
+      <h1 class="orlando-hero-title">Epic Universe</h1>
+      <p class="orlando-hero-subtitle">Visually stunning by day… unforgettable after dark</p>
+      <p class="orlando-hero-tagline">Your guide to the park’s best experiences</p>
+    </div>
   </section>
 
   <!-- MAIN CONTENT -->
   <section class="py-5">
     <div class="container">
-
-      <p>
-        Epic Universe is the biggest thing to happen to Orlando theme parks in many years, and you can see exactly where the money has
-        been spent. My first reaction walking in was simply, <strong>“this is absolutely beautiful.”</strong> The theming is on another
-        level, especially in <strong>Isle of Berk</strong>, which is breathtaking in daylight.
-      </p>
-
-      <p>
-        But the real magic happens after dark. Walking back into the park once the sun had gone down, I honestly said
-        <strong>“WOW!!”</strong> and believe me when I say it takes a lot to wow me. The whole place transforms — the lighting, the atmosphere, the energy. It all comes alive in a
-        way that photos can't do justice.
-      </p>
-
-      <p>
-        Epic Universe is huge, beautifully designed and full of immersive lands, incredible rides and some of the most impressive
-        theming Universal has ever created. Whether you’re visiting with kids, with friends, or it’s
-        just us grown ups this time, there’s something here for everyone.
-      </p>
-
-      <h2 class="fw-bold mt-5">Before You Go: A Note About Wait Times</h2>
-      <p>
-        Epic Universe is extremely popular, especially in its first few years, and some rides regularly hit
-        <strong>4+ hour standby waits</strong>.
-      </p>
-
-      <p>The two biggest culprits are:</p>
-      <ul>
-        <li>Harry Potter and the Battle at the Ministry</li>
-        <li>Donkey Kong: Mine‑Cart Madness</li>
-      </ul>
-
-      <p>
-        If these rides are a priority, arrive early and head straight to them, or save them for the very end of the day. Just be
-        careful — some rides close earlier than the park itself, so always check closing times before leaving them until last.
-      </p>
-
-      <h2 class="fw-bold mt-5">The Five Lands of Epic Universe</h2>
-      <p>
-        Epic Universe is designed in a circular layout, with <strong>Celestial Park</strong> at the centre and four immersive worlds
-        branching off it.
-      </p>
-
-      <h2 class="fw-bold mt-5">Celestial Park</h2>
-      <p>Bright, beautiful and full of energy. This is the heart of Epic Universe.</p>
-
-      <p>
-        Celestial Park is a stunning central hub filled with fountains, water features and open spaces. It’s calm, bright
-        and welcoming, and a lovely place to start your day or take a break later on.
-      </p>
-
-      <h3 class="fw-bold mt-3">Key Attractions</h3>
-      <p><strong>Stardust Racers</strong><br>
-        A dual launch racing coaster with huge airtime moments and a gorgeous “celestial ribbon” where the tracks intertwine.
-        Brilliant at any time of day, but after dark, it becomes something truly special.
-      </p>
-
-      <p><strong>Constellation Carousel</strong><br>
-        A beautifully designed carousel with floating, rotating creatures. Gentle, magical and perfect for all ages.
-      </p>
-
-      <p><strong>Astronomica</strong><br>
-        A playful kinetic water feature that doubles as a splash area.
-      </p>
-
-      <h3 class="fw-bold mt-3">Best For</h3>
-      <ul>
-        <li>Families</li>
-        <li>Adults who want a calmer start</li>
-        <li>Anyone who loves beautiful theming</li>
-      </ul>
             <h2 class="fw-bold mt-5">The Wizarding World of Harry Potter – Ministry of Magic</h2>
       <p>Stylish, atmospheric and incredibly detailed.</p>
       <p>
