@@ -88,48 +88,80 @@
       color: var(--hyw-blue);
     }
 
+    /* PAGE TITLE BAR */
+    .page-title-bar {
+      background-color: var(--hyw-red-dark);
+      color: #ffffff;
+      padding: 1.75rem 0;
+      text-align: center;
+    }
+
+    .page-title-bar h1 {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* SEAWORLD LOWER-THIRD OVERLAY */
+    .seaworld-hero-overlay {
+      position: absolute;
+      bottom: 12%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      color: #fff;
+      max-width: 900px;
+      padding: 1.5rem 2rem;
+      text-shadow: 0 4px 18px rgba(0,0,0,0.85);
+    }
+
+    .seaworld-hero-title {
+      font-family: "Playfair Display", serif;
+      font-size: 3rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .seaworld-hero-subtitle {
+      font-size: 1.25rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .seaworld-hero-tagline {
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
     /* HERO CAROUSEL */
     .orlando-hero-carousel .carousel-item img {
       max-height: 620px;
       object-fit: cover;
     }
 
-    .orlando-hero-overlay {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: #FFFFFF;
-      text-align: center;
-      text-shadow: 0 4px 18px rgba(0,0,0,0.7);
-      padding: 1.5rem;
-      max-width: 900px;
-    }
-
-    .orlando-hero-title {
-      font-family: "Playfair Display", serif;
-      font-size: 3rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .orlando-hero-subtitle {
-      font-size: 1.3rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .orlando-hero-tagline {
-      font-size: 1.05rem;
-      font-weight: 600;
-    }
-
+    /* SECTIONS */
     .hyw-section {
-      padding: 4.5rem 0;
+      padding: 4rem 0;
     }
 
     .hyw-section-grey {
-      background-color: #f7f7f7;
+      background-color: var(--hyw-grey);
     }
 
+    .hyw-section-title {
+      font-size: 2.2rem;
+      line-height: 1.25;
+      color: var(--hyw-blue-dark);
+      margin-bottom: 1.2rem;
+    }
+
+    .hyw-section-intro {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #4a5264;
+      margin-bottom: 1.1rem;
+    }
+
+    /* GUIDE CARDS */
     .guide-card {
       background-color: #ffffff;
       border-radius: 10px;
@@ -154,7 +186,8 @@
       color: #4a5264;
       margin-bottom: 1rem;
     }
-        /* FOOTER */
+
+    /* FOOTER */
     .hyw-footer {
       background-color: #050816;
       color: #cfd3e3;
@@ -238,6 +271,14 @@
       width: auto;
       margin-bottom: 0.4rem;
     }
+
+    /* RESPONSIVE */
+    @media (max-width: 767.98px) {
+      .seaworld-hero-title { font-size: 2.2rem; }
+      .seaworld-hero-subtitle { font-size: 1.05rem; }
+      .seaworld-hero-tagline { font-size: 0.95rem; }
+      .seaworld-hero-overlay { padding: 1rem; }
+    }
   </style>
 </head>
 
@@ -266,10 +307,10 @@
 
           <!-- ORLANDO DROPDOWN -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" id="orlandoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle active" href="#" id="orlandoDropdown" role="button" data-bs-toggle="dropdown">
               Orlando
             </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="orlandoDropdown">
+            <ul class="dropdown-menu dropdown-menu-end">
               <li><a class="dropdown-item" href="orlando-first-timers-guide.html">First‑Timers Guide</a></li>
               <li><a class="dropdown-item" href="disney-guide.html">Disney</a></li>
               <li><a class="dropdown-item" href="universal-orlando-guide.html">Universal</a></li>
@@ -286,88 +327,34 @@
     </nav>
   </header>
 
+  <!-- PAGE TITLE BAR -->
+  <section class="page-title-bar">
+    <h1>SeaWorld Parks</h1>
+  </section>
+
   <!-- HERO CAROUSEL -->
   <section class="orlando-hero-carousel">
     <div id="seaworldHeroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
       <div class="carousel-inner">
 
-        <!-- FIRST SLIDE WITH TEXT OVERLAY -->
+        <!-- FIRST SLIDE WITH LOWER-THIRD OVERLAY -->
         <div class="carousel-item active">
           <img src="images/orlando-hero.jpg" class="d-block w-100" alt="SeaWorld Parks">
-          <div class="orlando-hero-overlay">
-            <h1 class="orlando-hero-title">Make a Splash With the SeaWorld Parks</h1>
-            <p class="orlando-hero-subtitle">Where big thrills, big splashes and big memories come together</p>
-            <p class="orlando-hero-tagline">Your calm, friendly starting point for SeaWorld, Aquatica, Discovery Cove & Busch Gardens</p>
+          <div class="seaworld-hero-overlay">
+            <h1 class="seaworld-hero-title">Make a Splash With the SeaWorld Parks</h1>
+            <p class="seaworld-hero-subtitle">Where big thrills, big splashes and big memories come together</p>
+            <p class="seaworld-hero-tagline">Your calm, friendly starting point for SeaWorld, Aquatica, Discovery Cove & Busch Gardens</p>
           </div>
         </div>
-
-        <!-- REMAINING SLIDES -->
-        <div class="carousel-item"><img src="images/orlando-hotel.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando1.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando2.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando3.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando4.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando5.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando6.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando8.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando9.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando10.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando12.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando13.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando14.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando15.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando16.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando17.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando18.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando19.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando20.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando21.jpg" class="d-block w-100" alt=""></div>
-
-      </div>
-
-      <!-- CONTROLS -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </button>
-
-      <!-- INDICATORS -->
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="0" class="active"></button>
-        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="1"></button>
-        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="2"></button>
-        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="3"></button>
-        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="4"></button>
-        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="5"></button>
-        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="6"></button>
-        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="7"></button>
-        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="8"></button>
-        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="9"></button>
-        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="10"></button>
-        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="11"></button>
-        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="12"></button>
-        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="13"></button>
-        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="14"></button>
-        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="15"></button>
-        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="16"></button>
-        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="17"></button>
-        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="18"></button>
-        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="19"></button>
-        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="20"></button>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- INTRO -->
+          <!-- INTRO -->
   <section class="hyw-section">
     <div class="container">
       <h2 class="hyw-section-title">Make a Splash With the SeaWorld Parks</h2>
+
       <p class="hyw-section-intro">
         SeaWorld Parks are a brilliant mix of coasters, animals, water parks and “wow, we didn’t expect to love this so much” moments. They’re often the underdogs of an Orlando holiday — but once families go, they come home raving about them.
       </p>
+
       <p class="hyw-section-intro">
         Whether you’re here for the dolphins, the big drops, the lazy rivers, or the “I can’t believe this is included” Discovery Cove day… this hub gives you a calm, friendly starting point. Pop the kettle on, have a browse, and let’s make these parks feel exciting — not overwhelming.
       </p>
@@ -378,55 +365,69 @@
   <section class="hyw-section hyw-section-grey">
     <div class="container">
       <h3 class="hyw-section-title">Choose Your SeaWorld Park</h3>
+
       <p class="hyw-section-intro">
         Each park has its own personality — from big coasters to tropical lagoons. Here’s where to start.
       </p>
 
       <div class="row g-4">
+
+        <!-- SeaWorld Orlando -->
         <div class="col-12 col-md-6 col-lg-3">
           <div class="guide-card">
             <div>
               <h4 class="guide-card-title">SeaWorld Orlando</h4>
-              <p class="guide-card-text">Big coasters, big shows and a surprisingly chilled vibe. A great mix for families.</p>
+              <p class="guide-card-text">
+                Big coasters, big shows and a surprisingly chilled vibe. A great mix for families.
+              </p>
             </div>
             <a href="seaworld-orlando.html" class="btn btn-outline-primary btn-sm">Read guide</a>
           </div>
         </div>
 
+        <!-- Discovery Cove -->
         <div class="col-12 col-md-6 col-lg-3">
           <div class="guide-card">
             <div>
               <h4 class="guide-card-title">Discovery Cove</h4>
-              <p class="guide-card-text">A tropical, all‑inclusive day that feels nothing like a theme park — in the best way.</p>
+              <p class="guide-card-text">
+                A tropical, all‑inclusive day that feels nothing like a theme park — in the best way.
+              </p>
             </div>
             <a href="discovery-cove.html" class="btn btn-outline-primary btn-sm">Read guide</a>
           </div>
         </div>
 
+        <!-- Aquatica -->
         <div class="col-12 col-md-6 col-lg-3">
           <div class="guide-card">
             <div>
               <h4 class="guide-card-title">Aquatica</h4>
-              <p class="guide-card-text">Colourful slides, lazy rivers and warm‑weather fun. A brilliant water park for all ages.</p>
+              <p class="guide-card-text">
+                Colourful slides, lazy rivers and warm‑weather fun. A brilliant water park for all ages.
+              </p>
             </div>
             <a href="aquatica.html" class="btn btn-outline-primary btn-sm">Read guide</a>
           </div>
         </div>
 
+        <!-- Busch Gardens -->
         <div class="col-12 col-md-6 col-lg-3">
           <div class="guide-card">
             <div>
               <h4 class="guide-card-title">Busch Gardens</h4>
-              <p class="guide-card-text">Huge coasters, animals and a totally different feel. Worth the drive — trust me.</p>
+              <p class="guide-card-text">
+                Huge coasters, animals and a totally different feel. Worth the drive — trust me.
+              </p>
             </div>
             <a href="busch-gardens.html" class="btn btn-outline-primary btn-sm">Read guide</a>
           </div>
         </div>
+
       </div>
     </div>
   </section>
-
-   <!-- FOOTER -->
+    <!-- FOOTER -->
   <footer class="hyw-footer">
     <div class="container">
       <p class="mb-0">© 2024 Holidays Your Way. All rights reserved.</p>
@@ -493,6 +494,8 @@
     </div>
   </section>
 
+  <!-- BOOTSTRAP JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
