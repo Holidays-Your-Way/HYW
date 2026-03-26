@@ -88,132 +88,149 @@
       color: var(--hyw-blue);
     }
 
+    /* PAGE TITLE BAR */
+    .page-title-bar {
+      background-color: var(--hyw-red-dark);
+      color: #ffffff;
+      padding: 1.75rem 0;
+      text-align: center;
+    }
+
+    .page-title-bar h1 {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
     /* HERO CAROUSEL */
     .orlando-hero-carousel .carousel-item img {
       max-height: 620px;
       object-fit: cover;
     }
 
-    .orlando-hero-overlay {
+    /* LOWER-THIRD OVERLAY */
+    .ioa-hero-overlay {
       position: absolute;
-      top: 50%;
+      bottom: 12%;
       left: 50%;
-      transform: translate(-50%, -50%);
-      color: #FFFFFF;
+      transform: translateX(-50%);
       text-align: center;
-      text-shadow: 0 4px 18px rgba(0,0,0,0.7);
-      padding: 1.5rem;
+      color: #fff;
       max-width: 900px;
+      padding: 1.5rem 2rem;
+      text-shadow: 0 4px 18px rgba(0,0,0,0.85);
     }
 
-    .orlando-hero-title {
+    .ioa-hero-title {
       font-family: "Playfair Display", serif;
       font-size: 3rem;
       margin-bottom: 0.8rem;
     }
 
-    .orlando-hero-subtitle {
-      font-size: 1.3rem;
-      margin-bottom: 0.6rem;
+    .ioa-hero-subtitle {
+      font-size: 1.25rem;
+      margin-bottom: 0.4rem;
     }
 
-    .orlando-hero-tagline {
+    .ioa-hero-tagline {
       font-size: 1.05rem;
       font-weight: 600;
     }
 
-    /* CONTENT */
+    /* CONTENT SECTIONS */
     .hyw-section {
-      padding: 4.5rem 0;
+      padding: 4rem 0;
     }
 
     .hyw-section-grey {
-      background-color: #f7f7f7;
+      background-color: var(--hyw-grey);
     }
+
     /* FOOTER */
-.hyw-footer {
-  background-color: #050816;
-  color: #cfd3e3;
-  padding: 1.5rem 0;
-  text-align: center;
-  font-size: 0.85rem;
-}
+    .hyw-footer {
+      background-color: #050816;
+      color: #cfd3e3;
+      padding: 1.5rem 0;
+      text-align: center;
+      font-size: 0.85rem;
+    }
 
-/* LEGAL FOOTER */
-.legal-footer {
-  background-color: #f5f5f5;
-  padding: 2rem 0;
-  text-align: center;
-  color: #333;
-  font-size: 0.9rem;
-  border-top: 1px solid #ddd;
-}
+    /* LEGAL FOOTER */
+    .legal-footer {
+      background-color: #f5f5f5;
+      padding: 2rem 0;
+      text-align: center;
+      color: #333;
+      font-size: 0.9rem;
+      border-top: 1px solid #ddd;
+    }
 
-.legal-logos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.2rem;
-  margin-bottom: 1rem;
-}
+    .legal-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 1rem;
+    }
 
-.legal-exotic-logo {
-  height: 70px;
-  width: auto;
-}
+    .legal-exotic-logo {
+      height: 70px;
+      width: auto;
+    }
 
-.legal-atol-logo {
-  height: 90px;
-  width: auto;
-}
+    .legal-atol-logo {
+      height: 90px;
+      width: auto;
+    }
 
-.legal-text {
-  max-width: 900px;
-  margin: 0 auto 1.5rem;
-  line-height: 1.5;
-  color: #444;
-}
+    .legal-text {
+      max-width: 900px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.5;
+      color: #444;
+    }
 
-.legal-social {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
+    .legal-social {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
 
-.social-icon {
-  height: 28px;
-  width: auto;
-  transition: opacity 0.2s ease;
-}
+    .social-icon {
+      height: 28px;
+      width: auto;
+      transition: opacity 0.2s ease;
+    }
 
-.social-icon:hover {
-  opacity: 0.7;
-}
+    .social-icon:hover {
+      opacity: 0.7;
+    }
 
-.legal-features {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 2rem;
-}
+    .legal-features {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
 
-.feature-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 0.85rem;
-  color: #333;
-  max-width: 120px;
-  text-align: center;
-}
+    .feature-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.85rem;
+      color: #333;
+      max-width: 120px;
+      text-align: center;
+    }
 
-.feature-icon {
-  height: 40px;
-  width: auto;
-  margin-bottom: 0.4rem;
-}
+    .feature-icon {
+      height: 40px;
+      width: auto;
+      margin-bottom: 0.4rem;
+    }
   </style>
 </head>
 
@@ -242,10 +259,10 @@
 
           <!-- ORLANDO DROPDOWN -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" id="orlandoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle active" href="#" id="orlandoDropdown" role="button" data-bs-toggle="dropdown">
               Orlando
             </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="orlandoDropdown">
+            <ul class="dropdown-menu dropdown-menu-end">
               <li><a class="dropdown-item" href="orlando-first-timers-guide.html">First‑Timers Guide</a></li>
               <li><a class="dropdown-item" href="disney-guide.html">Disney</a></li>
               <li><a class="dropdown-item" href="universal-orlando-guide.html">Universal</a></li>
@@ -262,22 +279,20 @@
     </nav>
   </header>
 
+  <!-- PAGE TITLE BAR -->
+  <section class="page-title-bar">
+    <h1>Islands of Adventure</h1>
+  </section>
+
   <!-- HERO CAROUSEL -->
   <section class="orlando-hero-carousel">
     <div id="ioaHeroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
-      <div class="carousel-inner">
 
-        <!-- FIRST SLIDE WITH TEXT OVERLAY -->
+      <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="images/orlando-hero.jpg" class="d-block w-100" alt="Islands of Adventure">
-          <div class="orlando-hero-overlay">
-            <h1 class="orlando-hero-title">Islands of Adventure</h1>
-            <p class="orlando-hero-subtitle">The best park for coasters… with so much more to it</p>
-            <p class="orlando-hero-tagline">Your friendly guide to rides, shows & planning tips</p>
-          </div>
         </div>
 
-        <!-- REMAINING SLIDES -->
         <div class="carousel-item"><img src="images/orlando-hotel.jpg" class="d-block w-100" alt=""></div>
         <div class="carousel-item"><img src="images/orlando1.jpg" class="d-block w-100" alt=""></div>
         <div class="carousel-item"><img src="images/orlando2.jpg" class="d-block w-100" alt=""></div>
@@ -298,7 +313,13 @@
         <div class="carousel-item"><img src="images/orlando19.jpg" class="d-block w-100" alt=""></div>
         <div class="carousel-item"><img src="images/orlando20.jpg" class="d-block w-100" alt=""></div>
         <div class="carousel-item"><img src="images/orlando21.jpg" class="d-block w-100" alt=""></div>
+      </div>
 
+      <!-- LOWER-THIRD OVERLAY -->
+      <div class="ioa-hero-overlay">
+        <h1 class="ioa-hero-title">Islands of Adventure</h1>
+        <p class="ioa-hero-subtitle">The best park for coasters… with so much more to it</p>
+        <p class="ioa-hero-tagline">Your friendly guide to rides, shows & planning tips</p>
       </div>
 
       <!-- CONTROLS -->
@@ -308,18 +329,19 @@
       <button class="carousel-control-next" type="button" data-bs-target="#ioaHeroCarousel" data-bs-slide="next">
         <span class="carousel-control-next-icon"></span>
       </button>
+
     </div>
   </section>
-
-  <!-- MAIN CONTENT -->
-  <section class="py-5">
+    <!-- MAIN CONTENT -->
+  <section class="hyw-section">
     <div class="container">
 
       <p>
-        Islands of Adventure opened in <strong>May 1999</strong>, and I’ve been visiting since the very beginning. 27 years this May.
+        Islands of Adventure opened in <strong>May 1999</strong>, and I’ve been visiting since the very beginning — 27 years this May.
         It’s the park people often think is “just for thrill seekers,” but that couldn’t be further from the truth. Yes, it’s
         home to some of the biggest coasters at Universal Orlando, and if you love thrills, this is your park.
       </p>
+
       <p>
         But it also surprises people with how much there is to enjoy beyond the big rides. It’s a beautifully themed park with
         immersive lands, brilliant storytelling and loads to do whether you love coasters, prefer something gentler, you’re visiting
@@ -366,38 +388,39 @@
         One of the <strong>most popular rides in Orlando</strong>. Fast, fun, smooth and full of surprises. Queues can be long, but
         it’s worth every minute.
       </p>
-            <h3 class="fw-bold mt-3">VelociCoaster</h3>
+
+      <h3 class="fw-bold mt-3">VelociCoaster</h3>
       <p>
         If you love coasters, this is <em>the</em> one. Fast, intense, smooth and beautifully designed. If you don’t like big
-        coasters, this is a definite skip, there is no shame in that.
+        coasters, this is a definite skip — no shame in that.
       </p>
 
       <h3 class="fw-bold mt-3">The Incredible Hulk Coaster</h3>
       <p>
-        The OG. My absolute favourite ride in Universal, It's powerful, iconic and still one of the best coasters in Universal. If you
-        love big, bold, in your face coasters, this is unmissable.
+        The OG. My absolute favourite ride in Universal. It's powerful, iconic and still one of the best coasters in Universal. If you
+        love big, bold, in‑your‑face coasters, this is unmissable.
       </p>
 
       <h3 class="fw-bold mt-3">The Amazing Adventures of Spider‑Man</h3>
       <p>A brilliant, immersive dark ride. Still one of the best attractions Universal has ever created.</p>
 
       <h3 class="fw-bold mt-3">Jurassic Park River Adventure</h3>
-      <p>A classic water ride with a big drop at the end. Great fun on a hot day, you may get very wet.</p>
+      <p>A classic water ride with a big drop at the end. Great fun on a hot day — you may get very wet.</p>
 
       <h3 class="fw-bold mt-3">Popeye &amp; Bluto’s Bilge‑Rat Barges</h3>
       <p>
-        One of the best rapids rides in Orlando. You don’t just get wet, <strong>you get absolutely drenched</strong>. Brilliant
+        One of the best rapids rides in Orlando. You don’t just get wet — <strong>you get absolutely drenched</strong>. Brilliant
         fun and perfect on a hot day.
       </p>
 
       <h3 class="fw-bold mt-3">Dudley Do‑Right’s Ripsaw Falls</h3>
       <p>
-        A wild, cartoon style log flume with a huge drop. Another one where I guarantee you’ll get <strong>SOAKED</strong> head to
+        A wild, cartoon‑style log flume with a huge drop. Another one where I guarantee you’ll get <strong>SOAKED</strong> head to
         toe.
       </p>
 
       <h3 class="fw-bold mt-3">Flight of the Hippogriff</h3>
-      <p>A gentle family coaster, great for younger riders or anyone easing into coasters.</p>
+      <p>A gentle family coaster — great for younger riders or anyone easing into coasters.</p>
 
       <h3 class="fw-bold mt-3">The Seuss Landing Rides</h3>
       <p>Perfect for little ones or anyone who prefers something calm and colourful.</p>
@@ -405,8 +428,8 @@
       <!-- HOGSMEADE -->
       <h2 class="fw-bold mt-5">The Wizarding World – Hogsmeade</h2>
       <p>
-        Hogsmeade is one of the most atmospheric areas in any theme park. Snow covered rooftops, cobbled streets, Butterbeer, the
-        Hogwarts Express, it’s magical whether you’re a Potter fan or not.
+        Hogsmeade is one of the most atmospheric areas in any theme park. Snow‑covered rooftops, cobbled streets, Butterbeer, the
+        Hogwarts Express — it’s magical whether you’re a Potter fan or not.
       </p>
 
       <p>Highlights include:</p>
@@ -422,24 +445,24 @@
 
       <!-- DINING -->
       <h2 class="fw-bold mt-5">Dining at Islands of Adventure</h2>
-      <p>There are some great food options here, a mix of quick service and sit down.</p>
+      <p>There are some great food options here — a mix of quick service and sit‑down.</p>
 
       <h3 class="fw-bold mt-3">Three Broomsticks</h3>
-      <p>Traditional British style dishes in a beautifully themed setting. Great for breakfast too.</p>
+      <p>Traditional British‑style dishes in a beautifully themed setting. Great for breakfast too.</p>
 
       <h3 class="fw-bold mt-3">Thunder Falls Terrace</h3>
-      <p>One of the best quick service spots in the park. Great rotisserie chicken, ribs and salads.</p>
+      <p>One of the best quick‑service spots in the park. Great rotisserie chicken, ribs and salads.</p>
 
       <h3 class="fw-bold mt-3">The Burger Digs</h3>
       <p>Simple, reliable and good for picky eaters.</p>
 
       <h3 class="fw-bold mt-3">Croissant Moon Bakery</h3>
-      <p>Lovely pastries, sandwiches and coffee. Perfect for a lighter breakfast.</p>
+      <p>Lovely pastries, sandwiches and coffee — perfect for a lighter breakfast.</p>
 
       <h3 class="fw-bold mt-3">Mythos Restaurant</h3>
       <p>
-        Often called “the best theme park restaurant in the world.” It’s good, but don’t expect fine dining. A nice option It's nice if you
-        want a sit down meal in a beautiful setting.
+        Often called “the best theme park restaurant in the world.” It’s good, but don’t expect fine dining. A nice option if you
+        want a sit‑down meal in a beautiful setting.
       </p>
       <p><strong>Note:</strong> Mythos is set to close for refurbishment in early 2026. No date has been confirmed yet, so check if it’s open during your visit.</p>
 
@@ -451,7 +474,7 @@
         <li>Do Hagrid’s or VelociCoaster first.</li>
         <li>Water rides are best in the afternoon when it’s hottest.</li>
         <li>Take breaks in the shade.</li>
-        <li>Don’t rush, the theming is stunning and easy to miss.</li>
+        <li>Don’t rush — the theming is stunning and easy to miss.</li>
         <li>If you’re not a thrill seeker, there’s still loads to enjoy.</li>
       </ul>
 
@@ -473,10 +496,10 @@
       <p>
         After 27 years of visiting Islands of Adventure, here’s what I’ve learned: you don’t need to love coasters to enjoy this
         park. Hagrid’s is worth doing early or late. VelociCoaster is incredible, but only if you like big coasters. Hulk is
-        iconic, and still one of the best coasters in Universal. Spider‑Man is a must do for almost everyone. Don’t underestimate
-        the water rides, they’re brilliant. The theming is some of the best, and evenings here are gorgeous around the
-        lagoon.
+        iconic, and still one of the best coasters in Universal. Spider‑Man is a must‑do for almost everyone. Don’t underestimate
+        the water rides — they’re brilliant. The theming is some of the best, and evenings here are gorgeous around the lagoon.
       </p>
+
       <p>It’s a park that feels like a proper adventure, and it’s one of my favourites when you take it at your own pace.</p>
 
       <!-- STILL UNSURE -->
@@ -485,7 +508,7 @@
         If you’re not sure how to plan your Islands of Adventure day, or whether you need Express Pass, just ask. Tell me your
         dates, who’s travelling and what kind of day you want, and I’ll give you honest, personalised advice.
       </p>
-      <p>I’ve been visiting these parks for decades, it’s always easier when someone guides you through it.</p>
+      <p>I’ve been visiting these parks for decades — it’s always easier when someone guides you through it.</p>
 
       <!-- QUICK LINKS -->
       <section class="py-5 border-top">
@@ -509,8 +532,7 @@
 
     </div>
   </section>
-
-  <!-- FOOTER -->
+    <!-- FOOTER -->
   <footer class="hyw-footer">
     <div class="container">
       <p class="mb-0">© 2024 Holidays Your Way. All rights reserved.</p>
@@ -529,8 +551,8 @@
       <p class="legal-text">
         Exotic World Travel Ltd (company number 16110795) is a Member of Protected Trust Services (PTS) with member number PTS6358 and holds an ATOL Licence (number 12846).
         All the flights and flight-inclusive holidays on this website are financially protected by the ATOL scheme. When you pay you will be supplied with an ATOL Certificate.
-        Please ask for it and check to ensure that everything you booked (flights, hotels and other services) is listed on it. For more information about financial protection
-        and the ATOL Certificate go to www.caa.co.uk. Holidays are financially secured by PTS. All customer funds are held in an Independent Trust Account for your protection.
+        Please ask for it and check to ensure that everything you booked (flights, hotels and other services) is listed on it. For more information about financial protection and the ATOL Certificate go to www.caa.co.uk.
+        Holidays are financially secured by PTS. All customer funds are held in an Independent Trust Account for your protection.
       </p>
 
       <div class="legal-social">
