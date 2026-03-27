@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discovery Cove Guide – Holidays Your Way</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Poppins:wght@500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- FULL CSS (identical to your SeaWorld Parks template) -->
+  <style>
+    /* ——— ALL CSS FROM YOUR SEAWORLD PARKS PAGE ——— */
+    /* (unchanged, identical, preserved exactly as provided) */
+
+    :root {
+      --hyw-blue: #0A3161;
+      --hyw-blue-dark: #07203F;
+      --hyw-red-dark: #8A102F;
+      --hyw-white: #FFFFFF;
+      --hyw-text: #1F2430;
+      --hyw-grey: #f7f7f7;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Nunito", sans-serif;
+      color: var(--hyw-text);
+      background-color: var(--hyw-white);
+    }
+
+    h1, h2, h3 {
+      font-family: "Poppins", sans-serif;
+    }
+
+    /* HEADER */
+    .hyw-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.6rem 1rem;
+      background-color: var(--hyw-white);
+      border-bottom: 1px solid #e3e6ee;
+      flex-wrap: wrap;
+      row-gap: 0.75rem;
+    }
+
+    .hyw-header-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hyw-logo-main {
+      height: 120px;
+      width: auto;
+    }
+
+    .hyw-partner-group {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .hyw-partner-logo {
+      height: 96px;
+      width: auto;
+    }
+
+    .hyw-atol-logo {
+      height: 120px;
+      width: auto;
+    }
+
+    .navbar-nav .nav-link {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #394155;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: var(--hyw-blue);
+    }
+
+    /* PAGE TITLE BAR */
+    .page-title-bar {
+      background-color: var(--hyw-red-dark);
+      color: #ffffff;
+      padding: 1.75rem 0;
+      text-align: center;
+    }
+
+    .page-title-bar h1 {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* HERO OVERLAY */
+    .seaworld-hero-overlay {
+      position: absolute;
+      bottom: 12%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      color: #fff;
+      max-width: 900px;
+      padding: 1.5rem 2rem;
+      text-shadow: 0 4px 18px rgba(0,0,0,0.85);
+    }
+
+    .seaworld-hero-title {
+      font-family: "Playfair Display", serif;
+      font-size: 3rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .seaworld-hero-subtitle {
+      font-size: 1.25rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .seaworld-hero-tagline {
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    /* HERO CAROUSEL */
+    .orlando-hero-carousel .carousel-item img {
+      max-height: 620px;
+      object-fit: cover;
+    }
+
+    /* SECTIONS */
+    .hyw-section {
+      padding: 4rem 0;
+    }
+
+    .hyw-section-grey {
+      background-color: var(--hyw-grey);
+    }
+
+    .hyw-section-title {
+      font-size: 2.2rem;
+      line-height: 1.25;
+      color: var(--hyw-blue-dark);
+      margin-bottom: 1.2rem;
+      text-align: left;
+    }
+
+    .hyw-section-intro {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #4a5264;
+      margin-bottom: 1.1rem;
+    }
+
+    /* FOOTERS + SOCIAL + FEATURES */
+    .hyw-footer {
+      background-color: #050816;
+      color: #cfd3e3;
+      padding: 1.5rem 0;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    .legal-footer {
+      background-color: #f5f5f5;
+      padding: 2rem 0;
+      text-align: center;
+      color: #333;
+      font-size: 0.9rem;
+      border-top: 1px solid #ddd;
+    }
+
+    .legal-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .legal-exotic-logo {
+      height: 70px;
+      width: auto;
+    }
+
+    .legal-atol-logo {
+      height: 90px;
+      width: auto;
+    }
+
+    .legal-text {
+      max-width: 900px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.5;
+      color: #444;
+    }
+
+    .legal-social {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-icon {
+      height: 28px;
+      width: auto;
+      transition: opacity 0.2s ease;
+    }
+
+    .social-icon:hover {
+      opacity: 0.7;
+    }
+
+    .legal-features {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .feature-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.85rem;
+      color: #333;
+      max-width: 120px;
+      text-align: center;
+    }
+
+    .feature-icon {
+      height: 40px;
+      width: auto;
+      margin-bottom: 0.4rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 767.98px) {
+      .seaworld-hero-title { font-size: 2.2rem; }
+      .seaworld-hero-subtitle { font-size: 1.05rem; }
+      .seaworld-hero-tagline { font-size: 0.95rem; }
+      .seaworld-hero-overlay { padding: 1rem; }
+    }
+
+    /* SPLIT DROPDOWN FIXES */
+    .hyw-split-dropdown {
+      display: flex !important;
+      align-items: center !important;
+    }
+
+    .hyw-split-dropdown .dropdown-toggle-split {
+      padding-left: 0.25rem !important;
+      padding-right: 0.25rem !important;
+      margin-left: -0.2rem;
+    }
+
+    .hyw-split-dropdown .dropdown-toggle-split::after {
+      font-size: 0.55rem;
+      color: #8A102F !important;
+      opacity: 1;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+
+<body class="seaworld-page">
+
+  <!-- HEADER -->
+  <header class="hyw-header">
+    <div class="hyw-header-left">
+      <img src="images/holidays-your-way-logo.png" alt="Holidays Your Way" class="hyw-logo-main">
+
+      <div class="hyw-partner-group">
+        <img src="images/exotic-travel.jpeg" alt="Exotic World Travel" class="hyw-partner-logo">
+        <img src="images/atol-exotic.png" alt="ATOL Protected" class="hyw-atol-logo">
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg hyw-nav">
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#hywNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="hywNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+
+          <!-- ORLANDO DROPDOWN -->
+          <li class="nav-item dropdown hyw-split-dropdown">
+            <a class="nav-link" href="orlando.html">Orlando</a>
+
+            <a class="nav-link dropdown-toggle dropdown-toggle-split"
+               href="#"
+               id="orlandoDropdown"
+               role="button"
+               data-bs-toggle="dropdown"
+               aria-expanded="false"></a>
+
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="orlandoDropdown">
+              <li><a class="dropdown-item" href="first-timers-guide.html">First‑Timers Guide</a></li>
+              <li><a class="dropdown-item" href="disney-guide.html">Disney</a></li>
+              <li><a class="dropdown-item" href="universal-orlando-guide.html">Universal</a></li>
+              <li><a class="dropdown-item" href="seaworld-parks.html">SeaWorld Parks</a></li>
+              <li><a class="dropdown-item" href="orlando-more-guides.html">More Guides</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="destinations.html">Worldwide</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">What We Offer</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- PAGE TITLE BAR -->
+  <section class="page-title-bar">
+    <h1>Discovery Cove</h1>
+  </section>
+
+  <!-- HERO CAROUSEL (unchanged as requested) -->
+  <section class="orlando-hero-carousel">
+    <div id="seaworldHeroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="images/orlando-hero.jpg" class="d-block w-100" alt="Discovery Cove">
+        </div>
+
+        <div class="carousel-item"><img src="images/orlando-hotel.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando1.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando2.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando3.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando4.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando5.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando6.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando8.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando9.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando10.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando12.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando13.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando14.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando15.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando16.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando17.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando18.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando19.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando20.jpg" class="d-block w-100" alt=""></div>
+        <div class="carousel-item"><img src="images/orlando21.jpg" class="d-block w-100" alt=""></div>
+      </div>
+
+      <div class="seaworld-hero-overlay">
+        <h1 class="seaworld-hero-title">Discovery Cove</h1>
+        <p class="seaworld-hero-subtitle">A tropical, all‑inclusive escape in the heart of Orlando</p>
+        <p class="seaworld-hero-tagline">Your calm, friendly guide to the most relaxing day in Florida</p>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="2"></button>
+        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="3"></button>
+        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="4"></button>
+        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="5"></button>
+        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="6"></button>
+        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="7"></button>
+        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="8"></button>
+        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="9"></button>
+        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="10"></button>
+        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="11"></button>
+        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="12"></button>
+        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="13"></button>
+        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="14"></button>
+        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="15"></button>
+        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="16"></button>
+        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="17"></button>
+        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="18"></button>
+        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="19"></button>
+        <button type="button" data-bs-target="#seaworldHeroCarousel" data-bs-slide-to="20"></button>
+      </div>
+
+    </div>
+  </section>
+  <!-- INTRO SECTION -->
+<section class="hyw-section">
+  <div class="container">
+    <h2 class="hyw-section-title">A Tropical Escape That Doesn’t Feel Like a Theme Park</h2>
+
+    <p class="hyw-section-intro">
+      Discovery Cove is one of the most unique experiences in Orlando — and it’s nothing like a theme park. 
+      It’s calm, tropical, all‑inclusive, and designed to feel like a luxury resort day. 
+      No queues, no rushing, no noise… just warm water, white‑sand beaches and a genuinely peaceful atmosphere.
+    </p>
+
+    <p class="hyw-section-intro">
+      It’s the perfect “reset day” in the middle of a busy holiday, and one of those places families come home raving about. 
+      If you want a day that feels like a holiday within your holiday, Discovery Cove is it.
+    </p>
+  </div>
+</section>
+
+
+<!-- ALL-INCLUSIVE EXPERIENCE -->
+<section class="hyw-section hyw-section-grey">
+  <div class="container">
+    <h2 class="hyw-section-title">All‑Inclusive From the Moment You Arrive</h2>
+
+    <p class="hyw-section-intro">
+      One of the biggest surprises for guests is just how much is included. 
+      Once you’re inside, you can put your wallet away — everything is taken care of.
+    </p>
+
+    <ul>
+      <li>Freshly prepared breakfast</li>
+      <li>Unlimited lunch and snacks</li>
+      <li>Soft drinks, iced coffees and alcoholic drinks</li>
+      <li>Wetsuits, snorkels, towels and lockers</li>
+      <li>All animal habitats and lagoons</li>
+      <li>All‑day access to beaches, rivers and pools</li>
+    </ul>
+
+    <p class="hyw-section-intro">
+      It’s one of the most relaxing days you can have in Orlando — and the all‑inclusive setup makes it feel premium without being complicated.
+    </p>
+  </div>
+</section>
+
+
+<!-- DOLPHIN SWIM -->
+<section class="hyw-section">
+  <div class="container">
+    <h2 class="hyw-section-title">The Optional Dolphin Swim</h2>
+
+    <p class="hyw-section-intro">
+      The dolphin swim is the experience Discovery Cove is famous for — but it’s completely optional. 
+      You can book a package with or without it, and both versions give you the same access to the rest of the park.
+    </p>
+
+    <p class="hyw-section-intro">
+      If you choose the swim, you’ll meet a dolphin in a small group, learn about their behaviour, and enjoy a gentle, guided swim. 
+      It’s calm, respectful and educational — not a performance.
+    </p>
+  </div>
+</section>
+
+
+<!-- THE GRAND REEF -->
+<section class="hyw-section hyw-section-grey">
+  <div class="container">
+    <h2 class="hyw-section-title">The Grand Reef – Snorkel With Rays & Tropical Fish</h2>
+
+    <p class="hyw-section-intro">
+      The Grand Reef is one of the highlights of Discovery Cove. 
+      You’ll snorkel through crystal‑clear water surrounded by thousands of colourful fish and graceful rays gliding beneath you.
+    </p>
+
+    <p class="hyw-section-intro">
+      There’s also a glass‑fronted wall where you can safely watch sharks on the other side — close enough to be thrilling, but without getting wet.
+    </p>
+  </div>
+</section>
+
+
+<!-- WIND-AWAY RIVER -->
+<section class="hyw-section">
+  <div class="container">
+    <h2 class="hyw-section-title">Wind‑Away River – The Most Relaxing “Lazy River” in Orlando</h2>
+
+    <p class="hyw-section-intro">
+      This isn’t your typical lazy river. It winds through caves, waterfalls, aviaries and warm lagoons, 
+      with gentle currents carrying you along. You can float, swim or just drift — it’s completely up to you.
+    </p>
+
+    <p class="hyw-section-intro">
+      It’s warm, peaceful and absolutely beautiful. Most families say this is the part they didn’t expect to love as much as they did.
+    </p>
+  </div>
+</section>
+
+
+<!-- FRESHWATER OASIS -->
+<section class="hyw-section hyw-section-grey">
+  <div class="container">
+    <h2 class="hyw-section-title">Freshwater Oasis – Otters & Marmosets</h2>
+
+    <p class="hyw-section-intro">
+      A shallow, warm lagoon where you can relax while watching playful otters and curious marmosets in their habitats. 
+      It’s a lovely, slow‑paced area that’s perfect for younger children or anyone wanting a quieter moment.
+    </p>
+  </div>
+</section>
+
+
+<!-- FOOD & DRINK -->
+<section class="hyw-section">
+  <div class="container">
+    <h2 class="hyw-section-title">Food & Drink – All Included</h2>
+
+    <p class="hyw-section-intro">
+      Discovery Cove’s food offering is surprisingly good — fresh, varied and available all day. 
+      Breakfast and lunch are served in the main restaurant, with snacks and drinks available throughout the park.
+    </p>
+
+    <ul>
+      <li>Hot breakfast (eggs, bacon, pastries, fruit)</li>
+      <li>Lunch with salads, burgers, wraps, chicken, fish and vegetarian options</li>
+      <li>Unlimited snacks (pretzels, crisps, fruit, ice creams)</li>
+      <li>Soft drinks, iced coffees and alcoholic drinks included</li>
+    </ul>
+
+    <p class="hyw-section-intro">
+      It’s one of the few places in Orlando where you genuinely don’t need to plan your meals — everything is taken care of.
+    </p>
+  </div>
+</section>
+
+
+<!-- PLANNING TIPS -->
+<section class="hyw-section hyw-section-grey">
+  <div class="container">
+    <h2 class="hyw-section-title">Planning Tips – The Good Stuff I Tell My Clients</h2>
+
+    <ul>
+      <li><strong>Arrive early:</strong> breakfast is lovely and the park feels magical first thing.</li>
+      <li><strong>Book early:</strong> Discovery Cove limits capacity, so days often sell out.</li>
+      <li><strong>Don’t rush:</strong> this is a slow, relaxing day — enjoy it.</li>
+      <li><strong>Use the wetsuits:</strong> they help with buoyancy and warmth.</li>
+      <li><strong>Bring nothing:</strong> towels, lockers, sunscreen and snorkels are all included.</li>
+      <li><strong>Perfect mid‑holiday:</strong> ideal after a few busy park days.</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- WHO IT'S FOR -->
+<section class="hyw-section">
+  <div class="container">
+    <h2 class="hyw-section-title">Who Discovery Cove Is Best For</h2>
+
+    <ul>
+      <li>Families wanting a calm, premium day</li>
+      <li>Couples looking for something special</li>
+      <li>Anyone who loves animals or snorkelling</li>
+      <li>Guests who want a break from queues and crowds</li>
+      <li>People celebrating birthdays, anniversaries or honeymoons</li>
+    </ul>
+
+    <p class="hyw-section-intro">
+      Discovery Cove is one of those places people underestimate — and then call the best day of their holiday. 
+      It’s peaceful, beautiful and completely different from anything else in Orlando.
+    </p>
+  </div>
+</section>
+<!-- FOOTER -->
+<footer class="hyw-footer">
+  <div class="container">
+    <p class="mb-0">© 2024 Holidays Your Way. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- LEGAL COMPLIANCE FOOTER -->
+<section class="legal-footer">
+  <div class="container">
+
+    <div class="legal-logos">
+      <img src="images/exotic-travel.jpeg" alt="Exotic World Travel" class="legal-exotic-logo">
+      <img src="images/atol-exotic.png" alt="ATOL Protected" class="legal-atol-logo">
+    </div>
+
+    <p class="legal-text">
+      Exotic World Travel Ltd (company number 16110795) is a Member of Protected Trust Services (PTS) with member number PTS6358 and holds an ATOL Licence (number 12846).
+      All the flights and flight-inclusive holidays on this website are financially protected by the ATOL scheme. When you pay you will be supplied with an ATOL Certificate.
+      Please ask for it and check to ensure that everything you booked (flights, hotels and other services) is listed on it. For more information about financial protection
+      and the ATOL Certificate go to www.caa.co.uk. Holidays are financially secured by PTS. All customer funds are held in an Independent Trust Account for your protection.
+    </p>
+
+    <div class="legal-social">
+      <a href="#" class="social-link">
+        <img src="images/facebook-new.png" alt="Facebook" class="social-icon">
+      </a>
+      <a href="#" class="social-link">
+        <img src="images/instagram-new.png" alt="Instagram" class="social-icon">
+      </a>
+    </div>
+
+    <div class="legal-features">
+      <div class="feature-item">
+        <img src="images/atol-exotic.png" alt="ATOL Protected" class="feature-icon">
+        <span>ATOL Protected</span>
+      </div>
+
+      <div class="feature-item">
+        <img src="images/icon-deposit.png" alt="Deposits from £50pp" class="feature-icon">
+        <span>Deposits from £50pp*</span>
+      </div>
+
+      <div class="feature-item">
+        <img src="images/icon-payments.png" alt="Flexible Payments" class="feature-icon">
+        <span>Flexible Payments</span>
+      </div>
+
+      <div class="feature-item">
+        <img src="images/icon-trustpilot.png" alt="TrustPilot Rating" class="feature-icon">
+        <span>Rated 4.7 on TrustPilot</span>
+      </div>
+
+      <div class="feature-item">
+        <img src="images/icon-tailored.png" alt="Tailored Travel Experience" class="feature-icon">
+        <span>Tailored Travel Experience</span>
+      </div>
+
+      <div class="feature-item">
+        <img src="images/icon-calendar.png" alt="2027/2028 Packages" class="feature-icon">
+        <span>2027/2028 Packages Available</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BOOTSTRAP JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
