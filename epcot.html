@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EPCOT Park Guide – Holidays Your Way</title>
+  <title>EPCOT – Holidays Your Way</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +13,6 @@
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-  <!-- EPCOT PAGE CSS -->
   <style>
     :root {
       --hyw-blue: #0A3161;
@@ -33,6 +32,28 @@
 
     h1, h2, h3 {
       font-family: "Poppins", sans-serif;
+    }
+
+    /* EPCOT PAGE SPACING FIXES */
+    .epcot-page h2,
+    .epcot-page h3 {
+      margin-top: 2.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .epcot-page p {
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+    }
+
+    .epcot-page ul {
+      margin-bottom: 2rem;
+      padding-left: 1.2rem;
+    }
+
+    .epcot-page li {
+      margin-bottom: 0.6rem;
+      line-height: 1.6;
     }
 
     /* HEADER */
@@ -76,7 +97,6 @@
       width: auto;
     }
 
-    /* NAV */
     .navbar-nav .nav-link {
       font-weight: 600;
       font-size: 0.9rem;
@@ -105,8 +125,13 @@
       text-transform: uppercase;
     }
 
-    /* HERO OVERLAY (Disney style) */
-    .seaworld-hero-overlay {
+    /* HERO */
+    .epcot-hero img {
+      max-height: 620px;
+      object-fit: cover;
+    }
+
+    .epcot-hero-overlay {
       position: absolute;
       bottom: 12%;
       left: 50%;
@@ -115,92 +140,19 @@
       color: #fff;
       max-width: 900px;
       padding: 1.5rem 2rem;
-      text-shadow: 0 4px 18px rgba(0,0,0,0.85);
+      text-shadow: 0 0 18px rgba(255,255,255,0.85);
+      opacity: 0;
+      animation: fadeIn 1.8s ease-out forwards;
     }
 
-    .seaworld-hero-title {
-      font-family: "Playfair Display", serif;
-      font-size: 3rem;
-      margin-bottom: 0.8rem;
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translate(-50%, 20px); }
+      100% { opacity: 1; transform: translate(-50%, 0); }
     }
-
-    .seaworld-hero-subtitle {
-      font-size: 1.25rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .seaworld-hero-tagline {
-      font-size: 1.05rem;
-      font-weight: 600;
-    }
-
-    /* HERO CAROUSEL */
-    .orlando-hero-carousel .carousel-item img {
-      max-height: 620px;
-      object-fit: cover;
-    }
-
-    /* SPACING FIX */
-    .orlando-hero-carousel {
-      margin-bottom: 2.5rem;
-    }
-
-    /* SPLIT DROPDOWN FIXES */
-    .hyw-split-dropdown {
-      display: flex !important;
-      align-items: center !important;
-    }
-
-    .hyw-split-dropdown .dropdown-toggle-split {
-      padding-left: 0.25rem !important;
-      padding-right: 0.25rem !important;
-      margin-left: -0.2rem;
-    }
-
-    .hyw-split-dropdown .dropdown-toggle-split::after {
-      font-size: 0.55rem;
-      color: #8A102F !important;
-      opacity: 1;
-      vertical-align: middle;
-    }
-    .epcot-page h2,
-.epcot-page h3 {
-  margin-top: 2.5rem;
-  margin-bottom: 1.25rem;
-}
-
-.epcot-page p {
-  margin-bottom: 1.25rem;
-  line-height: 1.7;
-}
-
-.epcot-page ul {
-  margin-bottom: 2rem;
-  padding-left: 1.2rem;
-}
-
-.epcot-page li {
-  margin-bottom: 0.6rem;
-  line-height: 1.6;
-}
-.hyw-footer {
-  padding: 1.2rem 0;
-  text-align: center;
-  font-size: 0.85rem;
-}
-
-.legal-footer {
-  padding: 2rem 0;
-  font-size: 0.9rem;
-}
-
-.legal-logos img {
-  max-height: 70px;
-}
   </style>
 </head>
 
-<body class="seaworld-page">
+<body class="epcot-page">
 
   <!-- HEADER -->
   <header class="hyw-header">
@@ -225,8 +177,7 @@
 
           <!-- ORLANDO DROPDOWN -->
           <li class="nav-item dropdown hyw-split-dropdown">
-            <a class="nav-link" href="orlando.html">Orlando</a>
-
+            <a class="nav-link active" href="orlando.html">Orlando</a>
             <a class="nav-link dropdown-toggle dropdown-toggle-split"
                href="#"
                id="orlandoDropdown"
@@ -251,326 +202,184 @@
     </nav>
   </header>
 
-  <!-- PAGE TITLE BAR -->
+  <!-- PAGE TITLE -->
   <section class="page-title-bar">
     <h1>EPCOT</h1>
   </section>
 
-  <!-- HERO CAROUSEL -->
-  <section class="orlando-hero-carousel">
-    <div id="epcotHeroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+  <!-- HERO -->
+  <section class="epcot-hero position-relative">
+    <img src="images/epcot-hero.jpg" class="d-block w-100" alt="EPCOT">
 
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="images/orlando-hero.jpg" class="d-block w-100" alt="EPCOT">
+    <div class="epcot-hero-overlay">
+      <h1 class="display-5 fw-bold">A celebration of culture, innovation and imagination.</h1>
+    </div>
+  </section>
+    <!-- EPCOT CONTENT -->
+  <section class="hyw-section hyw-section-light">
+    <div class="container">
+
+      <h2>A Park Unlike Any Other</h2>
+      <p>
+        EPCOT is a unique blend of futuristic attractions, global culture and incredible dining. It’s a park where you can explore space, travel through time, dive into the oceans and then stroll around 11 different countries – all in one day.
+      </p>
+      <p>
+        With thrilling new attractions, seasonal festivals and world-class food and drink, EPCOT is perfect for families, couples and anyone who loves exploring and discovering new experiences.
+      </p>
+
+      <h3>Who EPCOT Is Best For</h3>
+      <ul>
+        <li>Families who want amazing dining and thrilling attractions</li>
+        <li>Couples looking for a relaxed, scenic day out</li>
+        <li>Anyone looking for a mix of culture, discovery and excitement</li>
+        <li>Guests who love incredible food and drink</li>
+      </ul>
+
+      <h3>The Four Neighbourhoods of EPCOT</h3>
+
+      <p><strong>✨ World Celebration</strong><br>
+      The heart of EPCOT is home to Spaceship Earth and beautiful gardens.</p>
+
+      <p><strong>🌍 World Showcase</strong><br>
+      11 countries around a stunning lagoon – full of food, culture and entertainment.</p>
+
+      <p><strong>🚀 World Discovery</strong><br>
+      Thrills, space travel and cutting-edge attractions.</p>
+
+      <p><strong>🌱 World Nature</strong><br>
+      Experiences celebrating the natural world, oceans and imagination.</p>
+
+      <h3>Top Attractions</h3>
+      <ul>
+        <li>Guardians of the Galaxy: Cosmic Rewind</li>
+        <li>Remy’s Ratatouille Adventure</li>
+        <li>Frozen Ever After</li>
+        <li>Test Track</li>
+        <li>The Seas with Nemo & Friends</li>
+        <li>Turtle Talk with Crush</li>
+        <li>Journey Into Imagination with Figment</li>
+        <li>Living with the Land</li>
+        <li>Mission: SPACE</li>
+      </ul>
+
+      <h3>Dining at EPCOT</h3>
+      <p>
+        EPCOT is known for some of the best dining at Walt Disney World – from quick bites to signature restaurants.
+      </p>
+
+      <ul>
+        <li>🍴 Le Cellier Steakhouse (Canada)</li>
+        <li>🍴 Via Napoli (Italy)</li>
+        <li>🍴 Teppan Edo (Japan)</li>
+        <li>🍴 Les Halles Boulangerie (France)</li>
+        <li>🍴 Regal Eagle Smokehouse (American)</li>
+        <li>🍴 Space 220 (World Discovery)</li>
+        <li>🍴 Connections Eatery – modern quick service</li>
+      </ul>
+
+      <p>
+        EPCOT also hosts seasonal festivals with incredible food booths throughout the year.
+      </p>
+
+      <h3>Seasonal Festivals</h3>
+      <ul>
+        <li>International Festival of the Arts (Jan–Feb)</li>
+        <li>International Flower & Garden Festival (Spring)</li>
+        <li>International Food & Wine Festival (Late Summer–Autumn)</li>
+        <li>International Festival of the Holidays (Nov–Dec)</li>
+      </ul>
+
+      <h3>Entertainment & Nighttime Spectacular</h3>
+      <p>
+        EPCOT offers beautiful live entertainment throughout the park, from cultural performances to musicians and seasonal shows.
+      </p>
+      <p>
+        The nighttime spectacular over World Showcase Lagoon is a highlight – combining fireworks, music and stunning visuals.
+      </p>
+
+      <h3>Top Tips for Visiting EPCOT</h3>
+      <ul>
+        <li>Use Lightning Lane for Frozen Ever After and Remy’s Ratatouille Adventure</li>
+        <li>Arrive early for Guardians of the Galaxy: Cosmic Rewind virtual queue</li>
+        <li>Plan your day – EPCOT is spread across a large area</li>
+        <li>Take time for exploring World Showcase</li>
+        <li>Stay for the nighttime spectacular – it’s amazing!</li>
+      </ul>
+
+      <h3>Why I Recommend EPCOT</h3>
+      <p>
+        EPCOT is perfect for guests who want a mix of thrills, culture and incredible food. It’s relaxing, scenic and full of unique experiences you won’t find anywhere else. Whether you’re new to the countries, exploring a favourite or diving in one of Disney’s newest attractions, EPCOT offers something special for everyone.
+      </p>
+
+    </div>
+  </section>
+    <!-- FOOTER -->
+  <footer class="hyw-footer text-center">
+    <div class="container">
+      <p class="mb-0">© 2024 Holidays Your Way. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- LEGAL FOOTER -->
+  <section class="legal-footer text-center">
+    <div class="container">
+
+      <div class="legal-logos d-flex justify-content-center align-items-center gap-3 flex-wrap mb-3">
+        <img src="images/exotic-travel.jpeg" alt="Exotic World Travel" class="legal-exotic-logo" style="height:70px;">
+        <img src="images/atol-exotic.png" alt="ATOL Protected" class="legal-atol-logo" style="height:90px;">
+      </div>
+
+      <p class="legal-text mx-auto" style="max-width:900px; line-height:1.5;">
+        Exotic World Travel Ltd (company number 16110795) is a Member of Protected Trust Services (PTS) with member number PTS6358 and holds an ATOL Licence (number 12846).
+        All the flights and flight-inclusive holidays on this website are financially protected by the ATOL scheme. When you pay you will be supplied with an ATOL Certificate.
+        Please ask for it and check to ensure that everything you booked (flights, hotels and other services) is listed on it. For more information about financial protection and the ATOL Certificate go to www.caa.co.uk.
+        Holidays are financially secured by PTS. All customer funds are held in an Independent Trust Account for your protection.
+      </p>
+
+      <div class="legal-social d-flex justify-content-center gap-3 mb-4">
+        <a href="#"><img src="images/facebook-new.png" alt="Facebook" class="social-icon" style="height:28px;"></a>
+        <a href="#"><img src="images/instagram-new.png" alt="Instagram" class="social-icon" style="height:28px;"></a>
+      </div>
+
+      <div class="legal-features d-flex justify-content-center flex-wrap gap-4">
+
+        <div class="feature-item text-center" style="max-width:120px;">
+          <img src="images/atol-exotic.png" alt="ATOL Protected" class="feature-icon" style="height:40px;">
+          <span>ATOL Protected</span>
         </div>
 
-        <div class="carousel-item"><img src="images/orlando-hotel.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando1.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando2.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando3.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando4.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando5.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando6.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando8.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando9.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando10.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando12.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando13.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando14.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando15.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando16.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando17.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando18.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando19.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando20.jpg" class="d-block w-100" alt=""></div>
-        <div class="carousel-item"><img src="images/orlando21.jpg" class="d-block w-100" alt=""></div>
-      </div>
+        <div class="feature-item text-center" style="max-width:120px;">
+          <img src="images/icon-deposit.png" alt="Deposits from £50pp" class="feature-icon" style="height:40px;">
+          <span>Deposits from £50pp*</span>
+        </div>
 
-      <div class="seaworld-hero-overlay">
-        <h1 class="seaworld-hero-title">EPCOT</h1>
-        <p class="seaworld-hero-subtitle">A celebration of culture, innovation and imagination</p>
-        <p class="seaworld-hero-tagline">Your friendly guide to Disney’s most unique park</p>
-      </div>
+        <div class="feature-item text-center" style="max-width:120px;">
+          <img src="images/icon-payments.png" alt="Flexible Payments" class="feature-icon" style="height:40px;">
+          <span>Flexible Payments</span>
+        </div>
 
-      <button class="carousel-control-prev" type="button" data-bs-target="#epcotHeroCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#epcotHeroCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </button>
+        <div class="feature-item text-center" style="max-width:120px;">
+          <img src="images/icon-trustpilot.png" alt="TrustPilot Rating" class="feature-icon" style="height:40px;">
+          <span>Rated 4.7 on TrustPilot</span>
+        </div>
 
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#epcotHeroCarousel" data-bs-slide-to="0" class="active"></button>
-        <button type="button" data-bs-target="#epcotHeroCarousel" data-bs-slide-to="1"></button>
-        <button type="button" data-bs-target="#epcotHeroCarousel" data-bs-slide-to="2"></button>
-        <button type="button" data-bs-target="#epcotHeroCarousel" data-bs-slide-to="3"></button>
-        <button type="button" data-bs-target="#epcotHeroCarousel" data-bs-slide-to="4"></button>
-        <button type="button" data-bs-target="#epcotHeroCarousel" data-bs-slide-to="5"></button>
-        <button type="button" data-bs-target="#epcotHeroCarousel" data-bs-slide-to="6"></button>
-        <button type="button" data-bs-target="#epcotHeroCarousel" data-bs-slide-to="7"></button>
-        <button type="button" data-bs-target="#epcotHeroCarousel" data-bs-slide-to="8"></button>
-        <button type="button" data-bs-target="#epcotHeroCarousel" data-bs-slide-to="9"></button>
-        <button type="button" data-bs-target="#epcotHeroCarousel" data-bs-slide-to="10"></button>
-        <button type="button" data-bs-target="#epcotHeroCarousel" data-bs-slide-to="11"></button>
-        <button type="button" data-bs-target="#epcotHeroCarousel" data-bs-slide-to="12"></button>
-        <button type="button" data-bs-target="#epcotHeroCarousel" data-bs-slide-to="13"></button>
-        <button type="button" data-bs-target="#epcotHeroCarousel" data-bs-slide-to="14"></button>
-        <button type="button" data-bs-target="#epcotHeroCarousel" data-bs-slide-to="15"></button>
-        <button type="button" data-bs-target="#epcotHeroCarousel" data-bs-slide-to="16"></button>
-        <button type="button" data-bs-target="#epcotHeroCarousel" data-bs-slide-to="17"></button>
-        <button type="button" data-bs-target="#epcotHeroCarousel" data-bs-slide-to="18"></button>
-        <button type="button" data-bs-target="#epcotHeroCarousel" data-bs-slide-to="19"></button>
-        <button type="button" data-bs-target="#epcotHeroCarousel" data-bs-slide-to="20"></button>
+        <div class="feature-item text-center" style="max-width:120px;">
+          <img src="images/icon-tailored.png" alt="Tailored Travel Experience" class="feature-icon" style="height:40px;">
+          <span>Tailored Travel Experience</span>
+        </div>
+
+        <div class="feature-item text-center" style="max-width:120px;">
+          <img src="images/icon-calendar.png" alt="2027/2028 Packages" class="feature-icon" style="height:40px;">
+          <span>2027/2028 Packages Available</span>
+        </div>
+
       </div>
 
     </div>
   </section>
-  <!-- INTRO SECTION -->
-<section class="hyw-section">
-  <div class="container">
-    <h2 class="hyw-section-title">A Park Unlike Any Other</h2>
 
-    <p class="hyw-section-intro">
-      EPCOT is a unique blend of futuristic attractions, global culture and incredible dining. It’s a park where you
-      can explore space, travel through time, dive into the oceans and then stroll around 11 different countries —
-      all in one day.
-    </p>
-
-    <p class="hyw-section-intro">
-      With thrilling new attractions, seasonal festivals and world‑class food and drink, EPCOT is perfect for families,
-      couples and anyone who loves exploring and discovering new experiences.
-    </p>
-  </div>
-</section>
-
-
-<!-- BEST FOR -->
-<section class="hyw-section hyw-section-grey">
-  <div class="container">
-    <h2 class="hyw-section-title">Who EPCOT Is Best For</h2>
-
-    <ul>
-      <li>Foodies who want amazing dining and festival treats</li>
-      <li>Families who enjoy a mix of thrills and gentle attractions</li>
-      <li>Couples looking for a relaxed, scenic Disney day</li>
-      <li>Guests who love culture, technology and exploration</li>
-    </ul>
-  </div>
-</section>
-
-
-<!-- PARK AREAS -->
-<section class="hyw-section">
-  <div class="container">
-    <h2 class="hyw-section-title">The Four Neighbourhoods of EPCOT</h2>
-
-    <h3 class="hyw-section-title" style="font-size:1.4rem;">✨ World Celebration</h3>
-    <p class="hyw-section-intro">
-      The heart of EPCOT, home to Spaceship Earth and beautiful gardens.
-    </p>
-
-    <h3 class="hyw-section-title" style="font-size:1.4rem;">🌐 World Showcase</h3>
-    <p class="hyw-section-intro">
-      11 countries around a stunning lagoon — full of food, culture and entertainment.
-    </p>
-
-    <h3 class="hyw-section-title" style="font-size:1.4rem;">🔬 World Discovery</h3>
-    <p class="hyw-section-intro">
-      Thrills, space travel and cutting‑edge attractions.
-    </p>
-
-    <h3 class="hyw-section-title" style="font-size:1.4rem;">🌱 World Nature</h3>
-    <p class="hyw-section-intro">
-      Experiences celebrating the natural world, oceans and imagination.
-    </p>
-  </div>
-</section>
-
-
-<!-- TOP ATTRACTIONS -->
-<section class="hyw-section hyw-section-grey">
-  <div class="container">
-    <h2 class="hyw-section-title">Top Attractions</h2>
-
-    <ul>
-      <li>Guardians of the Galaxy: Cosmic Rewind</li>
-      <li>Remy’s Ratatouille Adventure</li>
-      <li>Frozen Ever After</li>
-      <li>Soarin’ Around the World</li>
-      <li>Spaceship Earth</li>
-      <li>Test Track</li>
-      <li>The Seas with Nemo & Friends</li>
-      <li>Journey of Water, Inspired by Moana</li>
-      <li>Living with the Land</li>
-      <li>Mission: SPACE</li>
-    </ul>
-  </div>
-</section>
-
-
-<!-- DINING -->
-<section class="hyw-section">
-  <div class="container">
-    <h2 class="hyw-section-title">Dining at EPCOT</h2>
-
-    <p class="hyw-section-intro">
-      EPCOT is known for some of the best dining at Walt Disney World — from quick bites to signature restaurants.
-    </p>
-
-    <ul>
-      <li>Le Cellier Steakhouse (Canada)</li>
-      <li>Via Napoli (Italy)</li>
-      <li>Teppan Edo (Japan)</li>
-      <li>La Hacienda de San Angel (Mexico)</li>
-      <li>Les Halles Boulangerie-Patisserie (France)</li>
-      <li>Space 220 — a dining experience in orbit</li>
-      <li>Connections Eatery — modern quick service</li>
-    </ul>
-
-    <p class="hyw-section-intro">
-      EPCOT also hosts seasonal festivals with incredible food booths throughout the year.
-    </p>
-  </div>
-</section>
-
-
-<!-- FESTIVALS -->
-<section class="hyw-section hyw-section-grey">
-  <div class="container">
-    <h2 class="hyw-section-title">Seasonal Festivals</h2>
-
-    <p class="hyw-section-intro">
-      EPCOT is famous for its rotating festivals, each offering unique food, entertainment and experiences:
-    </p>
-
-    <ul>
-      <li>International Festival of the Arts (Jan–Feb)</li>
-      <li>International Flower & Garden Festival (Spring)</li>
-      <li>International Food & Wine Festival (Late Summer–Autumn)</li>
-      <li>International Festival of the Holidays (Nov–Dec)</li>
-    </ul>
-  </div>
-</section>
-
-
-<!-- ENTERTAINMENT -->
-<section class="hyw-section">
-  <div class="container">
-    <h2 class="hyw-section-title">Entertainment & Nighttime Spectacular</h2>
-
-    <p class="hyw-section-intro">
-      EPCOT offers beautiful live entertainment throughout the park, from cultural performances to musicians and
-      seasonal shows.
-    </p>
-
-    <p class="hyw-section-intro">
-      The nighttime spectacular over World Showcase Lagoon is a highlight — combining fireworks, music and stunning
-      visuals.
-    </p>
-  </div>
-</section>
-
-
-<!-- TIPS -->
-<section class="hyw-section hyw-section-grey">
-  <div class="container">
-    <h2 class="hyw-section-title">Top Tips for Visiting EPCOT</h2>
-
-    <ul>
-      <li>Use Lightning Lane for Frozen Ever After and Remy’s Ratatouille Adventure</li>
-      <li>Arrive early for Guardians of the Galaxy: Cosmic Rewind virtual queue</li>
-      <li>Plan your dining — EPCOT restaurants book up quickly</li>
-      <li>Take your time exploring World Showcase</li>
-      <li>Stay for the nighttime spectacular — it’s worth it</li>
-    </ul>
-  </div>
-</section>
-
-
-<!-- WHY I RECOMMEND -->
-<section class="hyw-section">
-  <div class="container">
-    <h2 class="hyw-section-title">Why I Recommend EPCOT</h2>
-
-    <p class="hyw-section-intro">
-      EPCOT is perfect for guests who want a mix of thrills, culture and incredible food. It’s relaxing, scenic and
-      full of unique experiences you won’t find anywhere else. Whether you’re exploring the countries, enjoying a
-      festival or riding one of Disney’s newest attractions, EPCOT offers something special for everyone.
-    </p>
-
-    <a href="contact.html" class="btn btn-primary btn-lg mt-2">Ask me about planning your EPCOT day</a>
-  </div>
-</section>
-<!-- FOOTER -->
-<footer class="hyw-footer">
-  <div class="container">
-    <p class="mb-0">© 2024 Holidays Your Way. All rights reserved.</p>
-  </div>
-</footer>
-
-<!-- LEGAL COMPLIANCE FOOTER -->
-<section class="legal-footer">
-  <div class="container">
-
-    <div class="legal-logos">
-      <img src="images/exotic-travel.jpeg" alt="Exotic World Travel" class="legal-exotic-logo">
-      <img src="images/atol-exotic.png" alt="ATOL Protected" class="legal-atol-logo">
-    </div>
-
-    <p class="legal-text">
-      Exotic World Travel Ltd (company number 16110795) is a Member of Protected Trust Services (PTS) with member number PTS6358 and holds an ATOL Licence (number 12846).
-      All the flights and flight-inclusive holidays on this website are financially protected by the ATOL scheme. When you pay you will be supplied with an ATOL Certificate.
-      Please ask for it and check to ensure that everything you booked (flights, hotels and other services) is listed on it. For more information about financial protection
-      and the ATOL Certificate go to www.caa.co.uk. Holidays are financially secured by PTS. All customer funds are held in an Independent Trust Account for your protection.
-    </p>
-
-    <div class="legal-social">
-      <a href="#" class="social-link">
-        <img src="images/facebook-new.png" alt="Facebook" class="social-icon">
-      </a>
-      <a href="#" class="social-link">
-        <img src="images/instagram-new.png" alt="Instagram" class="social-icon">
-      </a>
-    </div>
-
-    <div class="legal-features">
-      <div class="feature-item">
-        <img src="images/atol-exotic.png" alt="ATOL Protected" class="feature-icon">
-        <span>ATOL Protected</span>
-      </div>
-
-      <div class="feature-item">
-        <img src="images/icon-deposit.png" alt="Deposits from £50pp" class="feature-icon">
-        <span>Deposits from £50pp*</span>
-      </div>
-
-      <div class="feature-item">
-        <img src="images/icon-payments.png" alt="Flexible Payments" class="feature-icon">
-        <span>Flexible Payments</span>
-      </div>
-
-      <div class="feature-item">
-        <img src="images/icon-trustpilot.png" alt="TrustPilot Rating" class="feature-icon">
-        <span>Rated 4.7 on TrustPilot</span>
-      </div>
-
-      <div class="feature-item">
-        <img src="images/icon-tailored.png" alt="Tailored Travel Experience" class="feature-icon">
-        <span>Tailored Travel Experience</span>
-      </div>
-
-      <div class="feature-item">
-        <img src="images/icon-calendar.png" alt="2027/2028 Packages" class="feature-icon">
-        <span>2027/2028 Packages Available</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- BOOTSTRAP JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
