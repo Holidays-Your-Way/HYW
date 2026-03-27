@@ -84,11 +84,30 @@
       color: #394155;
       text-transform: uppercase;
       letter-spacing: 0.08em;
+      display: inline-flex;
+      align-items: center;
     }
 
     .navbar-nav .nav-link:hover,
     .navbar-nav .nav-link.active {
       color: var(--hyw-blue);
+    }
+
+    /* DROPDOWN ARROW FIX */
+    .hyw-split-dropdown {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    .hyw-split-dropdown .dropdown-toggle-split {
+      padding-left: 0;
+      margin-left: 0.15rem;
+    }
+
+    .hyw-split-dropdown .dropdown-toggle::after {
+      border-top-color: var(--hyw-red-dark);
+      margin-left: 0.25rem;
     }
 
     /* PAGE TITLE BAR */
@@ -244,52 +263,65 @@
     .hyw-final-cta {
       text-align: center;
       background-color: var(--hyw-white);
-      padding: 4rem 0;
+      padding: 3rem 0 3.5rem;
     }
 
-    /* FOOTER */
+    /* FOOTER FIX */
     .hyw-footer {
-      padding: 1.2rem 0;
+      padding: 0.8rem 0;
       text-align: center;
       font-size: 0.85rem;
     }
 
     .legal-footer {
-      padding: 2rem 0;
+      padding: 1.5rem 0 1.75rem;
       text-align: center;
       font-size: 0.9rem;
     }
 
-    .legal-logos img {
-      max-height: 70px; 
+    .legal-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
     }
 
-    .feature-icon {
-      height: 40px;
+    .legal-logos img {
+      max-height: 60px;
+      width: auto;
+    }
+
+    .legal-social {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 0.75rem 0 1.25rem;
+    }
+
+    .social-icon {
+      max-height: 32px;
+      width: auto;
     }
 
     .legal-features {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 2rem;
+      gap: 1.5rem;
     }
 
     .feature-item {
       text-align: center;
       max-width: 120px;
+      font-size: 0.85rem;
     }
 
-    /* DROPDOWN ARROW FIX */
-    .hyw-split-dropdown {
-      display: flex;
-      align-items: center;
-    }
-
-    .hyw-split-dropdown .dropdown-toggle-split {
-      color: var(--hyw-red-dark);
-      margin-left: 4px;
-      padding-left: 0;
+    .feature-icon {
+      height: 36px;
+      width: auto;
+      display: block;
+      margin: 0 auto 0.25rem;
     }
   </style>
 </head>
