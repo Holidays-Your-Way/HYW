@@ -22,7 +22,6 @@
       --hyw-red-dark: #8A102F;
       --hyw-white: #FFFFFF;
       --hyw-light: #F5F7FA;
-      --hyw-soft-cream: #FFFFFF;
       --hyw-text: #1F2430;
       --hyw-grey: #f7f7f7;
     }
@@ -35,11 +34,12 @@
     }
 
     h1, h2, h3 {
-      font-family: "Poppins", sans-serif;
+      font-family: "Playfair Display", serif;
+      font-weight: 800;
     }
 
     /* ============================
-       NEW BUTTON SYSTEM (matches homepage)
+       BUTTON SYSTEM (site-wide)
        ============================ */
 
     .btn-hyw-pill {
@@ -49,20 +49,12 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
       display: inline-block;
-      margin-top: 1rem;
+      margin-top: 0.8rem;
     }
 
-    .btn-hyw-blue {
-      background-color: var(--hyw-blue);
-      color: #fff;
-    }
+    .btn-hyw-red { background-color: var(--hyw-red); color: #fff; }
+    .btn-hyw-blue { background-color: var(--hyw-blue); color: #fff; }
 
-    .btn-hyw-red {
-      background-color: var(--hyw-red);
-      color: #fff;
-    }
-
-    /* HERO CTA BUTTON (kept from homepage) */
     .btn-hyw-hero-blue {
       background-color: var(--hyw-blue);
       color: #fff;
@@ -82,7 +74,10 @@
       background-color: var(--hyw-blue-dark);
     }
 
-    /* HEADER */
+    /* ============================
+       HEADER + NAV
+       ============================ */
+
     .hyw-header {
       display: flex;
       justify-content: space-between;
@@ -102,7 +97,6 @@
     .hyw-partner-logo { height: 96px; width: auto; }
     .hyw-atol-logo { height: 120px; width: auto; }
 
-    /* NAVIGATION */
     .navbar-nav .nav-link {
       font-weight: 600;
       font-size: 0.9rem;
@@ -116,11 +110,8 @@
       color: var(--hyw-blue);
     }
 
-    /* ORLANDO SPLIT DROPDOWN */
-    .hyw-split-dropdown {
-      display: flex !important;
-      align-items: center !important;
-    }
+    /* Orlando dropdown fix */
+    .hyw-split-dropdown { display: flex !important; align-items: center !important; }
 
     .hyw-split-dropdown .dropdown-toggle-split {
       padding-left: 0.25rem !important;
@@ -135,7 +126,10 @@
       vertical-align: middle;
     }
 
-    /* HERO (kept in your chosen style) */
+    /* ============================
+       HERO (simple version)
+       ============================ */
+
     .hyw-hero {
       width: 100%;
       height: 420px;
@@ -152,7 +146,6 @@
     .hyw-hero h1 {
       font-size: 3rem;
       color: var(--hyw-blue-dark);
-      font-weight: 700;
     }
 
     .hyw-hero p {
@@ -162,7 +155,10 @@
       margin-top: 0.8rem;
     }
 
-    /* SERVICES CONTENT */
+    /* ============================
+       SERVICES SECTION
+       ============================ */
+
     .services-section {
       padding: 4rem 0;
     }
@@ -173,46 +169,64 @@
       border-radius: 12px;
       margin-bottom: 25px;
       border-left: 6px solid var(--hyw-blue);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+      display: block;
+    }
+
+    .service-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
 
     .service-box h2 {
       margin-top: 0;
       font-size: 1.8rem;
-      color: var(--hyw-blue-dark);
-      font-weight: 700;
+      color: var(--hyw-white);
     }
 
     .service-box p {
       font-size: 1rem;
       line-height: 1.65;
-      color: #4a5264;
+      color: var(--hyw-white);
     }
 
-    /* FINAL CTA (matches homepage) */
+    /* Alternating colours */
+    .service-box-blue {
+      background: var(--hyw-blue);
+      border-left-color: var(--hyw-blue-dark);
+    }
+
+    .service-box-red {
+      background: var(--hyw-red-dark);
+      border-left-color: #5d0b20;
+    }
+
+    /* ============================
+       CTA + FOOTERS
+       ============================ */
+
     .hyw-final-cta {
       text-align: center;
       background-color: var(--hyw-white);
       padding: 4.5rem 0 5rem;
     }
 
-    .hyw-final-cta h2.hyw-section-title {
-      font-family: "Poppins", sans-serif;
-      font-weight: 700;
+    .hyw-final-cta h2 {
+      font-family: "Playfair Display", serif;
+      font-weight: 800;
       font-size: 2rem;
-      letter-spacing: 0.03em;
       color: var(--hyw-blue-dark);
       margin-bottom: 1.4rem;
     }
 
-    .hyw-final-cta .hyw-section-intro {
-      font-family: "Nunito", sans-serif;
+    .hyw-final-cta p {
       font-size: 1.05rem;
       line-height: 1.75;
       max-width: 760px;
       margin: 0 auto 2rem;
     }
 
-    /* FOOTER */
     .hyw-footer {
       background-color: var(--hyw-blue);
       color: #ffffff;
@@ -221,9 +235,6 @@
       font-size: 0.9rem;
     }
 
-    .hyw-footer p { margin: 0; }
-
-    /* LEGAL FOOTER */
     .legal-footer {
       padding: 1.5rem 0 1.75rem;
       text-align: center;
@@ -336,7 +347,7 @@
   </header>
 
 
-  <!-- HERO (Option A — keep simple static hero) -->
+  <!-- HERO (Simple version, as requested) -->
   <section class="hyw-hero">
     <div>
       <h1>What We Offer</h1>
@@ -347,33 +358,37 @@
   <section class="services-section">
     <div class="container">
 
-      <div class="service-box">
+      <!-- ORLANDO HOLIDAYS — BLUE -->
+      <a href="orlando.html" class="service-box service-box-blue text-decoration-none d-block">
         <h2>Orlando Holidays</h2>
         <p>
           From theme parks to hidden gems, I’ll help you build the perfect Orlando itinerary with real insider knowledge.
         </p>
-      </div>
+      </a>
 
-      <div class="service-box">
+      <!-- EUROPE — RED -->
+      <a href="destinations.html#europe" class="service-box service-box-red text-decoration-none d-block">
         <h2>Europe</h2>
         <p>
           Family-friendly escapes, luxury resorts, and sun-soaked destinations across Greece, Cyprus, Türkiye and more.
         </p>
-      </div>
+      </a>
 
-      <div class="service-box">
+      <!-- WORLDWIDE — BLUE -->
+      <a href="destinations.html" class="service-box service-box-blue text-decoration-none d-block">
         <h2>Worldwide</h2>
         <p>
           From the Maldives to Mexico, I’ll help you find the perfect long-haul getaway with trusted suppliers and real experience.
         </p>
-      </div>
+      </a>
 
-      <div class="service-box">
+      <!-- TAILORED PACKAGES — RED -->
+      <a href="contact.html" class="service-box service-box-red text-decoration-none d-block">
         <h2>Tailored Packages</h2>
         <p>
           Every holiday is built around you — your budget, your style, your must-haves. No generic packages, no upselling.
         </p>
-      </div>
+      </a>
 
     </div>
   </section>
